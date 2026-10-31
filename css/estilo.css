@@ -64,3 +64,15 @@ a.caja:hover { border-color: var(--acento); transform: translateY(-2px); }
 .oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .caja select { width: 100%; min-width: 0; }
 .contenedores { margin-bottom: 24px; }
+.guia h2 { padding-top: 12px; border-top: 1px solid var(--borde); }
+.guia h3 { font-size: 1.1rem; margin: 28px 0 10px; }
+.guia h4 { font-size: 1rem; margin: 22px 0 8px; color: var(--acento); }
+.indice { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 8px 0 8px; font-size: .95rem; }
+.tabla { overflow-x: auto; margin: 12px 0 16px; border: 1px solid var(--borde); border-radius: 10px; background: var(--tarjeta); }
+.tabla table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+.tabla th, .tabla td { text-align: left; vertical-align: top; padding: 8px 12px; border-bottom: 1px solid var(--borde); }
+.tabla tr:last-child td { border-bottom: none; }
+.tabla th { background: var(--fondo); font-weight: 600; }
+.tabla td p, .tabla th p { margin: 0 0 6px; }
+.tabla td ul, .tabla td ol { margin: 0; padding-left: 18px; }
+.casillas { list-style: "☐  "; }
