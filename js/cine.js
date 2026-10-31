@@ -16,6 +16,11 @@
 
   document.querySelectorAll('[data-cine="enlace-ultima"]').forEach(function (a) { a.href = url(ultima); });
 
+  var caja = document.querySelector('[data-cine="caja-ultima"]');
+  if (caja) caja.href = url(ultima);
+  var res = document.querySelector('[data-cine="ultima-resumen"]');
+  if (res) res.innerHTML = '<h3>' + esc(ultima.titulo) + '</h3><p>' + datos(ultima) + '</p>' + (ultima.resumen ? '<p>' + esc(ultima.resumen) + '</p>' : '');
+
   var u = document.querySelector('[data-cine="ultima"]');
   if (u) u.innerHTML = '<div class="destacada">' + tarjeta(ultima) + '</div>';
 

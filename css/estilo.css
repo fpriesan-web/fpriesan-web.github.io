@@ -50,3 +50,17 @@ h2 { font-size: 1.3rem; margin: 40px 0 16px; }
 .letras { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
 .letras a { display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--borde); background: var(--tarjeta); text-decoration: none; font-weight: 600; }
 .letras a:hover { border-color: var(--acento); }
+.contenedores { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); margin-top: 32px; }
+.caja { display: flex; flex-direction: column; gap: 8px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 14px; padding: 24px; color: var(--texto); text-decoration: none; }
+a.caja { transition: border-color .15s, transform .15s; }
+a.caja:hover { border-color: var(--acento); transform: translateY(-2px); }
+.caja h2 { margin: 4px 0 0; font-size: 1.25rem; }
+.caja h3 { margin: 0; font-size: 1.1rem; }
+.caja p { margin: 0; color: var(--suave); }
+.caja > div { display: grid; gap: 4px; }
+.caja-num { width: 36px; height: 36px; border-radius: 50%; background: var(--acento); color: var(--tarjeta); font-weight: 700; display: grid; place-items: center; }
+.caja-ir { margin-top: auto; padding-top: 8px; color: var(--acento); font-weight: 600; text-decoration: none; }
+.caja .desplegable { max-width: none; }
+.oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.caja select { width: 100%; min-width: 0; }
+.contenedores { margin-bottom: 24px; }
