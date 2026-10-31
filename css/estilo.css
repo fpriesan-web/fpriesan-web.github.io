@@ -38,3 +38,15 @@ h2 { font-size: 1.3rem; margin: 40px 0 16px; }
 .fase p strong { color: var(--texto); }
 .fase ul + p { margin-top: 10px; }
 .fase ul.sin-vinetas { list-style: none; padding-left: 0; }
+.subnav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+.subnav a { text-decoration: none; color: var(--texto); background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 999px; padding: 4px 14px; font-size: .95rem; }
+.subnav a:hover { border-color: var(--acento); }
+.subnav a[aria-current="page"] { background: var(--acento); border-color: var(--acento); color: var(--tarjeta); font-weight: 600; }
+.destacada .tarjeta { border: 2px solid var(--acento); }
+.destacada .tarjeta h3 { font-size: 1.3rem; }
+.desplegable { display: grid; gap: 6px; max-width: 420px; }
+.desplegable span { color: var(--suave); font-size: .95rem; }
+.desplegable select { font: inherit; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--borde); background: var(--tarjeta); color: var(--texto); }
+.letras { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
+.letras a { display: grid; place-items: center; min-width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--borde); background: var(--tarjeta); text-decoration: none; font-weight: 600; }
+.letras a:hover { border-color: var(--acento); }
