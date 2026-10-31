@@ -27,3 +27,11 @@ h2 { font-size: 1.3rem; margin: 40px 0 16px; }
 .vacio { color: var(--suave); font-style: italic; }
 .pie { color: var(--suave); font-size: .9rem; padding-bottom: 40px; }
 .lista { display: grid; gap: 12px; }
+.fase { display: flex; gap: 16px; background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.fase > div { min-width: 0; }
+.fase h3 { margin: 2px 0 4px; font-size: 1.15rem; }
+.fase p { margin: 0 0 8px; color: var(--suave); }
+.fase ul { margin: 0; padding-left: 20px; }
+.fase li { margin-bottom: 4px; }
+.fase-num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--acento); color: var(--tarjeta); font-weight: 700; display: grid; place-items: center; }
+.fase h4 { margin: 14px 0 4px; font-size: 1rem; }
