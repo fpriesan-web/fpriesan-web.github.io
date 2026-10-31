@@ -35,3 +35,6 @@ h2 { font-size: 1.3rem; margin: 40px 0 16px; }
 .fase li { margin-bottom: 4px; }
 .fase-num { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--acento); color: var(--tarjeta); font-weight: 700; display: grid; place-items: center; }
 .fase h4 { margin: 14px 0 4px; font-size: 1rem; }
+.fase p strong { color: var(--texto); }
+.fase ul + p { margin-top: 10px; }
+.fase ul.sin-vinetas { list-style: none; padding-left: 0; }
