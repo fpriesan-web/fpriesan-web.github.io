@@ -26,3 +26,4 @@ h2 { font-size: 1.3rem; margin: 40px 0 16px; }
 .miga { color: var(--suave); font-size: .9rem; margin: 0 0 16px; }
 .vacio { color: var(--suave); font-style: italic; }
 .pie { color: var(--suave); font-size: .9rem; padding-bottom: 40px; }
+.lista { display: grid; gap: 12px; }
