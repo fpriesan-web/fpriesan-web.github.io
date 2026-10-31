@@ -19,30 +19,36 @@
   </header>
   <main class="contenedor">
     <p class="miga"><a href="/">Inicio</a> / <a href="/recursos/">Recursos didácticos</a> / Cine y Educación</p>
-    <nav class="subnav" aria-label="Cine y Educación">
-      <a href="/recursos/cine-y-educacion/" aria-current="page">Inicio</a>
-      <a href="/recursos/cine-y-educacion/pauta/">Pauta de análisis</a>
-      <a href="/recursos/cine-y-educacion/peliculas/">Películas A–Z</a>
-      <a href="/recursos/cine-y-educacion/#ultima" data-cine="enlace-ultima">Última añadida</a>
-    </nav>
     <h1>Cine y Educación</h1>
     <p class="entradilla">Análisis de películas con valor pedagógico para trabajar en el aula. Todas siguen la misma pauta de análisis en cinco fases.</p>
 
-    <h2 id="ultima">Última película añadida</h2>
-    <div data-cine="ultima"><p class="vacio">Todavía no hay películas analizadas.</p></div>
+    <div class="contenedores">
+      <a class="caja" href="/recursos/cine-y-educacion/pauta/">
+        <span class="caja-num">1</span>
+        <h2>Pautas de análisis</h2>
+        <p>Las cinco fases para seleccionar, ver y trabajar una película en el aula.</p>
+        <span class="caja-ir">Ver la pauta →</span>
+      </a>
 
-    <h2>Ir a una película</h2>
-    <label class="desplegable">
-      <span>Elige una película</span>
-      <select data-cine="desplegable" disabled>
-        <option value="">Todavía no hay películas</option>
-      </select>
-    </label>
+      <div class="caja">
+        <span class="caja-num">2</span>
+        <h2>Películas</h2>
+        <p>Accede directamente a cualquier película analizada.</p>
+        <label class="desplegable">
+          <span class="oculto">Elige una película</span>
+          <select data-cine="desplegable" disabled>
+            <option value="">Todavía no hay películas</option>
+          </select>
+        </label>
+        <a class="caja-ir" href="/recursos/cine-y-educacion/peliculas/">Ver todas de la A a la Z →</a>
+      </div>
 
-    <h2>Explorar la sección</h2>
-    <div class="rejilla">
-      <a class="tarjeta" href="/recursos/cine-y-educacion/pauta/"><span class="etiqueta">Guía</span><h3>Pauta de análisis</h3><p>Las cinco fases para seleccionar, ver y trabajar una película en el aula.</p></a>
-      <a class="tarjeta" href="/recursos/cine-y-educacion/peliculas/"><span class="etiqueta">Índice</span><h3>Películas de la A a la Z</h3><p>Todas las películas analizadas, por orden alfabético.</p></a>
+      <a class="caja" id="ultima" href="/recursos/cine-y-educacion/peliculas/" data-cine="caja-ultima">
+        <span class="caja-num">3</span>
+        <h2>Última película añadida</h2>
+        <div data-cine="ultima-resumen"><p>Todavía no hay películas analizadas.</p></div>
+        <span class="caja-ir">Ver la película →</span>
+      </a>
     </div>
   </main>
   <footer class="contenedor pie">Materiales de uso educativo.</footer>
