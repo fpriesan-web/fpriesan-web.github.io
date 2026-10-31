@@ -3,7 +3,7 @@
 .lamina { position: relative; container-type: inline-size; border-radius: 8px; overflow: hidden; background: #fff; }
 .lamina img { display: block; width: 100%; height: auto; }
 .zona { position: absolute; background: #fff; border: 2px dashed #9aa5b1; border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 1px; }
-.zona.activa { border-color: var(--acento); background: #e8f3f0; }
+.zona.activa { border-color: var(--acento); background: #fdebd9; }
 .zona.bien { border: 2px solid #2e7d32; background: #e8f5e9; }
 .zona.mal { border: 2px solid #c62828; background: #ffebee; }
 .zona .ficha { font-size: max(8px, 1.6cqw); padding: 1px 3px; box-shadow: none; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.1; }
@@ -15,5 +15,5 @@
 .ficha.arrastrando { position: fixed; z-index: 1000; pointer-events: none; cursor: grabbing; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
 .resultado { font-weight: 600; min-height: 1.6em; margin: 12px 0 8px; }
 .botones { display: flex; gap: 8px; flex-wrap: wrap; }
-.botones button { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--acento); background: var(--acento); color: #fff; cursor: pointer; }
+.botones button { font: inherit; font-weight: 600; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--acento); background: var(--acento); color: var(--tarjeta); cursor: pointer; }
 .botones button.secundario { background: transparent; color: var(--acento); }
