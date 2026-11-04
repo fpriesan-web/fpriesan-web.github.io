@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La placa base (II) · Apuntes de clase</title>
+  <meta name="description" content="Tema 2 de 1º CFGB: socket del procesador, BIOS, CMOS, POST, XMP, actualización de la BIOS, factores de forma, separadores y códigos de pitidos.">
+  <link rel="stylesheet" href="/css/estilo.css?v=3">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-2/">Tema 2</a></p>
+    <span class="etiqueta">Material didáctico · Tema 2</span>
+    <h1>La placa base (II)</h1>
+    <nav class="indice" aria-label="Apartados">
+      <a href="#socket">1. El socket del procesador</a>
+      <a href="#bios">2. BIOS, CMOS y POST</a>
+      <a href="#xmp">3. XMP y EXPO</a>
+      <a href="#actualizar">4. Actualizar la BIOS</a>
+      <a href="#factores">5. Factores de forma</a>
+      <a href="#separadores">6. Separadores (standoffs)</a>
+      <a href="#pitidos">7. Señales de aviso (pitidos)</a>
+      <a href="#glosario">8. Glosario</a>
+    </nav>
+
+    <h2 id="socket">1. El socket del procesador</h2>
+    <h3>¿Qué es un socket de procesador?</h3>
+    <ul>
+      <li>El <strong>socket del procesador</strong> es una pieza metálica y plástica situada en la placa base. Su función principal es <strong>permitir la conexión eléctrica y mecánica entre la CPU y la placa base</strong>. Esta interfaz define <strong>la compatibilidad física</strong>, pero también condiciona otras funciones técnicas.</li>
+      <li>Cada socket está asociado a <strong>una o varias generaciones de procesadores</strong>. Además, algunos requieren actualizaciones de BIOS para reconocer nuevos modelos, aunque compartan el mismo tipo físico de socket.</li>
+    </ul>
+
+    <h3>Ejemplos de sockets comunes</h3>
+    <h4>Intel</h4>
+    <ul>
+      <li><strong>LGA 1151</strong>: para procesadores Intel de sexta, séptima, octava y novena generación.</li>
+      <li><strong>LGA 1200</strong>: compatible con décima y undécima generación.</li>
+      <li><strong>LGA 1700</strong>: utilizado por los procesadores de duodécima y decimotercera generación (Alder Lake y Raptor Lake).</li>
+      <li><strong>LGA 1851</strong>: nuevo estándar que acompañará a los procesadores <strong>Intel Core Ultra (serie 15ª generación Meteor Lake y Arrow Lake)</strong>. Este socket está diseñado para aprovechar mejoras en eficiencia energética, arquitectura híbrida avanzada y compatibilidad con memorias <strong>DDR5 de alto rendimiento</strong>.</li>
+    </ul>
+    <h4>AMD</h4>
+    <ul>
+      <li><strong>AM4</strong>: abarca varias generaciones, desde los Ryzen 1000 hasta algunos Ryzen 5000.</li>
+      <li><strong>AM5</strong>: introducido con los Ryzen 7000 y compatible con memorias DDR5.</li>
+      <li><strong>sTRX4/TR4</strong>: sockets para procesadores Threadripper de alto rendimiento.</li>
+    </ul>
+
+    <h3>LGA: Land Grid Array (matriz de rejilla de pines)</h3>
+    <ul>
+      <li>Si se observa detenidamente el zócalo de la CPU, se verá una rejilla de pines en la placa base, en lugar de en el procesador, lo que indica claramente que se trata de un zócalo LGA.</li>
+      <li>Las CPU de Intel utilizan el zócalo LGA desde sus plataformas heredadas hasta sus plataformas de última generación, lo que demuestra claramente que Intel se inclina por el zócalo LGA: procesadores complejos y de alto rendimiento que requieren un mayor número de pines para que las CPU tengan una mayor eficiencia en términos de transferencia de datos y suministro de energía.</li>
+      <li><strong>Instalar una CPU en el zócalo requiere un cuidado especial. Si uno de los pines se daña accidentalmente durante la instalación de la CPU, puede dañar permanentemente la placa base, dejándola inutilizable.</strong></li>
+    </ul>
+
+    <h3>PGA: Pin Grid Array</h3>
+    <ul>
+      <li>En el lado PGA, a diferencia del zócalo LGA, los pines se encuentran en el propio procesador y no en el zócalo de la placa base.</li>
+      <li>Instalar un procesador en un zócalo PGA es mucho más intuitivo que en un zócalo LGA, ya que los pines son más visibles, lo que facilita su alineación con los orificios del zócalo y reduce el riesgo de fallos en la conexión.</li>
+      <li>AMD es conocida por su amplia gama de CPU asequibles, por lo que el diseño PGA tiene mucho sentido, ya que permite la producción en masa de procesadores a un coste muy razonable.</li>
+      <li><strong>Debido a que los pines se encuentran en la CPU, son más susceptibles de sufrir daños, ya que se maneja más la CPU que la placa base. Para evitar que los pines se doblen, hay que tener mucho cuidado al sacarla del embalaje y al fijarla al zócalo.</strong></li>
+    </ul>
+
+    <h3>En la actualidad</h3>
+    <ul>
+      <li>Durante años, Intel ha utilizado sistemáticamente el diseño de zócalo LGA, comenzando con el LGA 775 en 2004, y se ha mantenido fiel a este enfoque en diferentes plataformas.</li>
+      <li>Aunque AMD ya había utilizado un diseño LGA con sus Threadripper 1950X y 1920X en 2017, destinados al mercado de gama alta, no fue hasta 2022, con el lanzamiento de la serie Ryzen 7000, cuando pasó del zócalo AM4 al AM5 y utilizó LGA 1718, una plataforma diseñada para satisfacer la demanda general de los consumidores de PC.</li>
+    </ul>
+
+    <h3>¿Por qué es importante saber el socket de tu CPU?</h3>
+    <p>Conocer el socket evita múltiples problemas:</p>
+    <ul>
+      <li><strong>Incompatibilidad física</strong>: el procesador no encaja físicamente en la placa.</li>
+      <li><strong>BIOS desactualizada</strong>: algunas placas pueden tener el socket correcto, pero no reconocer el procesador sin actualizar la BIOS.</li>
+      <li><strong>Disipadores incompatibles</strong>: algunos sistemas de refrigeración sólo son compatibles con sockets específicos.</li>
+      <li><strong>Inversión mal optimizada</strong>: usar una placa base de entrada con una CPU de gama alta puede limitar su rendimiento.</li>
+    </ul>
+    <p>Además, si planeas actualizar otros componentes como la memoria RAM o la GPU, el tipo de socket puede condicionar la disponibilidad de slots, el soporte de DDR4 o DDR5 y la conectividad interna.</p>
+
+    <h2 id="bios">2. BIOS, CMOS y POST</h2>
+    <h3>BIOS (Basic Input Output System)</h3>
+    <ul>
+      <li>La BIOS es el firmware integrado en tu placa base. Cuando enciendes tu PC, es la BIOS la que se ejecuta primero. Su función principal es inicializar y probar los componentes de hardware del sistema antes de cargar un gestor de arranque para tu sistema operativo. La BIOS se asegura de que todos los componentes de tu máquina, como la CPU, la RAM, la GPU y el almacenamiento, sean reconocidos y funcionen correctamente.</li>
+      <li>La BIOS es esencial para arrancar el sistema y proporcionar el marco para que el hardware se comunique entre sí. Actúa como intermediario entre el sistema operativo y los componentes de hardware del ordenador. Sin una BIOS que funcione correctamente, el ordenador no podría arrancar ni funcionar con eficacia. No sería más que un conjunto de componentes de hardware que no podrían comunicarse entre sí.</li>
+      <li>La BIOS se almacena en un chip ROM.</li>
+    </ul>
+
+    <h3>CMOS</h3>
+    <p><strong>CMOS</strong> (Complementary Metal-Oxide-Semiconductor, semiconductor de óxido metálico complementario) es un pequeño trozo de memoria alimentado por pilas que almacena la configuración de la BIOS.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>BIOS</th><th>CMOS</th><th>Pila CMOS</th></tr></thead>
+      <tbody><tr>
+        <td>Es el firmware (programa) que se ejecuta al encender la computadora. Inicializa el hardware y permite el arranque del sistema operativo.</td>
+        <td>Es una pequeña memoria (una parte del circuito de la placa base) donde se guarda la configuración del sistema (fecha, hora, orden de arranque, etc.).</td>
+        <td>Es la batería que alimenta la memoria CMOS para que la configuración no se pierda cuando la computadora está apagada.</td>
+      </tr></tbody>
+    </table></div>
+
+    <h3>POST (Power On Self Test, autocomprobación de encendido)</h3>
+    <p>Es el programa dentro de la BIOS que realiza el proceso de verificación y testeo de todos los componentes que están conectados a la placa base:</p>
+    <ul>
+      <li><strong>Microprocesador (CPU):</strong> verifica sus registros y estado interno.</li>
+      <li><strong>Memoria RAM:</strong> analiza y dimensiona los módulos de memoria para asegurar que guardan y recuperan datos sin fallos.</li>
+      <li><strong>Tarjeta gráfica (GPU):</strong> inicializa el vídeo y comprueba la conexión PCIe.</li>
+      <li><strong>Dispositivos de E/S y almacenamiento:</strong> detecta el teclado, los discos duros o unidades SSD (SATA o M.2) y los controladores básicos.</li>
+      <li><strong>Placa base:</strong> revisa el temporizador, el controlador de interrupciones y la integridad del código de la BIOS.</li>
+    </ul>
+    <p>Si todo es correcto, da paso al gestor de arranque del sistema operativo.</p>
+
+    <h3>Dual BIOS</h3>
+    <ul>
+      <li>Algunos fabricantes incluyen la DualBIOS, que actúa como respaldo de la BIOS principal cuando ésta falla.</li>
+      <li>El chip de respaldo intenta reparar el principal restaurándolo a los valores de fábrica.</li>
+      <li>Si no lo consigue, asume el papel de BIOS principal.</li>
+      <li>Todo el proceso se realiza de manera automática, sin intervención del usuario.</li>
+    </ul>
+
+    <h2 id="xmp">3. XMP y EXPO</h2>
+    <h3>XMP (Intel eXtreme Memory Profile)</h3>
+    <ul>
+      <li>Existe un organismo internacional llamado <strong>JEDEC</strong> que define los estándares de la memoria RAM. Su prioridad no es el rendimiento extremo, sino la <strong>máxima compatibilidad y estabilidad</strong>.</li>
+      <li>Para DDR4, el estándar base común suele ser 2133 MHz (o 2400/2666 MHz según el módulo).</li>
+      <li>Para DDR5, la base suele situarse entre 4800 MHz y 5200 MHz.</li>
+      <li>Cuando pinchas un módulo en tu placa base por primera vez, la BIOS/UEFI no arriesga: carga el perfil seguro estándar (2133 MHz).</li>
+    </ul>
+    <p>Cualquier velocidad por encima de la base de JEDEC se considera técnicamente <strong>overclocking</strong>. Cuando el fabricante te vende memorias a 3200 MHz, no significa que sean chips inherentemente distintos que solo funcionen rápido; significa que el fabricante los ha probado en laboratorio y garantiza que:</p>
+    <ul>
+      <li>Soportan 3200 MHz de forma estable.</li>
+      <li>Necesitan un voltaje específico (por ejemplo, subir de 1,2 V a 1,35 V).</li>
+      <li>Requieren tiempos de respuesta (<em>timings</em> o latencias como CL16) ajustados para no fallar.</li>
+    </ul>
+    <p>En lugar de obligarte a entrar en la BIOS a modificar manualmente decenas de valores complejos (voltajes, frecuencias y latencias secundarias), el fabricante guarda esa configuración ideal dentro de un chip diminuto en la propia RAM (el chip SPD).</p>
+    <p><strong>Intel XMP (Extreme Memory Profile)</strong> es el botón que lee esa configuración pregrabada. Al entrar en la BIOS y seleccionar XMP Profile 1:</p>
+    <ul>
+      <li>La placa base lee los parámetros óptimos del fabricante.</li>
+      <li>Sube la frecuencia de 2133 MHz a 3200 MHz.</li>
+      <li>Ajusta el voltaje y las latencias automáticamente de forma segura.</li>
+    </ul>
+    <h3>EXPO (AMD Extended Profiles for Overclocking)</h3>
+    <p>En placas base para procesadores AMD, esta misma función suele llamarse <strong>DOCP</strong>, <strong>EXPO</strong> o simplemente <strong>AXMP</strong>.</p>
+
+    <h2 id="actualizar">4. Actualizar la BIOS</h2>
+    <p>Guías paso a paso según el fabricante de la placa:</p>
+    <ul>
+      <li>MSI: <a href="https://www.corsair.com/es/es/explorer/diy-builder/howtos/how-to-update-msi-motherboard-bios/">cómo actualizar la BIOS de una placa MSI</a></li>
+      <li>ASUS: <a href="https://www.corsair.com/es/es/explorer/diy-builder/howtos/how-to-update-bios-on-an-asus-motherboard/">cómo actualizar la BIOS de una placa ASUS</a></li>
+      <li>GIGABYTE: <a href="https://www.corsair.com/es/es/explorer/diy-builder/howtos/how-to-update-bios-on-a-gigabyte-motherboard/">cómo actualizar la BIOS de una placa GIGABYTE</a></li>
+      <li>Resetear la BIOS: <a href="https://www.corsair.com/es/es/explorer/diy-builder/howtos/how-to-reset-the-bios-of-your-motherboard/">cómo resetear la BIOS de la placa base</a></li>
+    </ul>
+    <h3>Ejemplo: MSI</h3>
+    <p>Para este proceso, necesitarás una unidad flash USB que esté formateada como <strong>FAT32</strong>.</p>
+    <ol>
+      <li>Visita el sitio web oficial de MSI y navega hasta la página de producto de tu modelo exacto de placa base; ten en cuenta que a menudo hay modelos de placa base «WiFi» y no Wi-Fi. Desde allí, accede a la página de «Soporte».</li>
+      <li>Haz clic en la pestaña «Controladores y descargas». En «BIOS», encontrarás una biblioteca de versiones de BIOS. Descarga la última BIOS disponible para tu placa base, preferiblemente no una que diga «Beta». Si quieres bajar la versión de la BIOS en caso de que surjan problemas, opta por descargar una versión anterior a tu BIOS actual.</li>
+      <li>Abre la carpeta zip descargada y extrae el archivo de la BIOS en tu unidad flash USB.</li>
+      <li>Con la memoria USB aún insertada, reinicia el sistema y entra en la BIOS pulsando rápidamente la tecla adecuada (normalmente «Supr», «F2» o «F10») en la pantalla del logotipo de MSI.</li>
+      <li>Dentro de la configuración de la BIOS, haz clic en «M-Flash». El sistema se reiniciará y entrará en modo M-Flash.</li>
+      <li>Selecciona el archivo de la BIOS en la unidad USB y sigue las instrucciones en pantalla para confirmar e iniciar la actualización. Este proceso puede tardar unos minutos. <strong>No lo interrumpas bajo ninguna circunstancia</strong>, ya que de hacerlo podría bloquear la funcionalidad de la placa base. Una vez finalizada la actualización, el sistema debería reiniciarse automáticamente.</li>
+      <li>Puedes volver a entrar en la configuración de la BIOS y comprobar la versión para asegurarte de que se ha actualizado. También sería ideal volver a habilitar X.M.P/A-XMP/E.X.P.O para asegurarte de que estás utilizando al máximo las capacidades de velocidad de tu RAM. Si tenías ajustes personalizados en la BIOS, reconfigúralos según sea necesario.</li>
+      <li>Asegúrate de guardar los cambios y salir.</li>
+    </ol>
+
+    <h2 id="factores">5. Factores de forma</h2>
+    <p>Hay una gran variedad de formas, tamaños y tipos de placas base. El factor de forma de una placa base determina:</p>
+    <ul>
+      <li>El tamaño y la orientación de la placa con respecto a la caja.</li>
+      <li>El tipo de fuente de alimentación necesaria.</li>
+      <li>Los periféricos que pueden integrarse en la placa.</li>
+    </ul>
+    <p>Las principales familias son <strong>ATX</strong> (E-ATX, ATX, Micro-ATX, Mini-ATX), <strong>LPX</strong> y <strong>NLX</strong>, <strong>BTX</strong> (y Micro-BTX) e <strong>ITX</strong> (Mini-ITX, Nano-ITX, Pico-ITX).</p>
+
+    <h3>ATX (Advanced Technology eXtended)</h3>
+    <p>Son actualmente las más populares. Introducidas por INTEL en 1995, ofrecen:</p>
+    <ul>
+      <li>Mejor disposición de los componentes.</li>
+      <li>Mejor colocación de CPU y memoria, lejos de las tarjetas de expansión y cerca del ventilador de la fuente de alimentación.</li>
+      <li>Los conectores de la fuente de alimentación tienen una sola pieza y un único conector. No se pueden colocar incorrectamente.</li>
+    </ul>
+    <p>Una placa ATX típica tiene:</p>
+    <ul>
+      <li>Cuatro ranuras RAM.</li>
+      <li>Varias ranuras PCI-e.</li>
+      <li>Varios puertos SATA y USB.</li>
+      <li>Al menos una ranura M.2 SSD.</li>
+      <li>Conectores frontales de audio y alimentación.</li>
+    </ul>
+
+    <h3>E-ATX (Extended ATX)</h3>
+    <p><strong>E-ATX</strong>, o EATX, <strong>es el factor de forma de placa base más grande</strong> que encontramos en ordenadores personales. Se trata de una versión extendida de ATX:</p>
+    <ul>
+      <li><strong>Mayor espacio en la zona de la CPU</strong>, para evitar que el disipador de torre choque con las ranuras RAM.</li>
+      <li><strong>Hasta 8 slots de memoria RAM</strong>, para configuraciones de 128 GB.</li>
+      <li><strong>Más ranuras PCI-Express y más slots M.2</strong>.</li>
+    </ul>
+    <p>Tenemos algo más de espacio. El problema aquí es estandarizar unas medidas, porque en torno a ellas hay que compatibilizarlas con las cajas de PC, tanto en medidas como en tornillería.</p>
+
+    <h3>Micro-ATX</h3>
+    <p><strong>La placa MicroATX es una versión compacta de la placa ATX, que reduce su longitud en aproximadamente un 25 %.</strong></p>
+    <p>Admite los mismos procesadores y tarjetas gráficas que las placas base ATX, así como cuatro ranuras de RAM, pero suele carecer de algunas funciones adicionales:</p>
+    <ul>
+      <li>La mayoría de las placas MicroATX tienen un máximo de dos ranuras PCI-E x16, con la segunda ranura montada muy cerca de la parte inferior de la placa. Esto dificulta la instalación de tarjetas gráficas duales en la mayoría de las carcasas diseñadas para tarjetas MicroATX.</li>
+      <li>También tienen menos ranuras PCI-E x4 y x1, menos puertos USB, SATA y ranuras M.2.</li>
+      <li>Solo en términos de conectividad, las placas M-ATX son ligeramente menos versátiles que sus homólogas ATX.</li>
+      <li>Las placas base MicroATX también son retrocompatibles, lo que significa que caben en cualquier carcasa que acepte placas base ATX. Si bien esto es una ventaja a la hora de actualizar, no es muy útil cuando se construye un nuevo PC. No tiene mucho sentido montar un PC MicroATX en una carcasa ATX, ya que se pierden muchas de las ventajas de ahorro de espacio de un PC MicroATX, así como muchas de las ventajas de un conjunto de características ATX más grande.</li>
+    </ul>
+    <h4>Ventajas</h4>
+    <ul>
+      <li>Los PC MicroATX han reducido considerablemente la distancia que los separa de sus homólogos ATX, lo que convierte a un PC MicroATX en una especie de torre completa más pequeña. Puedes elegir los mismos procesadores, tarjetas gráficas y kits de memoria potentes, pero puedes meterlo todo en un chasis más compacto y ligero.</li>
+      <li>Los chasis son más pequeños y ligeros, por lo que ocupan menos espacio en el escritorio o en el suelo y resultan más portátiles cuando se acude a LAN parties o se traslada el PC de una habitación a otra.</li>
+      <li>Las cajas MicroATX son, por tanto, ideales para quienes disponen de poco espacio, pero muchos también encuentran más atractiva la apariencia más compacta de un PC MicroATX. No es tan imponente como una caja ATX de tamaño completo y puede permitir que tu PC se mezcle más fácilmente con el resto de tu equipo electrónico o decoración.</li>
+      <li>A pesar de esta menor huella física, las cajas MicroATX modernas pueden seguir beneficiándose de una refrigeración de gama alta gracias a ventiladores y disipadores perfectamente diseñados. La gestión de cables es un poco más difícil porque hay menos espacio para ocultarlos, pero con menos espacio abierto, las cajas MicroATX pueden ser mucho más limpias.</li>
+      <li>Los PC MicroATX ofrecen la mayoría de las ventajas de los PC ATX modernos, con algunas únicas, pero hay algunas cosas que simplemente no se pueden hacer en un PC más pequeño.</li>
+    </ul>
+    <h4>Desventajas</h4>
+    <ul>
+      <li>Los bucles de refrigeración por agua masivos y personalizados son muy difíciles de conseguir en un PC MicroATX. Los bucles inteligentes no son imposibles, pero no podrás instalar varios radiadores de triple ventilador en carcasas MicroATX. Del mismo modo, las cajas MicroATX más pequeñas pueden tener problemas de espacio con los refrigeradores de aire más grandes. Como resultado, el potencial de refrigeración de los PC MicroATX es menor. En un PC MicroATX se pueden seguir utilizando las CPU y GPU más potentes, pero no se podrán refrigerar tan bien. Si tienes planes específicos de componentes y refrigeración para tu nuevo PC, asegúrate de que un PC MicroATX puede acomodarlos antes de comprometerte con este formato.</li>
+      <li>Esta falta de espacio extra también significa que tendrás menos opciones para tarjetas de expansión y discos duros. Con menos puertos PCI-Express y SATA, hay menos opciones para conectar GPU, discos duros y SSD M.2, así como menos espacio para integrarlos en el sistema.</li>
+      <li>Dado que la plataforma MicroATX es menos popular que la ATX, también hay menos opciones en cuanto a carcasas y placas base.</li>
+    </ul>
+
+    <h3>LPX (Low Profile Extension)</h3>
+    <ul>
+      <li><strong>La principal diferencia entre estas placas y las anteriores es que los puertos de entrada y salida están presentes en la parte posterior del sistema</strong>.</li>
+      <li>Este concepto demostró ser beneficioso y también fue adoptado por los modelos AT en sus versiones más nuevas.</li>
+      <li>El uso de una tarjeta vertical también se hizo para la colocación de algunas ranuras más. Pero estas tarjetas de expansión también plantearon el problema de que el flujo de aire no era adecuado. Además, <strong>algunas placas LPX de baja calidad ni siquiera tenían una ranura AGP real y simplemente se conectaban al bus PCI</strong>. Todos estos aspectos desfavorables llevaron a la extinción de este sistema de placa base, que fue sucedido por el NLX.</li>
+    </ul>
+
+    <h3>NLX</h3>
+    <ul>
+      <li>Factor de forma de perfil bajo diseñado para sustituir al LPX. Fue muy popular en entornos de oficina.</li>
+      <li>Es muy similar al LPX, pero con algunas mejoras.</li>
+      <li>Como principal novedad, permitía cambiar la fuente de alimentación o cualquier unidad de disco sin tener que mover el resto de tarjetas del sistema.</li>
+      <li>Para mantener un perfil bajo, disponía de una «tarjeta elevadora» que permitía instalar tarjetas de forma PARALELA a la placa base.</li>
+    </ul>
+
+    <h3>BTX (Balanced Technology Extended)</h3>
+    <ul>
+      <li>Lo introdujo INTEL a finales de 2004, buscando solventar problemas de refrigeración de algunos procesadores.</li>
+      <li>Tuvo muy poca aceptación por parte de los usuarios.</li>
+      <li>Cambiaba completamente la distribución de los componentes de la placa base.</li>
+    </ul>
+
+    <h3>ITX: Mini-ITX, Nano-ITX y Pico-ITX</h3>
+    <ul>
+      <li>Son las placas más pequeñas que existen actualmente.</li>
+      <li>Todas son compatibles con el estándar ATX. Permiten la conexión de componentes diseñados para cualquier otro PC ATX.</li>
+      <li>Su refrigeración suele ser mediante disipadores pasivos.</li>
+      <li>Evidentemente, este formato tan compacto está mucho más limitado en cuanto a posibilidades de componentes.</li>
+      <li>El precio de estas placas base es generalmente igual o superior al de una placa base ATX con más características, porque su pequeño tamaño hace que su diseño sea más complejo de producir.</li>
+      <li>También se prefieren generalmente cuando se trata de overclocking de memoria, debido a su menor longitud de pista.</li>
+      <li>Las placas Mini-ITX también <strong>se pueden enfriar fácilmente debido a su arquitectura de bajo consumo de energía</strong>. Dicha arquitectura las hace ampliamente útiles para sistemas de PC de cine en casa o sistemas donde el ruido puede disminuir la calidad o el valor de la experiencia cinematográfica. Los cuatro orificios de montaje de una placa Mini-ITX se alinean con los cuatro orificios de las placas base de especificación ATX, y las ubicaciones de la placa posterior y la ranura de expansión son las mismas.</li>
+    </ul>
+
+    <h3>Comparativa de tamaños</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Nombre</th><th>Tamaño (mm)</th></tr></thead>
+      <tbody>
+        <tr><td>E-ATX</td><td>305 × 330</td></tr>
+        <tr><td>ATX</td><td>305 × 244</td></tr>
+        <tr><td>Micro-ATX</td><td>244 × 244</td></tr>
+        <tr><td>Mini-ITX</td><td>170 × 170</td></tr>
+        <tr><td>Nano-ITX</td><td>120 × 120</td></tr>
+        <tr><td>Pico-ITX</td><td>100 × 72</td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota">
+      <strong>Para pensar.</strong> Teniendo en cuenta estas medidas:
+      <ul>
+        <li>¿Puedo colocar una placa base Mini-ITX en una caja con factor Pico-ITX?</li>
+        <li>¿Y en una caja con factor ATX?</li>
+      </ul>
+    </div>
+
+    <h2 id="separadores">6. Separadores (standoffs)</h2>
+    <p>Los <strong>separadores</strong> son unas de las piezas más pequeñas pero más críticas al montar un ordenador. Tienen una doble función vital:</p>
+    <ul>
+      <li>Elevar la placa base para que no toque el metal de la caja (evitando un cortocircuito que podría quemar tus componentes).</li>
+      <li>Asegurar la placa firmemente en su lugar.</li>
+    </ul>
+    <p>Cada factor de forma (E-ATX, ATX, Micro-ATX, Mini-ITX…) usa una distribución distinta de separadores.</p>
+    <h3>Tres tipos</h3>
+    <ul>
+      <li><strong>Separadores de rosca (tradicionales):</strong> son pequeños postes metálicos (normalmente de latón dorado o negros). Tienen una rosca macho en la parte inferior (que se atornilla a la caja) y un agujero con rosca hembra en la parte superior (donde se introduce el tornillo que sujeta la placa base).</li>
+      <li><strong>Separadores integrados (pretroquelados):</strong> muchas cajas modernas ya no usan postes sueltos. En su lugar, la propia bandeja de metal de la caja viene con unas protuberancias o «bultos» elevados con el agujero para el tornillo.</li>
+      <li><strong>El poste de centrado:</strong> muchas cajas incluyen un separador especial en el centro que no tiene rosca, sino un pivote de plástico o metal liso. Sirve para encajar la placa base a la primera y mantenerla alineada mientras pones el resto de los tornillos.</li>
+    </ul>
+    <h3>Colocación</h3>
+    <ol>
+      <li><strong>Presenta la placa:</strong> pon la placa base dentro de la caja con cuidado (sin atornillar) y mira a través de sus agujeros para ver cuáles coinciden con los de la bandeja.</li>
+      <li><strong>Quita los que sobren:</strong> si la caja traía separadores preinstalados en posiciones que tu placa no usa, <strong>desatorníllalos obligatoriamente</strong>.</li>
+      <li><strong>Pon los que falten:</strong> enrosca los separadores en los agujeros que sí coincidan con tu placa. Puedes apretarlos firmemente con los dedos o usar una pequeña herramienta hexagonal (a veces incluida con la caja) adaptada a un destornillador de estrella.</li>
+      <li><strong>Atornilla la placa:</strong> coloca la placa sobre los separadores y usa los tornillos correctos (suelen ser de rosca fina, tipo <em>M3</em>). Apriétalos en cruz para repartir la presión de forma uniforme, sin hacer fuerza excesiva.</li>
+    </ol>
+    <h3>Errores comunes</h3>
+    <p>El error más común al montar un PC por primera vez es <strong>dejar un separador puesto en un lugar donde la placa base no tiene un agujero</strong>.</p>
+    <p>Si el poste de metal hace contacto directo con las pistas de circuito o las soldaduras de la parte trasera de la placa base, al encender la fuente de alimentación ocurrirá un cortocircuito. Esto puede provocar:</p>
+    <ul>
+      <li>Que el ordenador no encienda (la fuente activa su sistema de protección).</li>
+      <li>Daños permanentes y destructivos en la placa base o el procesador.</li>
+    </ul>
+
+    <h2 id="pitidos">7. Señales de aviso (pitidos)</h2>
+    <h3>AMIBIOS</h3>
+    <p><strong>AMIBIOS</strong> es un fabricante de BIOS al que recurren muchas grandes empresas de todo el mundo (Apple, Asus, Acer, Dell, Huawei o Microsoft, entre muchas otras).</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Sonido</th><th>Posible causa</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pitidos continuos</strong></td><td>Fallo en el suministro eléctrico.</td></tr>
+        <tr><td><strong>1 pitido corto</strong></td><td>Fallo en la actualización de DRAM.</td></tr>
+        <tr><td><strong>2 pitidos cortos</strong></td><td>Error de paridad en la memoria base, normalmente en los primeros 64 KB de la RAM.</td></tr>
+        <tr><td><strong>3 pitidos cortos</strong></td><td>Fallo de escritura o lectura en los primeros 64 KB de la RAM.</td></tr>
+        <tr><td><strong>4 pitidos cortos</strong></td><td>Fallo en el temporizador de la placa base. También puede ser un problema con el módulo RAM del primer slot.</td></tr>
+        <tr><td><strong>5 pitidos cortos</strong></td><td>Fallo en el procesador. Puede deberse a una tarjeta de expansión dañada, la CPU o la placa base.</td></tr>
+        <tr><td><strong>6 pitidos cortos</strong></td><td>Suele estar relacionado con el teclado. También puede deberse a una tarjeta de expansión.</td></tr>
+        <tr><td><strong>7 pitidos cortos</strong></td><td>Fallo de excepción del modo virtual. Problema de la tarjeta de expansión, del hardware de la placa base o una CPU dañada.</td></tr>
+        <tr><td><strong>8 pitidos cortos</strong></td><td>Error con la memoria de la pantalla, causado casi siempre por fallos en la tarjeta de vídeo.</td></tr>
+        <tr><td><strong>9 pitidos cortos</strong></td><td>Error de suma de verificación de ROM AMIBIOS. Problema con el chip de la BIOS.</td></tr>
+        <tr><td><strong>10 pitidos cortos</strong></td><td>Error de lectura/escritura del registro de apagado CMOS. Fallo de hardware en el chip de la BIOS.</td></tr>
+        <tr><td><strong>11 pitidos cortos</strong></td><td>Error de la memoria caché, que puede deberse a varios tipos de hardware que están fallando.</td></tr>
+        <tr><td><strong>1 pitido largo y 2 cortos</strong></td><td>Error con la memoria que forma parte de la tarjeta de vídeo.</td></tr>
+        <tr><td><strong>1 pitido largo y 3 cortos</strong></td><td>Fallo en la memoria RAM, concretamente en los primeros 64 KB de memoria.</td></tr>
+        <tr><td><strong>1 pitido largo y 8 cortos</strong></td><td>Fallo en el test del adaptador de vídeo, quizá por falta de energía en la tarjeta de vídeo.</td></tr>
+        <tr><td><strong>Sirena de dos tonos</strong></td><td>Problema con el nivel del voltaje o con unos ventiladores de CPU que van demasiado lentos.</td></tr>
+      </tbody>
+    </table></div>
+    <h3>BIOS de Award y Phoenix</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Sonido</th><th>Posible causa</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pitidos continuos</strong></td><td>No se encuentra o no se reconoce tu memoria RAM o la tarjeta gráfica.</td></tr>
+        <tr><td><strong>1 pitido corto</strong></td><td>Se ha iniciado el ordenador sin encontrar errores en su diagnóstico inicial.</td></tr>
+        <tr><td><strong>2 pitidos cortos</strong></td><td>Error que no está especificado por el pitido. La información sobre lo que falla se muestra en pantalla.</td></tr>
+        <tr><td><strong>Pitidos cortos repetidos</strong></td><td>Fallo en la alimentación del sistema.</td></tr>
+        <tr><td><strong>1 pitido largo</strong></td><td>Error en la memoria RAM.</td></tr>
+        <tr><td><strong>1 pitido largo y 1 corto</strong></td><td>Error en el funcionamiento de la placa base o de la memoria DRAM.</td></tr>
+        <tr><td><strong>1 pitido largo y 2 cortos</strong></td><td>Error en la tarjeta gráfica, la tarjeta de vídeo o el monitor.</td></tr>
+        <tr><td><strong>1 pitido largo y 3 cortos</strong></td><td>Error en el teclado o su controlador, aunque en versiones posteriores puede ser también un error por una gráfica no detectada.</td></tr>
+        <tr><td><strong>3 pitidos largos</strong></td><td>Error de conexión entre la placa base y el teclado.</td></tr>
+        <tr><td><strong>1 pitido largo y 9 cortos</strong></td><td>Error en la BIOS.</td></tr>
+        <tr><td><strong>Pitidos de tonos fuertes y bajos</strong></td><td>Un error en el procesador, posiblemente por sobrecalentamiento.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="glosario">8. Glosario</h2>
+    <div class="tabla"><table>
+      <thead><tr><th>Español</th><th>Inglés</th><th>Abreviatura</th></tr></thead>
+      <tbody>
+        <tr><td>Placa base</td><td>Motherboard</td><td>MB</td></tr>
+        <tr><td>Factor de forma</td><td>Form Factor</td><td></td></tr>
+        <tr><td>Fuente de alimentación</td><td>Power Supply</td><td>P.S.</td></tr>
+        <tr><td>Zócalo</td><td>Socket</td><td></td></tr>
+        <tr><td>Tarjeta de expansión</td><td>Expansion Card</td><td></td></tr>
+        <tr><td>Disco duro</td><td>Hard Disk Drive</td><td>HDD</td></tr>
+        <tr><td>Memoria de acceso aleatorio</td><td>Random Access Memory</td><td>RAM</td></tr>
+        <tr><td>Memoria de solo lectura</td><td>Read Only Memory</td><td>ROM</td></tr>
+      </tbody>
+    </table></div>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>
