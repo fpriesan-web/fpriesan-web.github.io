@@ -1,4 +1,8 @@
-:root { color-scheme: dark; --fondo: #191613; --texto: #efeae3; --suave: #aca497; --acento: #f2a35c; --tarjeta: #231f1a; --borde: #3a332b; }
+:root { color-scheme: light; --fondo: #f3f6fa; --texto: #1a2433; --suave: #536175; --acento: #1f5fbf; --tarjeta: #ffffff; --borde: #d9e1ec; --bien-fondo: #e8f5e9; --bien-borde: #2e7d32; --bien-texto: #1b4d1f; --mal-fondo: #fdecea; --mal-borde: #c62828; --mal-texto: #7f1d1d; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) { color-scheme: dark; --fondo: #10151c; --texto: #e5eaf1; --suave: #98a5b6; --acento: #86b2f2; --tarjeta: #18202b; --borde: #293342; --bien-fondo: #1d3320; --bien-borde: #6fbf66; --bien-texto: #d8f0d4; --mal-fondo: #3a1f1c; --mal-borde: #e07a6e; --mal-texto: #f6d6d1; }
+}
+:root[data-tema="oscuro"] { color-scheme: dark; --fondo: #10151c; --texto: #e5eaf1; --suave: #98a5b6; --acento: #86b2f2; --tarjeta: #18202b; --borde: #293342; --bien-fondo: #1d3320; --bien-borde: #6fbf66; --bien-texto: #d8f0d4; --mal-fondo: #3a1f1c; --mal-borde: #e07a6e; --mal-texto: #f6d6d1; }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.6; }
 a { color: var(--acento); }
@@ -75,3 +79,7 @@ a.caja:hover { border-color: var(--acento); transform: translateY(-2px); }
 .casillas { list-style: "☐  "; }
 .nota { background: var(--tarjeta); border: 1px solid var(--borde); border-left: 4px solid var(--acento); border-radius: 10px; padding: 14px 18px; margin: 16px 0; }
 .nota ul { margin: 6px 0 0; padding-left: 20px; }
+.cabecera nav { align-items: center; flex-wrap: wrap; gap: 8px 18px; }
+.boton-tema { font: inherit; font-size: .9rem; display: inline-flex; align-items: center; gap: 6px; color: var(--texto); background: var(--fondo); border: 1px solid var(--borde); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.boton-tema:hover { border-color: var(--acento); }
+.boton-tema:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
