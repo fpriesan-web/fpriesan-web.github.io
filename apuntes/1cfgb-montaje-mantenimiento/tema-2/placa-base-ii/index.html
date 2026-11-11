@@ -24,6 +24,7 @@
     <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-2/">Tema 2</a></p>
     <span class="etiqueta">Material didáctico · Tema 2</span>
     <h1>La placa base (II)</h1>
+    <p class="descargas"><a class="boton-descarga" href="La_placa_base_II.pptx" download>Descargar la presentación (PowerPoint, 13 MB)</a></p>
     <nav class="indice" aria-label="Apartados">
       <a href="#socket">1. El socket del procesador</a>
       <a href="#bios">2. BIOS, CMOS y POST</a>
@@ -42,6 +43,7 @@
       <li>Cada socket está asociado a <strong>una o varias generaciones de procesadores</strong>. Además, algunos requieren actualizaciones de BIOS para reconocer nuevos modelos, aunque compartan el mismo tipo físico de socket.</li>
     </ul>
 
+    <figure class="figura"><img src="lga-vs-pga.jpg" width="700" height="350" loading="lazy" alt="Procesador LGA con contactos planos frente a procesador PGA con pines" style="width:auto;max-width:100%"><figcaption>LGA frente a PGA: en LGA los pines están en la placa; en PGA, en el procesador.</figcaption></figure>
     <h3>Ejemplos de sockets comunes</h3>
     <h4>Intel</h4>
     <ul>
@@ -64,6 +66,7 @@
       <li><strong>Instalar una CPU en el zócalo requiere un cuidado especial. Si uno de los pines se daña accidentalmente durante la instalación de la CPU, puede dañar permanentemente la placa base, dejándola inutilizable.</strong></li>
     </ul>
 
+    <figure class="figura"><img src="socket-lga.jpg" width="1024" height="942" loading="lazy" alt="Socket LGA de Intel abierto, con la rejilla de pines a la vista"><figcaption>Socket LGA: los pines están en la placa base, por eso hay que tener tanto cuidado al colocar la CPU.</figcaption></figure>
     <h3>PGA: Pin Grid Array</h3>
     <ul>
       <li>En el lado PGA, a diferencia del zócalo LGA, los pines se encuentran en el propio procesador y no en el zócalo de la placa base.</li>
@@ -72,6 +75,7 @@
       <li><strong>Debido a que los pines se encuentran en la CPU, son más susceptibles de sufrir daños, ya que se maneja más la CPU que la placa base. Para evitar que los pines se doblen, hay que tener mucho cuidado al sacarla del embalaje y al fijarla al zócalo.</strong></li>
     </ul>
 
+    <figure class="figura"><img src="cpu-pga.jpg" width="554" height="350" loading="lazy" alt="Parte inferior de un procesador PGA con sus pines" style="width:auto;max-width:100%"><figcaption>Procesador PGA: los pines están en la CPU y se pueden doblar al manipularla.</figcaption></figure>
     <h3>En la actualidad</h3>
     <ul>
       <li>Durante años, Intel ha utilizado sistemáticamente el diseño de zócalo LGA, comenzando con el LGA 775 en 2004, y se ha mantenido fiel a este enfoque en diferentes plataformas.</li>
@@ -107,6 +111,7 @@
       </tr></tbody>
     </table></div>
 
+    <figure class="figura"><img src="bios-cmos-pila.jpg" width="1200" height="800" loading="lazy" alt="Esquema con tres columnas: chip BIOS, memoria CMOS y pila CMOS"><figcaption>BIOS, CMOS y pila CMOS de un vistazo.</figcaption></figure>
     <h3>POST (Power On Self Test, autocomprobación de encendido)</h3>
     <p>Es el programa dentro de la BIOS que realiza el proceso de verificación y testeo de todos los componentes que están conectados a la placa base:</p>
     <ul>
@@ -126,6 +131,7 @@
       <li>Todo el proceso se realiza de manera automática, sin intervención del usuario.</li>
     </ul>
 
+    <figure class="figura"><img src="dual-bios.jpg" width="427" height="345" loading="lazy" alt="Dos chips en la placa base rotulados Main BIOS y Back up BIOS" style="width:auto;max-width:100%"><figcaption>Dual BIOS: un chip principal y otro de respaldo.</figcaption></figure>
     <h2 id="xmp">3. XMP y EXPO</h2>
     <h3>XMP (Intel eXtreme Memory Profile)</h3>
     <ul>
@@ -147,9 +153,11 @@
       <li>Sube la frecuencia de 2133 MHz a 3200 MHz.</li>
       <li>Ajusta el voltaje y las latencias automáticamente de forma segura.</li>
     </ul>
+    <figure class="figura"><img src="xmp-bios.jpg" width="1200" height="675" loading="lazy" alt="Menú de overclocking de una BIOS con la opción XMP habilitada"><figcaption>Opción XMP dentro del menú de overclocking de la BIOS.</figcaption></figure>
     <h3>EXPO (AMD Extended Profiles for Overclocking)</h3>
     <p>En placas base para procesadores AMD, esta misma función suele llamarse <strong>DOCP</strong>, <strong>EXPO</strong> o simplemente <strong>AXMP</strong>.</p>
 
+    <figure class="figura"><img src="expo-xmp.jpg" width="1200" height="675" loading="lazy" alt="Módulos de RAM DDR5 con los logotipos AMD EXPO e Intel XMP"><figcaption>AMD EXPO e Intel XMP: dos nombres para la misma idea.</figcaption></figure>
     <h2 id="actualizar">4. Actualizar la BIOS</h2>
     <p>Guías paso a paso según el fabricante de la placa:</p>
     <ul>
@@ -180,6 +188,7 @@
     </ul>
     <p>Las principales familias son <strong>ATX</strong> (E-ATX, ATX, Micro-ATX, Mini-ATX), <strong>LPX</strong> y <strong>NLX</strong>, <strong>BTX</strong> (y Micro-BTX) e <strong>ITX</strong> (Mini-ITX, Nano-ITX, Pico-ITX).</p>
 
+    <figure class="figura"><img src="tamanos-placas.jpg" width="1200" height="476" loading="lazy" alt="Placas Standard-ATX, Micro-ATX, Mini-ITX, Nano-ITX y Pico-ITX colocadas de mayor a menor"><figcaption>De la más grande a la más pequeña: ATX, Micro-ATX, Mini-ITX, Nano-ITX y Pico-ITX.</figcaption></figure>
     <h3>ATX (Advanced Technology eXtended)</h3>
     <p>Son actualmente las más populares. Introducidas por INTEL en 1995, ofrecen:</p>
     <ul>
@@ -205,6 +214,7 @@
     </ul>
     <p>Tenemos algo más de espacio. El problema aquí es estandarizar unas medidas, porque en torno a ellas hay que compatibilizarlas con las cajas de PC, tanto en medidas como en tornillería.</p>
 
+    <figure class="figura"><img src="eatx-vs-atx.jpg" width="466" height="304" loading="lazy" alt="Placa E-ATX junto a una placa ATX" style="width:auto;max-width:100%"><figcaption>E-ATX frente a ATX: la E-ATX es más ancha y deja más espacio alrededor de la CPU.</figcaption></figure>
     <h3>Micro-ATX</h3>
     <p><strong>La placa MicroATX es una versión compacta de la placa ATX, que reduce su longitud en aproximadamente un 25 %.</strong></p>
     <p>Admite los mismos procesadores y tarjetas gráficas que las placas base ATX, así como cuatro ranuras de RAM, pero suele carecer de algunas funciones adicionales:</p>
@@ -236,6 +246,7 @@
       <li>El uso de una tarjeta vertical también se hizo para la colocación de algunas ranuras más. Pero estas tarjetas de expansión también plantearon el problema de que el flujo de aire no era adecuado. Además, <strong>algunas placas LPX de baja calidad ni siquiera tenían una ranura AGP real y simplemente se conectaban al bus PCI</strong>. Todos estos aspectos desfavorables llevaron a la extinción de este sistema de placa base, que fue sucedido por el NLX.</li>
     </ul>
 
+    <figure class="figura"><img src="placa-lpx.jpg" width="500" height="315" loading="lazy" alt="Placa base LPX de un equipo Dell" style="width:auto;max-width:100%"><figcaption>Placa LPX: puertos en la parte posterior y ranura para la tarjeta vertical.</figcaption></figure>
     <h3>NLX</h3>
     <ul>
       <li>Factor de forma de perfil bajo diseñado para sustituir al LPX. Fue muy popular en entornos de oficina.</li>
@@ -251,6 +262,7 @@
       <li>Cambiaba completamente la distribución de los componentes de la placa base.</li>
     </ul>
 
+    <figure class="figura"><img src="atx-vs-btx.jpg" width="605" height="326" loading="lazy" alt="Esquemas comparados de la distribución de componentes en ATX y BTX" style="width:auto;max-width:100%"><figcaption>ATX (izquierda) frente a BTX (derecha): BTX cambia de sitio la CPU, la RAM y los conectores.</figcaption></figure>
     <h3>ITX: Mini-ITX, Nano-ITX y Pico-ITX</h3>
     <ul>
       <li>Son las placas más pequeñas que existen actualmente.</li>
@@ -262,6 +274,7 @@
       <li>Las placas Mini-ITX también <strong>se pueden enfriar fácilmente debido a su arquitectura de bajo consumo de energía</strong>. Dicha arquitectura las hace ampliamente útiles para sistemas de PC de cine en casa o sistemas donde el ruido puede disminuir la calidad o el valor de la experiencia cinematográfica. Los cuatro orificios de montaje de una placa Mini-ITX se alinean con los cuatro orificios de las placas base de especificación ATX, y las ubicaciones de la placa posterior y la ranura de expansión son las mismas.</li>
     </ul>
 
+    <figure class="figura"><img src="mini-pc-itx.jpg" width="416" height="312" loading="lazy" alt="Ordenador muy pequeño sujeto con una mano" style="width:auto;max-width:100%"><figcaption>Un mini PC: con placas ITX el ordenador completo cabe en una mano.</figcaption></figure>
     <h3>Comparativa de tamaños</h3>
     <div class="tabla"><table>
       <thead><tr><th>Nombre</th><th>Tamaño (mm)</th></tr></thead>
@@ -274,6 +287,7 @@
         <tr><td>Pico-ITX</td><td>100 × 72</td></tr>
       </tbody>
     </table></div>
+    <figure class="figura"><img src="comparativa-formatos.jpg" width="1200" height="670" loading="lazy" alt="Comparativa visual de formatos de placa base: BTX, ATX, NLX, Micro-ATX, Mini-ITX, Nano-ITX, Pico-ITX y LTX"><figcaption>Comparativa visual de formatos.</figcaption></figure>
     <div class="nota">
       <strong>Para pensar.</strong> Teniendo en cuenta estas medidas:
       <ul>
@@ -288,13 +302,17 @@
       <li>Elevar la placa base para que no toque el metal de la caja (evitando un cortocircuito que podría quemar tus componentes).</li>
       <li>Asegurar la placa firmemente en su lugar.</li>
     </ul>
+    <figure class="figura"><img src="separadores-laton.jpg" width="360" height="360" loading="lazy" alt="Varios separadores de latón con rosca" style="width:auto;max-width:100%"><figcaption>Separadores de latón.</figcaption></figure>
     <p>Cada factor de forma (E-ATX, ATX, Micro-ATX, Mini-ITX…) usa una distribución distinta de separadores.</p>
+    <figure class="figura"><img src="separadores-formatos.jpg" width="1200" height="633" loading="lazy" alt="Placas E-ATX, ATX, Micro-ATX y Mini-ITX con la posición de sus agujeros marcada"><figcaption>Cada formato tiene sus agujeros en posiciones distintas.</figcaption></figure>
     <h3>Tres tipos</h3>
     <ul>
       <li><strong>Separadores de rosca (tradicionales):</strong> son pequeños postes metálicos (normalmente de latón dorado o negros). Tienen una rosca macho en la parte inferior (que se atornilla a la caja) y un agujero con rosca hembra en la parte superior (donde se introduce el tornillo que sujeta la placa base).</li>
       <li><strong>Separadores integrados (pretroquelados):</strong> muchas cajas modernas ya no usan postes sueltos. En su lugar, la propia bandeja de metal de la caja viene con unas protuberancias o «bultos» elevados con el agujero para el tornillo.</li>
       <li><strong>El poste de centrado:</strong> muchas cajas incluyen un separador especial en el centro que no tiene rosca, sino un pivote de plástico o metal liso. Sirve para encajar la placa base a la primera y mantenerla alineada mientras pones el resto de los tornillos.</li>
     </ul>
+    <figure class="figura"><img src="tipos-separadores.jpg" width="1200" height="655" loading="lazy" alt="Separador de rosca de latón, separador integrado troquelado y poste de centrado de plástico"><figcaption>Los tres tipos de separador.</figcaption></figure>
+    <figure class="figura"><img src="poste-centrado.jpg" width="523" height="585" loading="lazy" alt="Placa base apoyada en un poste de centrado amarillo" style="width:auto;max-width:100%"><figcaption>Poste de centrado: la placa encaja en él sin tornillo.</figcaption></figure>
     <h3>Colocación</h3>
     <ol>
       <li><strong>Presenta la placa:</strong> pon la placa base dentro de la caja con cuidado (sin atornillar) y mira a través de sus agujeros para ver cuáles coinciden con los de la bandeja.</li>
@@ -302,6 +320,8 @@
       <li><strong>Pon los que falten:</strong> enrosca los separadores en los agujeros que sí coincidan con tu placa. Puedes apretarlos firmemente con los dedos o usar una pequeña herramienta hexagonal (a veces incluida con la caja) adaptada a un destornillador de estrella.</li>
       <li><strong>Atornilla la placa:</strong> coloca la placa sobre los separadores y usa los tornillos correctos (suelen ser de rosca fina, tipo <em>M3</em>). Apriétalos en cruz para repartir la presión de forma uniforme, sin hacer fuerza excesiva.</li>
     </ol>
+    <figure class="figura"><img src="manual-agujeros.jpg" width="1080" height="1190" loading="lazy" alt="Esquema de la placa del manual de ASUS con algunos agujeros de montaje rodeados en azul"><figcaption>En el manual de la placa vienen marcados los agujeros de montaje: compáralos con los de la caja.</figcaption></figure>
+    <figure class="figura"><img src="placa-tornillos.jpg" width="1024" height="819" loading="lazy" alt="Placa base MSI con los agujeros de montaje marcados con círculos verdes y rojos"><figcaption>Agujeros de montaje de una placa MSI.</figcaption></figure>
     <h3>Errores comunes</h3>
     <p>El error más común al montar un PC por primera vez es <strong>dejar un separador puesto en un lugar donde la placa base no tiene un agujero</strong>.</p>
     <p>Si el poste de metal hace contacto directo con las pistas de circuito o las soldaduras de la parte trasera de la placa base, al encender la fuente de alimentación ocurrirá un cortocircuito. Esto puede provocar:</p>
