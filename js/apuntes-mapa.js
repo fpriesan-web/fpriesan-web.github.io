@@ -33,6 +33,12 @@ window.MAPA_APUNTES = [
         { slug: 'ods-desempeno', tipo: 'Apuntes', titulo: 'Los ODS en el desempeño profesional y personal' },
         { slug: 'ficha-p1-ods-empresa-tic', tipo: 'Práctica P1', titulo: 'Riesgos y oportunidades de los ODS en una empresa TIC' },
         { slug: 'ficha-p2-plan-accion', tipo: 'Práctica P2', titulo: 'Mi autodiagnóstico y mi plan de acción' }
+      ] },
+      { slug: 'tema-4', num: 4, titulo: 'Economía verde y circular', materiales: [
+        { slug: 'economia-verde-circular', tipo: 'Apuntes', titulo: 'Economía verde y circular' },
+        { slug: 'ficha-p1-mochila-ordenador', tipo: 'Práctica P1', titulo: 'La mochila de un ordenador' },
+        { slug: 'ficha-p2-7r-negocio-circular', tipo: 'Práctica P2', titulo: 'Las 7R y un negocio circular' },
+        { slug: 'ficha-p3-ciclo-vida', tipo: 'Práctica P3', titulo: 'Ciclo de vida de un equipo' }
       ] }
     ]
   }
