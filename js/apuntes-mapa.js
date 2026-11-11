@@ -28,6 +28,11 @@ window.MAPA_APUNTES = [
         { slug: 'retos-ambientales-sociales', tipo: 'Apuntes', titulo: 'Retos ambientales y sociales' },
         { slug: 'mercado-libre-regulado', tipo: 'Material de apoyo', titulo: 'Mercado libre y mercado regulado' },
         { slug: 'practica-consumo-electrico', tipo: 'Práctica', titulo: '¿Cuánto cuesta encender un ordenador?' }
+      ] },
+      { slug: 'tema-3', num: 3, titulo: 'Los ODS en el desempeño profesional y personal', materiales: [
+        { slug: 'ods-desempeno', tipo: 'Apuntes', titulo: 'Los ODS en el desempeño profesional y personal' },
+        { slug: 'ficha-p1-ods-empresa-tic', tipo: 'Práctica P1', titulo: 'Riesgos y oportunidades de los ODS en una empresa TIC' },
+        { slug: 'ficha-p2-plan-accion', tipo: 'Práctica P2', titulo: 'Mi autodiagnóstico y mi plan de acción' }
       ] }
     ]
   }
