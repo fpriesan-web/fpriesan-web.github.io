@@ -159,3 +159,4 @@ nav.nav-temas, nav.barra-der { display: block; }
 .nota p { margin: 0; }
 .nota p + p { margin-top: 6px; }
 .formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .98rem; }
+.boton-descarga.secundario { background: var(--tarjeta); color: var(--acento); border: 1px solid var(--acento); }
