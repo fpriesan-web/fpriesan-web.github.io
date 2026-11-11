@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¿Cuánto cuesta encender un ordenador? · Apuntes de clase</title>
+  <meta name="description" content="Práctica del Tema 2 de Sostenibilidad (2º SMR): potencia, energía y precio de la luz para calcular lo que consumen el aula, un PC gaming y una televisión. Con solucionario.">
+  <link rel="stylesheet" href="/css/estilo.css?v=7">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=3" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/2smr-sostenibilidad/">Sostenibilidad aplicada al sistema productivo</a> / <a href="/apuntes/2smr-sostenibilidad/tema-2/">Tema 2</a></p>
+    <span class="etiqueta">Práctica · Tema 2</span>
+    <h1>¿Cuánto cuesta encender un ordenador?</h1>
+
+    <h2 id="que-vamos-a-hacer">1. ¿Qué vamos a hacer?</h2>
+    <p>Cada vez que encendemos un ordenador, una consola o una televisión consumimos electricidad. Esa electricidad cuesta dinero y, como buena parte se sigue produciendo quemando gas, también emite <strong>gases de efecto invernadero</strong>. Es nuestra <strong>huella climática digital</strong>, uno de los retos ambientales de la unidad.</p>
+    <p>En esta práctica vais a calcular cuánta energía consumen los equipos del aula y cuánto cuesta, y lo vais a comparar con lo que gasta jugar a un videojuego exigente o ver una televisión de última generación en casa. Al final propondréis cambios para gastar menos.</p>
+    <div class="nota">
+      <p><strong>Al terminar sabrás...</strong></p>
+      <ul>
+        <li>Diferenciar <strong>potencia (W)</strong> y <strong>energía (kWh)</strong> y calcular el consumo de cualquier aparato.</li>
+        <li>Leer el precio de la luz en distintas tarifas y saber por qué no cuesta lo mismo en casa que en un edificio público.</li>
+        <li>Proponer medidas de ahorro que puede aplicar un técnico de SMR.</li>
+      </ul>
+    </div>
+    <p>Debajo de cada cuestionario y de cada tabla tienes un botón <strong>«Ver solución»</strong>. Ábrelo solo cuando hayas terminado.</p>
+
+    <h2 id="potencia-energia">2. Potencia y energía: lo que de verdad se paga</h2>
+    <p>La <strong>potencia</strong> es lo que gasta un aparato en cada momento y se mide en <strong>vatios (W)</strong>. Un monitor de oficina puede consumir 30 W; un PC gaming jugando, más de 500 W. 1 kilovatio (kW) son 1000 W.</p>
+    <p>La <strong>energía</strong> es la potencia mantenida durante un tiempo y se mide en <strong>kilovatios hora (kWh)</strong>. Es lo que marca el contador y lo que pagamos en la factura: <strong>no se paga el vatio, se paga el kWh</strong>.</p>
+    <div class="nota">
+      <p><strong>Las dos fórmulas de la práctica</strong></p>
+      <p class="formula"><strong>Energía (kWh) = Potencia (kW) × Tiempo (h)</strong></p>
+      <p class="formula"><strong>Coste (€) = Energía (kWh) × Precio (€/kWh)</strong></p>
+      <p>Ejemplo: un PC de oficina de 60 W encendido 6 horas consume 0,060 kW × 6 h = 0,36 kWh. Con la luz a 0,15 €/kWh, cuesta 0,36 × 0,15 = 0,054 €, unos 5 céntimos al día.</p>
+    </div>
+    <p>La factura tiene además un <strong>término de potencia</strong>: una cantidad fija por los kW que tienes contratados, uses o no la luz. En esta práctica solo calcularemos el <strong>término de energía</strong>, que es el que depende de lo que consumimos.</p>
+
+    <h3>Cuestionario A</h3>
+    <ol>
+      <li>¿Qué diferencia hay entre 500 W y 500 Wh?</li>
+      <li>Una consola consume 200 W. ¿Cuántos kWh gasta en 5 horas?</li>
+      <li>Si el kWh cuesta 0,20 €, ¿cuánto cuestan esas 5 horas de juego?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>500 W es una <strong>potencia</strong>: lo que gasta un aparato en un instante. 500 Wh (0,5 kWh) es una <strong>energía</strong>: lo que gasta un aparato de 500 W si está encendido una hora. La factura cobra la energía.</li>
+          <li>0,2 kW × 5 h = <strong>1 kWh</strong>.</li>
+          <li>1 kWh × 0,20 €/kWh = <strong>0,20 €</strong>.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="cuanto-consume">3. ¿Cuánto consume un ordenador?</h2>
+    <p>Un ordenador no gasta siempre lo mismo: depende de lo que esté haciendo. El componente que más consume en un equipo potente es la <strong>tarjeta gráfica</strong>, seguida del procesador.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Equipo y situación</th><th>Consumo orientativo</th></tr></thead>
+      <tbody>
+        <tr><td>PC normal encendido en reposo</td><td>20 - 30 W</td></tr>
+        <tr><td>PC navegando o con ofimática</td><td>menos de 100 W</td></tr>
+        <tr><td>PC gaming en reposo</td><td>50 - 120 W</td></tr>
+        <tr><td>PC gaming jugando con calidad máxima</td><td>400 - 600 W</td></tr>
+        <tr><td>Procesador (CPU)</td><td>65 - 130 W</td></tr>
+        <tr><td>Tarjeta gráfica gama media / gama extrema</td><td>180 - 220 W / hasta 450 W</td></tr>
+        <tr><td>Monitor de 27" a 144 Hz / monitor OLED</td><td>30 - 50 W / hasta 80 W</td></tr>
+        <tr><td>Televisor (según tamaño)</td><td>100 - 300 W</td></tr>
+        <tr><td>Luces RGB de un setup gaming</td><td>unos 30 W</td></tr>
+      </tbody>
+    </table></div>
+    <p><em>Los aparatos en espera (stand-by) suponen entre el 7 % y el 11 % del consumo de una vivienda media, según el IDAE (citado por Endesa).</em></p>
+    <div class="nota">
+      <p><strong>¿Cómo saber lo que consume un equipo concreto?</strong></p>
+      <ul>
+        <li><strong>Etiqueta o ficha técnica:</strong> potencia de la fuente de alimentación o consumo típico (W). Ojo: la fuente indica el máximo, no lo que gasta normalmente.</li>
+        <li><strong>Etiqueta energética</strong> de monitores y televisores: indica el consumo en kWh por cada 1000 horas.</li>
+        <li><strong>Medidor de consumo</strong> (enchufe con pantalla, unos 10-15 €): la medida más fiable.</li>
+      </ul>
+    </div>
+
+    <h2 id="precio-kwh">4. ¿Cuánto cuesta el kWh? Depende de dónde y cuándo</h2>
+    <h3>4.1. En casa: tarifa 2.0TD (hasta 15 kW)</h3>
+    <p>Casi todas las viviendas tienen la tarifa de acceso 2.0TD, que divide el día en tres tramos. El precio del kWh es más alto cuando más gente consume:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Tramo</th><th>Lunes a viernes</th><th>Fines de semana y festivos</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Punta (más caro)</strong></td><td>10 a 14 h y 18 a 22 h</td><td>—</td></tr>
+        <tr><td><strong>Llano</strong></td><td>8 a 10 h, 14 a 18 h y 22 a 24 h</td><td>—</td></tr>
+        <tr><td><strong>Valle (más barato)</strong></td><td>0 a 8 h</td><td>Todo el día</td></tr>
+      </tbody>
+    </table></div>
+    <p>Con esa tarifa de acceso, cada hogar elige entre dos tipos de contrato (lo tienes explicado en <a href="/apuntes/2smr-sostenibilidad/tema-2/mercado-libre-regulado/">Mercado libre y mercado regulado</a>):</p>
+    <ul>
+      <li><strong>Mercado regulado (PVPC):</strong> el precio cambia <strong>cada hora</strong> según el mercado mayorista. Se puede consultar a diario.</li>
+      <li><strong>Mercado libre:</strong> cada comercializadora fija sus precios. Puede ser un <strong>precio fijo las 24 horas</strong> o un precio distinto <strong>por tramos</strong>.</li>
+    </ul>
+
+    <h3>4.2. Precios reales de noviembre de 2026</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Tarifa</th><th>Tipo</th><th>Precio de la energía (€/kWh)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PVPC, 5 de noviembre de 2026</strong></td><td>Cambia cada hora</td><td>Media del día 0,249 · hora más barata 0,168 (14-15 h) · hora más cara 0,402 (20-21 h)</td></tr>
+        <tr><td><strong>Niba, tarifa Zen</strong></td><td>Precio fijo 24 h</td><td>0,123</td></tr>
+        <tr><td><strong>CHC Energía, Plan Estrella Dúo</strong></td><td>Precio fijo 24 h</td><td>0,139</td></tr>
+        <tr><td><strong>Nufri, Tarifa 3 Precios</strong></td><td>Por tramos</td><td>Punta 0,187 · llano 0,109 · valle 0,075</td></tr>
+      </tbody>
+    </table></div>
+    <p><em>Precios sin impuestos. Fuentes: Selectra (PVPC del 5/11/2026) y Xataka Home (ofertas de mercado libre, 2/11/2026). Las ofertas cambian: comprobadlas el día de la práctica.</em></p>
+
+    <h3>4.3. En un sitio público: el instituto, el ayuntamiento o un cibercafé</h3>
+    <p>Los edificios grandes y los negocios con más de 15 kW contratados usan la <strong>tarifa 3.0TD</strong>. En lugar de tres tramos tiene <strong>seis periodos (P1 a P6)</strong>, que dependen de la hora, del tipo de día y de la temporada del año (la más cara, en la península, de diciembre a febrero).</p>
+    <p>Sus precios no se publican en una tabla común: cada empresa o administración los <strong>negocia con su comercializadora</strong>. Por eso, para calcular lo que gasta el aula, lo mejor es <strong>conseguir el dato real</strong> de la factura del centro.</p>
+    <div class="nota">
+      <p><strong>Recursos para consultar precios</strong></p>
+      <ul>
+        <li>Precio del PVPC hora a hora: <a href="https://selectra.es/energia/info/que-es/pvpc">selectra.es/energia/info/que-es/pvpc</a></li>
+        <li>Comparativas mensuales de tarifas: xatakahome.com (sección precio de la luz).</li>
+        <li>Comparador oficial de ofertas de la CNMC (búscalo como «comparador ofertas energía CNMC»).</li>
+        <li>La factura de tu casa: busca el apartado «término de energía» y el precio por kWh.</li>
+      </ul>
+    </div>
+
+    <h3>Cuestionario B</h3>
+    <ol>
+      <li>¿A qué hora de un martes es más barato poner a cargar el portátil con la tarifa de Nufri? ¿Y un sábado?</li>
+      <li>Con el PVPC del 5 de noviembre, ¿cuántas veces más cara es la hora más cara que la más barata?</li>
+      <li>¿Por qué el instituto no puede usar la misma tarifa que una vivienda?</li>
+      <li>Precio del kWh que paga vuestro centro (preguntad en secretaría o usad 0,15 €/kWh si no lo conseguís): ______ €/kWh</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>Un martes, en horas <strong>valle: de 0 a 8 h</strong> (0,075 €/kWh). Un sábado, <strong>a cualquier hora</strong>, porque todo el fin de semana es valle.</li>
+          <li>0,402 ÷ 0,168 = <strong>2,4 veces</strong> más cara.</li>
+          <li>Porque tiene contratados <strong>más de 15 kW</strong>. Le corresponde la <strong>tarifa 3.0TD</strong>, con seis periodos de precio, y sus precios se negocian con la comercializadora.</li>
+          <li>Depende del centro. Si no se consigue el dato, se usa <strong>0,15 €/kWh</strong>, que es el valor del solucionario.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="aula">5. Práctica 1: el consumo de nuestra aula</h2>
+    <p>Contad los equipos del aula y buscad la potencia de cada uno (etiqueta, ficha técnica o la tabla del apartado 3). Suponed <strong>6 horas de clase al día</strong> y <strong>175 días lectivos</strong> por curso.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Equipo</th><th>Cantidad</th><th>Potencia (W)</th><th>Horas/día</th><th>kWh/día</th><th>kWh/curso</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Ordenadores</strong></td><td></td><td></td><td>6</td><td></td><td></td></tr>
+        <tr><td><strong>Monitores</strong></td><td></td><td></td><td>6</td><td></td><td></td></tr>
+        <tr><td><strong>Proyector</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>Switch / router</strong></td><td></td><td></td><td>24</td><td></td><td></td></tr>
+        <tr><td><strong>Impresora</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>TOTAL</strong></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <p><em>kWh/día = cantidad × potencia (W) ÷ 1000 × horas/día. kWh/curso = kWh/día × 175 (el switch: × 365).</em></p>
+    <p>Ahora calculad cuánto costaría ese consumo con distintos precios:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Precio</th><th>€/kWh</th><th>Coste al día (€)</th><th>Coste en un curso (€)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tarifa real del centro</strong></td><td></td><td></td><td></td></tr>
+        <tr><td><strong>Precio fijo (Niba Zen)</strong></td><td>0,123</td><td></td><td></td></tr>
+        <tr><td><strong>PVPC, media del 5/11/2026</strong></td><td>0,249</td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <details class="solucion">
+      <summary>Ver solución (con un aula tipo)</summary>
+      <div>
+        <p>Las respuestas dependen de cada aula. El solucionario usa un <strong>aula tipo</strong>: 16 ordenadores de 65 W, 16 monitores de 25 W, un proyector de 250 W (3 h al día), un switch de 30 W (24 h) y una impresora de 30 W (2 h al día). Si el centro no facilita su precio, se usa <strong>0,15 €/kWh</strong>. Los resultados se redondean a dos decimales.</p>
+        <div class="tabla"><table>
+          <thead><tr><th>Equipo</th><th>Cantidad</th><th>Potencia (W)</th><th>Horas/día</th><th>kWh/día</th><th>kWh/curso</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ordenadores</strong></td><td>16</td><td>65</td><td>6</td><td>6,24</td><td>1.092,00</td></tr>
+            <tr><td><strong>Monitores</strong></td><td>16</td><td>25</td><td>6</td><td>2,40</td><td>420,00</td></tr>
+            <tr><td><strong>Proyector</strong></td><td>1</td><td>250</td><td>3</td><td>0,75</td><td>131,25</td></tr>
+            <tr><td><strong>Switch / router</strong></td><td>1</td><td>30</td><td>24</td><td>0,72</td><td>262,80 (× 365)</td></tr>
+            <tr><td><strong>Impresora</strong></td><td>1</td><td>30</td><td>2</td><td>0,06</td><td>10,50</td></tr>
+            <tr><td><strong>TOTAL</strong></td><td></td><td></td><td></td><td><strong>10,17</strong></td><td><strong>1.916,55</strong></td></tr>
+          </tbody>
+        </table></div>
+        <div class="tabla"><table>
+          <thead><tr><th>Precio</th><th>€/kWh</th><th>Coste al día (€)</th><th>Coste en un curso (€)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tarifa real del centro (supuesta)</strong></td><td>0,15</td><td>1,53</td><td>287,48</td></tr>
+            <tr><td><strong>Precio fijo (Niba Zen)</strong></td><td>0,123</td><td>1,25</td><td>235,74</td></tr>
+            <tr><td><strong>PVPC, media del 5/11/2026</strong></td><td>0,249</td><td>2,53</td><td>477,22</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <h3>Cuestionario C</h3>
+    <ol>
+      <li>¿Qué equipo es el que más energía consume en un curso? ¿Por qué?</li>
+      <li>Si los ordenadores se quedan en reposo (20 W) durante el recreo y la hora de comer, 2 horas al día, ¿cuántos kWh se gastan en un curso sin que nadie los use?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>Los <strong>ordenadores</strong>: 1.092 kWh, el <strong>57 %</strong> del total. No son los que más potencia tienen uno a uno (el proyector gasta más), pero son muchos y están encendidos toda la jornada.</li>
+          <li>16 × 20 W = 0,32 kW. 0,32 kW × 2 h × 175 días = <strong>112 kWh</strong>, unos <strong>16,80 €</strong> a 0,15 €/kWh.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="gaming">6. Práctica 2: una tarde jugando a un juego de gama alta</h2>
+    <p>Un PC gaming con una tarjeta gráfica de gama alta consume unos <strong>550 W</strong> jugando con calidad máxima, y su monitor unos <strong>50 W</strong>. Un jugador lo usa <strong>3 horas al día durante 30 días</strong>.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Cálculo</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Potencia total (kW)</strong></td><td></td></tr>
+        <tr><td><strong>Energía al día (kWh)</strong></td><td></td></tr>
+        <tr><td><strong>Energía al mes (kWh)</strong></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <div class="tabla"><table>
+      <thead><tr><th>¿Cuándo juega y con qué tarifa?</th><th>€/kWh</th><th>Coste al mes (€)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Nufri, en horas valle (sábado o de madrugada)</strong></td><td>0,075</td><td></td></tr>
+        <tr><td><strong>Nufri, en horas punta (de 18 a 22 h)</strong></td><td>0,187</td><td></td></tr>
+        <tr><td><strong>Precio fijo (Niba Zen)</strong></td><td>0,123</td><td></td></tr>
+        <tr><td><strong>PVPC, en la hora más cara (20-21 h)</strong></td><td>0,402</td><td></td></tr>
+      </tbody>
+    </table></div>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Cálculo</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Potencia total (kW)</strong></td><td>550 W + 50 W = 0,6 kW</td></tr>
+            <tr><td><strong>Energía al día (kWh)</strong></td><td>0,6 kW × 3 h = 1,8 kWh</td></tr>
+            <tr><td><strong>Energía al mes (kWh)</strong></td><td>1,8 kWh × 30 = 54 kWh</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tabla"><table>
+          <thead><tr><th>¿Cuándo juega y con qué tarifa?</th><th>€/kWh</th><th>Coste al mes (€)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Nufri, en horas valle</strong></td><td>0,075</td><td>4,05</td></tr>
+            <tr><td><strong>Nufri, en horas punta</strong></td><td>0,187</td><td>10,10</td></tr>
+            <tr><td><strong>Precio fijo (Niba Zen)</strong></td><td>0,123</td><td>6,64</td></tr>
+            <tr><td><strong>PVPC, en la hora más cara</strong></td><td>0,402</td><td>21,71</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <h3>Cuestionario D</h3>
+    <ol>
+      <li>¿Cuánto se ahorra al mes jugando en horas valle en lugar de en horas punta con la tarifa de Nufri?</li>
+      <li>Si el jugador baja la calidad gráfica y el equipo pasa a consumir 350 W, ¿cuánto ahorra al mes con el precio fijo?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>10,10 € − 4,05 € = <strong>6,05 € al mes</strong>, un 60 % menos por la misma partida.</li>
+          <li>350 W + 50 W de monitor = 0,4 kW × 3 h × 30 = 36 kWh → 36 × 0,123 = 4,43 €. Ahorra 6,64 € − 4,43 € = <strong>2,21 € al mes</strong>.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="television">7. Práctica 3: una televisión de última generación</h2>
+    <p>Un televisor grande de última generación (65 pulgadas) consume unos <strong>200 W</strong> encendido. En una casa se ve <strong>4 horas al día</strong> durante <strong>todo el año</strong>. Cuando se apaga con el mando se queda en espera.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Cálculo</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Energía al día (kWh)</strong></td><td></td></tr>
+        <tr><td><strong>Energía al año (kWh)</strong></td><td></td></tr>
+        <tr><td><strong>Coste al año con el PVPC medio (0,249 €/kWh)</strong></td><td></td></tr>
+        <tr><td><strong>Coste al año con precio fijo (0,123 €/kWh)</strong></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Cálculo</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Energía al día (kWh)</strong></td><td>0,2 kW × 4 h = 0,8 kWh</td></tr>
+            <tr><td><strong>Energía al año (kWh)</strong></td><td>0,8 kWh × 365 = 292 kWh</td></tr>
+            <tr><td><strong>Coste al año con el PVPC medio (0,249 €/kWh)</strong></td><td>72,71 €</td></tr>
+            <tr><td><strong>Coste al año con precio fijo (0,123 €/kWh)</strong></td><td>35,92 €</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <h3>Cuestionario E</h3>
+    <ol>
+      <li>Buscad la etiqueta energética de un televisor real de 65 pulgadas en la web de una tienda. ¿Qué clase energética tiene y cuántos kWh consume cada 1000 horas?</li>
+      <li>Comparad: ¿qué gasta más en un mes, el televisor del apartado 7 o el PC gaming del apartado 6? Justificadlo con vuestros números.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>Depende del modelo que elijan. Hay que comprobar que anotan <strong>la letra de la clase</strong> (de A a G) y <strong>el consumo en kWh por cada 1000 horas</strong>, que es el dato de la etiqueta. Si multiplican ese dato por 1,46 (4 h al día durante un año son 1.460 horas) obtienen el consumo anual de su modelo y pueden compararlo con los 292 kWh del ejercicio.</li>
+          <li>El <strong>PC gaming</strong>: 54 kWh al mes frente a 0,8 kWh × 30 = <strong>24 kWh</strong> del televisor. El PC gasta más del doble, aunque se use menos horas, porque su potencia es tres veces mayor (600 W frente a 200 W).</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="conclusiones">8. Conclusiones: ¿qué haría un técnico de SMR?</h2>
+    <ol>
+      <li>Proponed <strong>dos cambios de configuración</strong> en los equipos del aula (suspensión, apagado del monitor, apagado programado...) y estimad cuántos kWh y euros se ahorrarían en un curso.</li>
+      <li>¿Con qué reto ambiental de la UT2 está relacionado este consumo? Explicad la relación en dos líneas.</li>
+      <li>¿Qué consejo le daríais a la cooperativa de la situación de partida para pagar menos luz por sus 15 ordenadores?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <ol>
+          <li>Ejemplo de respuesta completa:
+            <ol type="a">
+              <li><strong>Suspensión automática</strong> de los ordenadores tras 10 minutos sin uso: evita los 112 kWh del reposo en recreos y comidas (16,80 €).</li>
+              <li><strong>Apagado del monitor</strong> tras 5 minutos sin uso: si cada monitor está encendido sin uso 1 hora al día, se ahorran 16 × 25 W × 1 h × 175 = 70 kWh (10,50 €).</li>
+            </ol>
+            Total: <strong>182 kWh y unos 27,30 € por curso</strong> solo en un aula. Multiplicado por todas las aulas del centro, el ahorro es mucho mayor.</li>
+          <li>Con el <strong>cambio climático</strong>: parte de la electricidad se produce quemando gas, que emite gases de efecto invernadero. Cuanta más energía gastamos, más emisiones. También con la <strong>sobrexplotación de recursos</strong>, porque producir esa energía consume recursos naturales.</li>
+          <li>Respuestas válidas: comparar ofertas y elegir una tarifa con tramos si se puede trabajar en horas baratas; configurar suspensión y apagado automático en los 15 ordenadores; apagar los equipos por la noche; <strong>reacondicionar los ordenadores (SSD, más RAM) en lugar de comprar nuevos</strong>, que también evita residuos; y estudiar placas solares en la nave para autoconsumo. Se valora que la respuesta incluya al menos una medida de configuración y una de tarifa.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h3>Fuentes de consulta</h3>
+    <ul>
+      <li><a href="https://www.endesa.com/es/blog/blog-de-endesa/luz/cuanto-consume-setup-gaming-ahorrar-luz">Endesa: ¿cuánto consume un setup gaming?</a></li>
+      <li><a href="https://www.profesionalreview.com/2022/08/18/cuanto-consume-un-ordenador/">Profesional Review: ¿cuánto consume un ordenador?</a></li>
+      <li><a href="https://selectra.es/energia/noticias/precio-luz/2026-11-05">Selectra: precio de la luz del 5 de noviembre de 2026</a></li>
+      <li><a href="https://www.xatakahome.com/iluminacion-y-energia/tarifas-luz-baratas-para-empezar-noviembre-2026-ahorrando-asi-queda-pvpc-respecto-a-mercado-libre">Xataka Home: tarifas de la luz para empezar noviembre de 2026</a></li>
+      <li><a href="https://www.repsol.es/autonomos-y-empresas/asesoramiento/que-es-tarifa-3-0td/">Repsol: qué es la tarifa 3.0TD</a></li>
+    </ul>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>

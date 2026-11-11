@@ -23,6 +23,11 @@ window.MAPA_APUNTES = [
         { slug: 'sostenibilidad-organizaciones', tipo: 'Apuntes', titulo: 'La sostenibilidad en las organizaciones empresariales' },
         { slug: 'actividad-foro-hlpf', tipo: 'Actividad 1', titulo: 'Investiga el Foro Político de Alto Nivel (HLPF)' },
         { slug: 'caso-cafeterias-origen', tipo: 'Actividad 2', titulo: 'Caso práctico: Cafeterías Origen' }
+      ] },
+      { slug: 'tema-2', num: 2, titulo: 'Retos ambientales y sociales', materiales: [
+        { slug: 'retos-ambientales-sociales', tipo: 'Apuntes', titulo: 'Retos ambientales y sociales' },
+        { slug: 'mercado-libre-regulado', tipo: 'Material de apoyo', titulo: 'Mercado libre y mercado regulado' },
+        { slug: 'practica-consumo-electrico', tipo: 'Práctica', titulo: '¿Cuánto cuesta encender un ordenador?' }
       ] }
     ]
   }

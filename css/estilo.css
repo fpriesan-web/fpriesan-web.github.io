@@ -147,3 +147,15 @@ nav.nav-temas, nav.barra-der { display: block; }
 .cifra { font-size: 1.8rem; font-weight: 700; color: var(--acento); line-height: 1.1; }
 .mapa-unidad ul { margin: 4px 0; }
 .mapa-unidad > ul > li { margin-bottom: 6px; }
+/* Botón de descarga y figuras de los apuntes */
+.descargas { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 8px; }
+.boton-descarga { display: inline-flex; align-items: center; gap: 8px; background: var(--acento); color: var(--tarjeta); font-weight: 600; text-decoration: none; border-radius: 999px; padding: 8px 18px; }
+.boton-descarga::before { content: "⬇"; }
+.boton-descarga:hover { filter: brightness(1.1); }
+.boton-descarga:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+.figura { margin: 16px 0 20px; }
+.figura img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--borde); background: #fff; }
+.figura figcaption { color: var(--suave); font-size: .92rem; margin-top: 6px; }
+.nota p { margin: 0; }
+.nota p + p { margin-top: 6px; }
+.formula { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .98rem; }
