@@ -15,5 +15,15 @@ window.MAPA_APUNTES = [
   },
   { slug: '2cfgb-proyecto-intermodular', curso: '2º CFGB', titulo: 'Proyecto Intermodular de Aprendizaje Colaborativo', temas: [] },
   { slug: '2smr-digitalizacion', curso: '2º SMR', titulo: 'Digitalización aplicada a los sistemas productivos', temas: [] },
-  { slug: '2smr-sostenibilidad', curso: '2º SMR', titulo: 'Sostenibilidad aplicada al sistema productivo', temas: [] }
+  {
+    slug: '2smr-sostenibilidad', curso: '2º SMR',
+    titulo: 'Sostenibilidad aplicada al sistema productivo',
+    temas: [
+      { slug: 'tema-1', num: 1, titulo: 'La sostenibilidad en las organizaciones empresariales', materiales: [
+        { slug: 'sostenibilidad-organizaciones', tipo: 'Apuntes', titulo: 'La sostenibilidad en las organizaciones empresariales' },
+        { slug: 'actividad-foro-hlpf', tipo: 'Actividad 1', titulo: 'Investiga el Foro Político de Alto Nivel (HLPF)' },
+        { slug: 'caso-cafeterias-origen', tipo: 'Actividad 2', titulo: 'Caso práctico: Cafeterías Origen' }
+      ] }
+    ]
+  }
 ];
