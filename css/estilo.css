@@ -130,3 +130,20 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--acento); outli
 h2[id] { scroll-margin-top: 16px; }
 nav.nav-temas, nav.barra-der { display: block; }
 .con-barras .cabecera .contenedor, .con-barras .pie { max-width: 1320px; }
+/* Soluciones desplegables y fichas de apuntes */
+.solucion { background: var(--tarjeta); border: 1px solid var(--borde); border-left: 4px solid var(--bien-borde); border-radius: 10px; margin: 12px 0 20px; }
+.solucion > summary { cursor: pointer; padding: 10px 16px; font-weight: 600; color: var(--bien-texto); }
+.solucion[open] > summary { border-bottom: 1px solid var(--borde); }
+.solucion > div { padding: 4px 18px 10px; }
+.solucion h4 { color: var(--texto); }
+.preguntas { list-style: none; padding-left: 0; }
+.preguntas li { margin-bottom: 6px; }
+.fichas { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); margin: 12px 0 16px; }
+.ficha { background: var(--tarjeta); border: 1px solid var(--borde); border-top: 3px solid var(--acento); border-radius: 10px; padding: 14px 16px; }
+.ficha h4 { margin: 0 0 6px !important; color: var(--texto) !important; font-size: 1rem; }
+.ficha p { margin: 0 0 6px; color: var(--suave); font-size: .95rem; }
+.ficha p:last-child { margin-bottom: 0; }
+.ficha ul { margin: 6px 0 0; padding-left: 18px; font-size: .95rem; }
+.cifra { font-size: 1.8rem; font-weight: 700; color: var(--acento); line-height: 1.1; }
+.mapa-unidad ul { margin: 4px 0; }
+.mapa-unidad > ul > li { margin-bottom: 6px; }
