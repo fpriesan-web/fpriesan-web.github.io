@@ -10,6 +10,11 @@ window.MAPA_APUNTES = [
         { slug: 'placa-base-ii', tipo: 'Apuntes', titulo: 'La placa base (II)' },
         { slug: 'componentes-placa-base', tipo: 'Actividad', titulo: 'Componentes de la placa base' },
         { slug: 'kahoot-bios-placa-base', tipo: 'Kahoot', titulo: 'BIOS, UEFI y placa base' }
+      ] },
+      { slug: 'tema-3', num: 3, titulo: 'La memoria', materiales: [
+        { slug: 'la-memoria', tipo: 'Apuntes', titulo: 'La memoria del ordenador' },
+        { slug: 'actividades-memoria', tipo: 'Actividades', titulo: 'Actividades sobre la memoria' },
+        { slug: 'test-memoria', tipo: 'Test', titulo: 'Test de repaso' }
       ] }
     ]
   },
