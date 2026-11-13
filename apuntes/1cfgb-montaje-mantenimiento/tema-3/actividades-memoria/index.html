@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actividades: la memoria · Apuntes de clase</title>
+  <meta name="description" content="Tema 3 de 1º CFGB: actividades sobre la memoria del ordenador para pensar, calcular, investigar y practicar en el taller, con soluciones.">
+  <link rel="stylesheet" href="/css/estilo.css?v=8">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=6" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/">Tema 3</a></p>
+    <span class="etiqueta">Recurso · Actividades</span>
+    <h1>Actividades: la memoria del ordenador</h1>
+    <p class="entradilla">Actividades para repasar los <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/la-memoria/">apuntes del tema</a>. Algunas tienen la solución en un desplegable: inténtalo antes de abrirlo.</p>
+
+    <h2 id="pensar">Para pensar y calcular</h2>
+    <ol>
+      <li>Explica con tus palabras, usando la comparación de la mesa y el armario, la diferencia entre RAM y almacenamiento.</li>
+      <li>Ordena de más rápida a más lenta: SSD NVMe, caché L1, disco duro, RAM, caché L3.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 2</summary>
+      <div><p>Caché L1, caché L3, RAM, SSD NVMe, disco duro.</p></div>
+    </details>
+    <ol start="3">
+      <li>Calcula el ancho de banda (en MB/s) de una DDR4-2666 y de una DDR5-4800. ¿Qué nombre comercial PC4-... y PC5-... tendrán?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 3</summary>
+      <div>
+        <ul>
+          <li>DDR4-2666: 2.666 × 8 = <strong>21.328 MB/s</strong>. Se vende como <strong>PC4-21300</strong>.</li>
+          <li>DDR5-4800: 4.800 × 8 = <strong>38.400 MB/s</strong>. Se vende como <strong>PC5-38400</strong>.</li>
+        </ul>
+      </div>
+    </details>
+    <ol start="4">
+      <li>Un SSD de 512 GB aparece en Windows con unos 476 GB. ¿Está roto? Explica por qué.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 4</summary>
+      <div><p>No está roto: 512 GB contados de 1.000 en 1.000 son unos 476 GB contados de 1.024 en 1.024.</p></div>
+    </details>
+    <ol start="5">
+      <li>¿Qué es mejor para un equipo de oficina, 1 módulo de 16 GB o 2 módulos de 8 GB? Justifícalo.</li>
+    </ol>
+
+    <h2 id="investigar">Para investigar</h2>
+    <ol start="6">
+      <li>Busca en una tienda online un kit de memoria DDR5 y otro DDR4 de 16 GB. Anota su ficha (formato, velocidad, CL, voltaje) y su precio. ¿Cuánto cuesta cada GB?</li>
+      <li>Busca el manual de una placa base actual y responde: ¿qué tipo de memoria admite?, ¿cuántas ranuras tiene?, ¿cuánta memoria máxima?, ¿en qué ranuras se colocan dos módulos para el doble canal?</li>
+      <li>Una placa base tiene estas características: <em>2 ranuras DDR5 DIMM, máximo 96 GB, dual channel, 4800-6400 MT/s</em>. ¿Se podría instalar el kit del ejemplo del apartado 4 (2 × 16 GB DDR5-6000)? ¿Y un módulo DDR4-3200 de 16 GB? ¿Por qué?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 8</summary>
+      <div>
+        <ul>
+          <li>El kit DDR5-6000 <strong>sí</strong>, porque es DDR5, cabe en las 2 ranuras, 32 GB es menos del máximo y 6000 está dentro del rango.</li>
+          <li>El módulo DDR4 <strong>no</strong>, porque es otra generación y no encaja.</li>
+        </ul>
+      </div>
+    </details>
+
+    <h2 id="taller">Práctica en el taller</h2>
+    <ol start="9">
+      <li>Con los módulos del aula, identifica cada uno: formato (DIMM o SO-DIMM), generación (fíjate en la muesca y en la etiqueta), capacidad y velocidad. Rellena una tabla con los datos.</li>
+      <li>Siguiendo las normas de seguridad, retira e instala la memoria de un equipo del aula. Después comprueba en la BIOS/UEFI y en el Administrador de tareas que se detecta toda la memoria.</li>
+      <li>Ejecuta el Diagnóstico de memoria de Windows (<code>mdsched</code>) y anota el resultado en una ficha de incidencias.</li>
+    </ol>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>

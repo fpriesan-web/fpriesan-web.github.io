@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La memoria del ordenador · Apuntes de clase</title>
+  <meta name="description" content="Tema 3 de 1º CFGB: qué es la memoria, cómo se mide, tipos de memoria, RAM DDR4 y DDR5, latencia, instalación y diagnóstico, y diferencia con el almacenamiento.">
+  <link rel="stylesheet" href="/css/estilo.css?v=8">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=6" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/">Tema 3</a></p>
+    <span class="etiqueta">Material didáctico · Tema 3</span>
+    <h1>La memoria del ordenador</h1>
+    <nav class="indice" aria-label="Apartados">
+      <a href="#que-es">1. ¿Qué es la memoria?</a>
+      <a href="#medida">2. ¿Cómo se mide la memoria?</a>
+      <a href="#tipos">3. Tipos de memoria</a>
+      <a href="#ram">4. La memoria RAM</a>
+      <a href="#latencia">5. La latencia de la memoria</a>
+      <a href="#instalacion">6. Instalación, comprobación y mantenimiento de la RAM</a>
+      <a href="#almacenamiento">7. Memoria y almacenamiento: no son lo mismo</a>
+      <a href="#glosario">8. Glosario</a>
+    </nav>
+
+    <h2 id="que-es">1. ¿Qué es la memoria?</h2>
+    <p>La memoria es la parte del ordenador que guarda los datos y los programas para que el procesador (CPU) pueda trabajar con ellos. Sin memoria, el procesador no tendría nada que hacer: no sabría qué instrucciones seguir ni con qué datos operar.</p>
+    <p>Una forma fácil de entenderlo es pensar en un taller o en tu escritorio de estudio:</p>
+    <ul>
+      <li><strong>El procesador</strong> eres tú, la persona que trabaja.</li>
+      <li><strong>La memoria RAM</strong> es la mesa de trabajo: pones encima lo que estás usando ahora mismo. Es rápida de alcanzar, pero tiene un tamaño limitado y, al terminar la jornada (apagar el ordenador), se recoge todo.</li>
+      <li><strong>El almacenamiento (SSD o disco duro)</strong> es el armario: guarda muchas cosas durante mucho tiempo, aunque sacarlas cuesta más.</li>
+    </ul>
+    <p>Cuando abres un programa, por ejemplo un procesador de textos, el ordenador copia ese programa desde el SSD a la RAM. Desde la RAM, el procesador lo lee muy deprisa. Por eso, si tienes poca RAM y muchas cosas abiertas, el equipo se vuelve lento: la mesa está llena y hay que ir al armario una y otra vez.</p>
+    <p>En este tema estudiaremos qué tipos de memoria hay, cómo se mide, cómo son los módulos de RAM actuales (DDR4 y DDR5), cómo se instalan y cómo se comprueba que funcionan. Corresponde a la <strong>UD 4, Componentes internos de un ordenador</strong>, y a los resultados de aprendizaje RA1 y RA2 del módulo.</p>
+
+    <h2 id="medida">2. ¿Cómo se mide la memoria?</h2>
+    <p>El ordenador solo entiende dos estados: hay corriente o no hay corriente, que representamos con <strong>1</strong> y <strong>0</strong>. Cada uno de esos ceros o unos es un <strong>bit</strong>, la unidad más pequeña de información. Un grupo de 8 bits forma un <strong>byte</strong>, que es más o menos lo que ocupa una letra.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Unidad</th><th>Símbolo</th><th>Equivale a</th><th>Ejemplo para hacerse una idea</th></tr></thead>
+      <tbody>
+        <tr><td>Bit</td><td>b</td><td>0 o 1</td><td>Un interruptor encendido o apagado</td></tr>
+        <tr><td>Byte</td><td>B</td><td>8 bits</td><td>Una letra, como la «A»</td></tr>
+        <tr><td>Kilobyte</td><td>KB</td><td>1.000 bytes</td><td>Un correo electrónico corto de texto</td></tr>
+        <tr><td>Megabyte</td><td>MB</td><td>1.000 KB</td><td>Una foto del móvil (3-5 MB) o una canción MP3 (4 MB)</td></tr>
+        <tr><td>Gigabyte</td><td>GB</td><td>1.000 MB</td><td>Una película en HD (2-4 GB); la RAM de un PC (8-32 GB)</td></tr>
+        <tr><td>Terabyte</td><td>TB</td><td>1.000 GB</td><td>Un SSD o disco duro actual (1-2 TB)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota"><p><strong>Ojo con la «b» minúscula y la «B» mayúscula.</strong> 100 Mb (megabits) no es lo mismo que 100 MB (megabytes). Las velocidades de Internet se dan en megabits por segundo (Mbps), y los tamaños de archivo en megabytes.</p></div>
+    <div class="nota"><p><strong>¿Por qué mi disco de 1 TB marca 931 GB?</strong> Los fabricantes cuentan de 1.000 en 1.000, pero Windows cuenta de 1.024 en 1.024 (porque el ordenador trabaja en base 2). Por eso un disco de 1 TB aparece en Windows como unos 931 GB. No falta espacio: es la misma cantidad contada de otra forma. Con la RAM pasa al revés: los módulos siempre tienen tamaños en potencias de 2 o cercanos (8, 16, 32 GB).</p></div>
+    <p>Cuando hablamos de memoria RAM, lo normal hoy es medir en <strong>gigabytes (GB)</strong>. El libro de 2012 decía «megabytes o gigabytes», pero actualmente ningún ordenador nuevo trae menos de 8 GB.</p>
+
+    <h2 id="tipos">3. Tipos de memoria</h2>
+    <p>En un ordenador hay varias memorias, cada una con una tarea. La primera gran diferencia es si la memoria es <strong>volátil</strong> (pierde los datos al apagar) o <strong>no volátil</strong> (los conserva sin corriente).</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Memoria</th><th>¿Volátil?</th><th>Dónde está</th><th>Para qué sirve</th></tr></thead>
+      <tbody>
+        <tr><td>Registros</td><td>Sí</td><td>Dentro del procesador</td><td>Guardan el dato con el que la CPU está operando en ese instante</td></tr>
+        <tr><td>Caché (L1, L2, L3)</td><td>Sí</td><td>Dentro del procesador</td><td>Copia de los datos que la CPU va a usar enseguida. Muy rápida y pequeña (de KB a decenas de MB)</td></tr>
+        <tr><td>RAM (memoria principal)</td><td>Sí</td><td>Módulos en la placa base (o soldada en portátiles)</td><td>Programas y datos en uso. Es la «mesa de trabajo»</td></tr>
+        <tr><td>Memoria de vídeo (VRAM, GDDR6/GDDR7)</td><td>Sí</td><td>En la tarjeta gráfica</td><td>Imágenes que se van a mostrar en pantalla. Si la gráfica es integrada, usa parte de la RAM</td></tr>
+        <tr><td>ROM / memoria flash del firmware</td><td>No</td><td>Chip en la placa base</td><td>Guarda la <strong>BIOS/UEFI</strong>, el programa que arranca el equipo</td></tr>
+        <tr><td>Almacenamiento (SSD, disco duro)</td><td>No</td><td>Unidades conectadas a la placa</td><td>Sistema operativo, programas y archivos de forma permanente</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>RAM y ROM</h3>
+    <p><strong>RAM</strong> significa <em>Random Access Memory</em> (memoria de acceso aleatorio). Se puede leer y escribir muy rápido, pero es volátil. Por eso, si se va la luz sin haber guardado, se pierde el trabajo.</p>
+    <p><strong>ROM</strong> significa <em>Read Only Memory</em> (memoria de solo lectura). Antes se grababa en fábrica y no se podía cambiar. Hoy el firmware de la placa (BIOS o, en los equipos actuales, <strong>UEFI</strong>) está en una <strong>memoria flash</strong> que sí se puede actualizar cuando el fabricante publica una versión nueva.</p>
+    <div class="nota"><p><strong>¿Y la pila de la placa base?</strong> El libro habla de la memoria CMOS, que guardaba la configuración gracias a la pila. En las placas actuales la configuración suele guardarse en la propia memoria flash, y la pila (normalmente una <strong>CR2032</strong>) mantiene sobre todo el <strong>reloj</strong> (fecha y hora). Si un equipo pierde la hora cada vez que se desenchufa, lo más probable es que haya que cambiar la pila.</p></div>
+
+    <h3>SRAM y DRAM</h3>
+    <p>Hay dos tecnologías de RAM:</p>
+    <ul>
+      <li><strong>SRAM (RAM estática):</strong> muy rápida, pero cara y ocupa mucho. Se usa en la <strong>memoria caché</strong> del procesador.</li>
+      <li><strong>DRAM (RAM dinámica):</strong> más barata y con más capacidad. Necesita «refrescarse» (recargarse) miles de veces por segundo. Es la que se usa como <strong>memoria principal</strong>. Todas las DDR que veremos son DRAM.</li>
+    </ul>
+
+    <h3>La jerarquía de memoria</h3>
+    <p>Las memorias se ordenan como una pirámide: cuanto más cerca del procesador, más rápidas, más caras y más pequeñas. Cuanto más lejos, más lentas, más baratas y con más capacidad. El procesador siempre busca primero en la caché; si no lo encuentra, va a la RAM; y si tampoco está allí, al SSD o disco.</p>
+    <figure class="figura"><img src="jerarquia-memoria.jpg" width="1200" height="650" loading="lazy" alt="Pirámide de la jerarquía de memoria: registros arriba, después caché L1, L2 y L3, memoria RAM, SSD y disco duro abajo. Una línea discontinua separa las memorias volátiles (arriba) de las no volátiles (abajo)."><figcaption>Jerarquía de memoria en 5 niveles. La línea discontinua separa las memorias que se borran al apagar (arriba) de las que conservan los datos (abajo).</figcaption></figure>
+
+    <h2 id="ram">4. La memoria RAM</h2>
+    <p>La RAM viene en <strong>módulos</strong>: pequeñas placas de circuito con varios chips de memoria y una fila de contactos dorados que se insertan en las <strong>ranuras de memoria</strong> de la placa base.</p>
+
+    <h3>Formatos de módulo</h3>
+    <ul>
+      <li><strong>DIMM:</strong> el módulo largo (unos 13,3 cm) de los ordenadores de sobremesa.</li>
+      <li><strong>SO-DIMM:</strong> versión corta (unos 7 cm) para portátiles y miniPC.</li>
+      <li><strong>Memoria soldada (LPDDR4X, LPDDR5X):</strong> muchos portátiles finos, tablets y móviles llevan la RAM soldada a la placa. <strong>No se puede ampliar ni cambiar</strong>, así que hay que elegir bien la cantidad al comprar.</li>
+      <li><strong>CAMM2:</strong> formato nuevo y plano para portátiles que empieza a verse desde 2024. De momento es poco común.</li>
+    </ul>
+    <p>Los formatos antiguos SIMM, FB-DIMM o Micro-DIMM que aparecen en el libro ya no se usan en equipos actuales.</p>
+
+    <h3>Generaciones: DDR3, DDR4 y DDR5</h3>
+    <p>Toda la RAM actual es <strong>DDR SDRAM</strong> (<em>Double Data Rate</em>): transfiere datos dos veces en cada ciclo de reloj. Cada generación es más rápida, gasta menos energía y admite módulos de más capacidad.</p>
+    <div class="tabla"><table>
+      <thead><tr><th></th><th>DDR3</th><th>DDR4</th><th>DDR5</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Año de llegada a los PC</th><td>2007</td><td>2014</td><td>2021</td></tr>
+        <tr><th scope="row">Contactos DIMM (sobremesa)</th><td>240</td><td>288</td><td>288</td></tr>
+        <tr><th scope="row">Contactos SO-DIMM (portátil)</th><td>204</td><td>260</td><td>262</td></tr>
+        <tr><th scope="row">Voltaje</th><td>1,5 V (1,35 V en DDR3L)</td><td>1,2 V</td><td>1,1 V</td></tr>
+        <tr><th scope="row">Velocidades típicas</th><td>1.333 a 1.866 MT/s</td><td>2.133 a 3.200 MT/s</td><td>4.800 a 8.000 MT/s</td></tr>
+        <tr><th scope="row">Capacidad típica por módulo</th><td>2 a 8 GB</td><td>4 a 32 GB</td><td>8 a 64 GB</td></tr>
+        <tr><th scope="row">Dónde la encontrarás</th><td>Equipos de 2008 a 2015 aprox.</td><td>Muchos equipos de oficina actuales</td><td>Equipos nuevos (Intel desde 12.ª gen., AMD AM5)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota"><p><strong>Las generaciones no son compatibles entre sí.</strong> Cada una tiene la <strong>muesca</strong> (la ranura en la fila de contactos) en una posición distinta, para que sea físicamente imposible meter una DDR4 en una ranura DDR5 o al revés. Aunque DDR4 y DDR5 tengan los mismos 288 contactos, no encajan. La placa base decide qué tipo admite: hay que mirar siempre su manual.</p></div>
+    <p>Novedades de la DDR5 que conviene conocer: lleva su propio chip de alimentación (<strong>PMIC</strong>) en el módulo, divide cada módulo en dos subcanales para trabajar más rápido e incluye una corrección de errores interna (<em>on-die ECC</em>). Las DDR y DDR2 que menciona el libro son ya historia.</p>
+
+    <h3>Características que hay que saber leer</h3>
+    <ul>
+      <li><strong>Capacidad:</strong> cuántos GB tiene el módulo o el kit. Es lo que más se nota en el día a día.</li>
+      <li><strong>Velocidad:</strong> se mide en <strong>MT/s</strong> (millones de transferencias por segundo). Las tiendas a menudo ponen «MHz», pero se refieren a lo mismo: «DDR5-5600» o «5600 MHz» significa 5.600 MT/s.</li>
+      <li><strong>Ancho de banda:</strong> cantidad de datos por segundo. Se calcula multiplicando la velocidad por 8 (porque el bus de memoria es de 64 bits = 8 bytes). De ahí salen nombres como <strong>PC4-25600</strong> (DDR4-3200) o <strong>PC5-44800</strong> (DDR5-5600).</li>
+      <li><strong>Latencia (CL):</strong> el tiempo de espera, en ciclos de reloj, desde que se piden los datos hasta que llegan. <strong>Cuanto más bajo, mejor</strong>, pero solo se puede comparar entre memorias de la misma velocidad.</li>
+      <li><strong>Doble canal (dual channel):</strong> con <strong>dos módulos iguales</strong> en las ranuras correctas, la CPU accede a los dos a la vez y casi duplica el ancho de banda. Por eso es mejor 2 × 8 GB que 1 × 16 GB.</li>
+      <li><strong>Perfiles XMP (Intel) o EXPO (AMD):</strong> la memoria arranca a una velocidad «de serie» más baja. Para que funcione a la velocidad anunciada hay que activar este perfil en la BIOS/UEFI.</li>
+      <li><strong>ECC y módulos registrados (RDIMM):</strong> detectan y corrigen errores. Se usan en <strong>servidores</strong>, no en ordenadores de oficina.</li>
+    </ul>
+    <p>Para saber más, estas son las dos fórmulas (con el ejemplo de una DDR4-3200 CL16):</p>
+    <div class="nota">
+      <p class="formula"><strong>Ancho de banda (MB/s) = MT/s × 8 = 3.200 × 8 = 25.600 MB/s</strong></p>
+      <p class="formula"><strong>Latencia real (ns) = CL × 2.000 ÷ MT/s = 16 × 2.000 ÷ 3.200 = 10 ns</strong></p>
+    </div>
+    <p>Una DDR5-6000 CL30 da también unos 10 ns: el CL es más alto, pero como va más rápida, la espera real es parecida y transfiere muchos más datos.</p>
+
+    <h3>Cómo leer la ficha de una memoria</h3>
+    <p>Ejemplo de lo que puedes encontrar en una tienda: <strong>«Kit 32 GB (2 × 16 GB) DDR5-6000 CL30, 1,35 V, XMP/EXPO, DIMM»</strong>.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Dato</th><th>Qué significa</th></tr></thead>
+      <tbody>
+        <tr><td>Kit 32 GB (2 × 16 GB)</td><td>Dos módulos de 16 GB, pensados para doble canal</td></tr>
+        <tr><td>DDR5</td><td>Generación. La placa debe tener ranuras DDR5</td></tr>
+        <tr><td>6000</td><td>Velocidad: 6.000 MT/s (con el perfil XMP/EXPO activado)</td></tr>
+        <tr><td>CL30</td><td>Latencia de 30 ciclos</td></tr>
+        <tr><td>1,35 V</td><td>Voltaje con el perfil activado (sin él funciona a 1,1 V)</td></tr>
+        <tr><td>DIMM</td><td>Formato de sobremesa (para portátil buscaríamos SO-DIMM)</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>¿Cuánta RAM necesita un equipo?</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Uso del equipo</th><th>RAM recomendada (2026)</th></tr></thead>
+      <tbody>
+        <tr><td>Mínimo para Windows 11</td><td>4 GB (en la práctica, se queda corto)</td></tr>
+        <tr><td>Ofimática e Internet (puesto de oficina)</td><td>8 GB mínimo, 16 GB recomendable</td></tr>
+        <tr><td>Muchas pestañas, videollamadas, multitarea</td><td>16 GB</td></tr>
+        <tr><td>Juegos, edición de vídeo o fotos</td><td>32 GB o más</td></tr>
+      </tbody>
+    </table></div>
+    <p>Estas cifras son orientativas y cambian con los años: los programas piden cada vez más memoria.</p>
+
+    <h2 id="latencia">5. La latencia de la memoria</h2>
+    <p>La latencia es el <strong>tiempo de espera</strong> desde que el procesador pide un dato hasta que empieza a recibirlo. Piensa en una cafetería: la latencia es lo que tardan en servirte el primer café, y el ancho de banda es cuántos cafés pueden servir por minuto. Una buena memoria tiene <strong>latencia baja y ancho de banda alto</strong>.</p>
+    <div class="tabla"><table>
+      <thead><tr><th></th><th>Latencia</th><th>Ancho de banda</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Qué mide</th><td>Cuánto se tarda en empezar a recibir datos</td><td>Cuántos datos llegan por segundo</td></tr>
+        <tr><th scope="row">Unidad</th><td>ns (o ciclos de reloj)</td><td>MB/s o GB/s</td></tr>
+        <tr><th scope="row">¿Mejor?</th><td>Cuanto más baja</td><td>Cuanto más alto</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Tipo 1: la latencia según el nivel de memoria</h3>
+    <p>Cada nivel de la jerarquía de memoria tarda un tiempo distinto en responder. La última columna convierte cada nanosegundo en un segundo para que se vea mejor la diferencia:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Memoria</th><th>Latencia aproximada</th><th>Si 1 ns fuera 1 segundo...</th></tr></thead>
+      <tbody>
+        <tr><td>Caché L1</td><td>1 ns</td><td>1 segundo</td></tr>
+        <tr><td>Caché L2</td><td>3-5 ns</td><td>unos 4 segundos</td></tr>
+        <tr><td>Caché L3</td><td>10-15 ns</td><td>unos 12 segundos</td></tr>
+        <tr><td>RAM</td><td>60-100 ns</td><td>1-2 minutos</td></tr>
+        <tr><td>SSD NVMe</td><td>20-100 µs</td><td>medio día</td></tr>
+        <tr><td>Disco duro</td><td>5-10 ms</td><td>3 meses</td></tr>
+      </tbody>
+    </table></div>
+    <p>Por eso el procesador busca primero en la caché. A esa escala, ir a la RAM es esperar un minuto, e ir al disco duro, meses. Son valores típicos redondeados, no medidas exactas.</p>
+
+    <h3>Tipo 2: los tiempos de la RAM (timings)</h3>
+    <p>En la etiqueta o en la ficha de una memoria aparecen cuatro números, por ejemplo <strong>16-18-18-38</strong>. Son esperas medidas en <strong>ciclos de reloj</strong>. Para entenderlos, imagina la RAM como una hoja de cálculo enorme, con filas y columnas:</p>
+    <ol>
+      <li><strong>CL (CAS Latency):</strong> ciclos desde que se pide una columna hasta que sale el dato. Es el más importante y el que más se anuncia.</li>
+      <li><strong>tRCD (RAS to CAS Delay):</strong> ciclos para «abrir» una fila antes de poder leer sus columnas.</li>
+      <li><strong>tRP (RAS Precharge):</strong> ciclos para «cerrar» una fila y poder abrir otra.</li>
+      <li><strong>tRAS:</strong> tiempo mínimo que una fila debe estar abierta.</li>
+    </ol>
+    <p>Es como usar un archivador: abres un cajón (tRCD), buscas la carpeta dentro (CL), lo cierras para abrir otro (tRP) y no puedes cerrarlo nada más abrirlo (tRAS). <strong>Si dos memorias tienen la misma velocidad, cuanto más bajos sean estos números, mejor.</strong></p>
+
+    <h3>Latencia real en nanosegundos</h3>
+    <p>Los ciclos no sirven para comparar memorias de distinta velocidad. Para compararlas hay que pasar el CL a nanosegundos:</p>
+    <div class="nota"><p class="formula"><strong>Latencia real (ns) = CL × 2.000 ÷ MT/s</strong></p></div>
+    <div class="tabla"><table>
+      <thead><tr><th>Memoria</th><th>CL</th><th>Latencia real</th></tr></thead>
+      <tbody>
+        <tr><td>DDR3-1600</td><td>11</td><td>13,75 ns</td></tr>
+        <tr><td>DDR4-3200</td><td>16</td><td>10 ns</td></tr>
+        <tr><td>DDR4-3200</td><td>22</td><td>13,75 ns</td></tr>
+        <tr><td>DDR5-4800</td><td>40</td><td>16,67 ns</td></tr>
+        <tr><td>DDR5-6000</td><td>30</td><td>10 ns</td></tr>
+      </tbody>
+    </table></div>
+    <p>Ojo: esta fórmula solo mide el CL. Una lectura completa desde el procesador tarda bastante más, los 60-100 ns de la tabla del Tipo 1.</p>
+
+    <h3>¿Por qué la DDR5 es más rápida si su latencia (CL) es más alta?</h3>
+    <p><strong>1. Sus ciclos son más cortos.</strong> El CL se cuenta en ciclos de reloj, y en la DDR5 cada ciclo dura mucho menos. Una cosa compensa la otra:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Memoria</th><th>Reloj real</th><th>Duración de un ciclo</th><th>CL</th><th>Espera real</th></tr></thead>
+      <tbody>
+        <tr><td>DDR4-3200</td><td>1.600 MHz</td><td>0,625 ns</td><td>16 ciclos</td><td>16 × 0,625 = 10 ns</td></tr>
+        <tr><td>DDR5-6000</td><td>3.000 MHz</td><td>0,333 ns</td><td>30 ciclos</td><td>30 × 0,333 = 10 ns</td></tr>
+      </tbody>
+    </table></div>
+    <p>La DDR5 cuenta casi el doble de ciclos, pero cada uno dura casi la mitad. Por eso <strong>la espera real es la misma</strong>. Un CL más alto no significa esperar más.</p>
+    <p><strong>2. Cuando los datos empiezan a llegar, llegan mucho más deprisa.</strong> La latencia es solo la espera inicial. Después, lo que cuenta es el ancho de banda:</p>
+    <ul>
+      <li>DDR4-3200: 3.200 × 8 = 25.600 MB/s por canal.</li>
+      <li>DDR5-6000: 6.000 × 8 = 48.000 MB/s por canal, casi el doble.</li>
+    </ul>
+    <p>Volviendo a la cafetería: con la DDR5 tardan lo mismo en servirte el primer café, pero luego sirven casi el doble de cafés por minuto.</p>
+    <p><strong>3. Casi todo el trabajo del ordenador es mover bloques grandes de datos.</strong> Abrir un programa, cargar una página web o editar un vídeo supone mover muchos MB seguidos. Por ejemplo, para leer 1 GB:</p>
+    <ul>
+      <li>La espera inicial (10 ns) es 0,00001 ms: no se nota.</li>
+      <li>DDR4-3200: 1.000 MB ÷ 25.600 MB/s = <strong>39 ms</strong>.</li>
+      <li>DDR5-6000: 1.000 MB ÷ 48.000 MB/s = <strong>21 ms</strong>.</li>
+    </ul>
+    <p>En la práctica, el tiempo lo decide el ancho de banda, no la latencia. <strong>Además</strong>, la DDR5 está organizada para atender más peticiones a la vez: divide cada módulo en dos subcanales y tiene más bancos internos. Mientras espera un dato, ya va preparando otros.</p>
+    <div class="nota"><p><strong>Conclusión:</strong> de DDR3 a DDR5 el CL ha subido porque cada ciclo dura cada vez menos. La espera real se ha mantenido entre 10 y 17 ns, mientras que la cantidad de datos por segundo se ha multiplicado. Por eso la DDR5 es más rápida.</p></div>
+
+    <h3>Dónde ver la latencia</h3>
+    <ul>
+      <li><strong>Etiqueta o ficha de la tienda:</strong> «CL30» o «30-36-36-76».</li>
+      <li><strong>CPU-Z, pestaña Memory:</strong> muestra CAS# Latency (CL), RAS# to CAS# Delay (tRCD), RAS# Precharge (tRP) y Cycle Time (tRAS). La pestaña SPD muestra los tiempos de cada módulo y sus perfiles XMP/EXPO.</li>
+      <li><strong>BIOS/UEFI:</strong> al activar el perfil XMP/EXPO se aplican los tiempos anunciados.</li>
+    </ul>
+
+    <h3>Ideas clave</h3>
+    <ul>
+      <li>Latencia = tiempo de espera; ancho de banda = cantidad de datos por segundo.</li>
+      <li>Cuanto más lejos del procesador está una memoria, más latencia tiene.</li>
+      <li>Los timings (CL-tRCD-tRP-tRAS) se miden en ciclos. Si dos memorias tienen la misma velocidad, cuanto más bajos, mejor.</li>
+      <li>Para comparar memorias de distinta velocidad, pasa el CL a nanosegundos.</li>
+    </ul>
+
+    <h2 id="instalacion">6. Instalación, comprobación y mantenimiento de la RAM</h2>
+    <h3>Antes de empezar: seguridad</h3>
+    <p>Los módulos de memoria se pueden estropear con la <strong>electricidad estática</strong> (ESD) que acumula nuestro cuerpo, aunque no notemos ninguna chispa.</p>
+    <ul>
+      <li>Apaga el equipo y <strong>desenchufa</strong> el cable de corriente. Después, pulsa el botón de encendido unos segundos para descargar la energía que queda.</li>
+      <li>Usa una <strong>pulsera antiestática</strong> conectada al chasis, o toca una parte metálica sin pintar de la caja antes de tocar nada.</li>
+      <li>Coge los módulos <strong>por los bordes</strong>. No toques los contactos dorados ni los chips.</li>
+      <li>Trabaja sobre una superficie que no sea moqueta ni plástico. Guarda los módulos en su <strong>bolsa antiestática</strong>.</li>
+    </ul>
+
+    <h3>Comprobar la compatibilidad</h3>
+    <ol>
+      <li>Mira en el manual de la placa base (o en la web del fabricante) qué tipo de memoria admite: generación (DDR4 o DDR5), formato (DIMM o SO-DIMM), capacidad máxima y velocidades.</li>
+      <li>Cuenta las ranuras libres. Muchas placas tienen 2 o 4 ranuras.</li>
+      <li>Si vas a ampliar, intenta que los módulos nuevos sean <strong>iguales</strong> a los que ya hay (misma capacidad, velocidad y, mejor, misma marca). Lo más seguro es comprar un <strong>kit</strong> de dos módulos.</li>
+      <li>En un portátil, comprueba antes que la RAM no esté soldada.</li>
+    </ol>
+
+    <h3>Instalar un módulo DIMM (sobremesa)</h3>
+    <ol>
+      <li>Abre la caja y localiza las ranuras de memoria, junto al procesador.</li>
+      <li>Si vas a poner dos módulos, usa las ranuras que indica el manual para el doble canal. En la mayoría de placas de 4 ranuras son la <strong>segunda y la cuarta</strong> contando desde el procesador (llamadas A2 y B2).</li>
+      <li>Abre los <strong>pestillos</strong> de la ranura. En algunas placas solo hay pestillo en un lado.</li>
+      <li>Alinea la <strong>muesca</strong> del módulo con la de la ranura. Si no coincide, está al revés o no es el tipo correcto. <strong>Nunca lo fuerces.</strong></li>
+      <li>Presiona el módulo hacia abajo con los dos pulgares, de forma firme y recta, hasta que los pestillos se cierren solos con un <strong>clic</strong>.</li>
+      <li>Cierra la caja, conecta el cable y enciende.</li>
+    </ol>
+    <p>En un <strong>portátil</strong> (SO-DIMM), el módulo se inserta inclinado unos 30-45º y luego se baja hasta que las pestañas laterales lo sujetan.</p>
+    <div class="nota"><p><strong>Primer arranque con DDR5:</strong> la primera vez que arranca con memoria nueva, la placa hace un «entrenamiento de memoria» (<em>memory training</em>) y la pantalla puede quedarse en negro 1 o 2 minutos. Es normal: hay que esperar y no apagar.</p></div>
+
+    <h3>Comprobar que funciona</h3>
+    <ul>
+      <li>En la <strong>BIOS/UEFI</strong>, la pantalla principal muestra la memoria total detectada y su velocidad.</li>
+      <li>En <strong>Windows</strong>: <em>Administrador de tareas</em> (Ctrl + Mayús + Esc) → <em>Rendimiento</em> → <em>Memoria</em>. Ahí se ve la cantidad, la velocidad, las ranuras usadas y el formato.</li>
+      <li>Programas gratuitos como <strong>CPU-Z</strong> (pestañas <em>Memory</em> y <em>SPD</em>) muestran el tipo, el canal y los datos de cada módulo.</li>
+      <li>En <strong>Linux</strong>: el comando <code>free -h</code> muestra la memoria total y la usada.</li>
+    </ul>
+
+    <h3>Averías típicas y diagnóstico</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Síntoma</th><th>Causa probable</th><th>Qué hacer</th></tr></thead>
+      <tbody>
+        <tr><td>El equipo enciende pero no da imagen, pita o se enciende el LED «DRAM» de la placa</td><td>Módulo mal insertado, incompatible o averiado</td><td>Volver a insertarlo. Probar con un solo módulo y en otra ranura</td></tr>
+        <tr><td>Detecta menos memoria de la instalada</td><td>Un módulo no hace buen contacto o está averiado</td><td>Revisar la inserción. Probar los módulos uno a uno</td></tr>
+        <tr><td>Pantallazos azules o reinicios al azar</td><td>Memoria defectuosa o perfil XMP/EXPO inestable</td><td>Desactivar XMP/EXPO y pasar un test de memoria</td></tr>
+        <tr><td>El equipo va muy lento con varios programas abiertos</td><td>Poca RAM</td><td>Ampliar memoria</td></tr>
+      </tbody>
+    </table></div>
+    <p>Herramientas para analizar la memoria:</p>
+    <ul>
+      <li><strong>Diagnóstico de memoria de Windows:</strong> viene incluido. Se abre escribiendo <code>mdsched</code> en el menú Inicio. Reinicia el equipo y comprueba la RAM.</li>
+      <li><strong>MemTest86:</strong> se arranca desde un pendrive, sin sistema operativo. Es más completo. Con que aparezca <strong>un solo error</strong>, el módulo es sospechoso.</li>
+    </ul>
+    <p>Los códigos de pitidos (<em>beep codes</em>) cambian según el fabricante de la BIOS: hay que consultar el manual de la placa. Muchas placas actuales tienen <strong>LED de diagnóstico</strong> (CPU, DRAM, VGA, BOOT) que indican dónde está el problema.</p>
+
+    <h3>Mantenimiento y reciclaje</h3>
+    <ul>
+      <li>La RAM no necesita mantenimiento habitual. Si hay suciedad, se limpia el polvo con <strong>aire comprimido</strong> y los contactos con un paño y <strong>alcohol isopropílico</strong>.</li>
+      <li>Los módulos retirados que funcionan se guardan en bolsa antiestática y <strong>etiquetados</strong> (tipo, capacidad, velocidad).</li>
+      <li>Los que estén averiados son <strong>residuos electrónicos (RAEE)</strong>: van a un punto limpio o al contenedor específico, nunca a la basura normal.</li>
+    </ul>
+
+    <h2 id="almacenamiento">7. Memoria y almacenamiento: no son lo mismo</h2>
+    <p>Muchas personas dicen «mi móvil tiene 256 de memoria» cuando hablan del almacenamiento. Conviene no confundirlos: la <strong>RAM</strong> es la mesa de trabajo (volátil, rápida, 8-32 GB) y el <strong>almacenamiento</strong> es el armario (permanente, más lento, 256 GB a varios TB). El libro de 2012 solo hablaba de discos duros; hoy lo habitual son los SSD.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Tipo</th><th>Cómo guarda los datos</th><th>Conexión</th><th>Velocidad aproximada</th><th>Uso típico hoy</th></tr></thead>
+      <tbody>
+        <tr><td>Disco duro (HDD)</td><td>Discos magnéticos que giran (5.400 o 7.200 rpm)</td><td>SATA</td><td>100-200 MB/s</td><td>Copias de seguridad y mucha capacidad barata</td></tr>
+        <tr><td>SSD SATA (2,5″)</td><td>Chips de memoria flash, sin piezas móviles</td><td>SATA</td><td>hasta 550 MB/s</td><td>Renovar equipos antiguos</td></tr>
+        <tr><td>SSD M.2 NVMe PCIe 3.0</td><td>Memoria flash</td><td>Ranura M.2 (PCIe)</td><td>hasta 3.500 MB/s</td><td>Equipos de oficina</td></tr>
+        <tr><td>SSD M.2 NVMe PCIe 4.0</td><td>Memoria flash</td><td>Ranura M.2 (PCIe)</td><td>hasta 7.000 MB/s</td><td>Lo más habitual en equipos nuevos</td></tr>
+        <tr><td>SSD M.2 NVMe PCIe 5.0</td><td>Memoria flash</td><td>Ranura M.2 (PCIe)</td><td>hasta 14.000 MB/s</td><td>Equipos de gama alta</td></tr>
+        <tr><td>Pendrive USB y tarjetas SD/microSD</td><td>Memoria flash</td><td>USB / lector de tarjetas</td><td>Muy variable</td><td>Transportar archivos, cámaras, móviles</td></tr>
+      </tbody>
+    </table></div>
+    <h3>Ideas clave</h3>
+    <ul>
+      <li>Los SSD usan <strong>memoria flash</strong>, que es un tipo de memoria <strong>no volátil</strong>. Por eso no pierden los datos al apagar.</li>
+      <li>Un SSD hace que el ordenador arranque en segundos. Cambiar un disco duro por un SSD es la mejora más notable en un equipo antiguo de oficina.</li>
+      <li>El formato más común de SSD M.2 es el <strong>2280</strong> (22 mm de ancho y 80 mm de largo).</li>
+      <li>Ojo: una ranura M.2 puede ser <strong>SATA</strong> o <strong>NVMe</strong>. Parecen iguales, así que hay que mirar el manual de la placa.</li>
+      <li>Cuando la RAM se llena, Windows usa parte del SSD como memoria de apoyo (el <strong>archivo de paginación</strong> o memoria virtual). Funciona, pero es mucho más lento que la RAM.</li>
+    </ul>
+    <p>Los discos y unidades de almacenamiento se estudian con más detalle en el apartado de dispositivos de almacenamiento.</p>
+
+    <h2 id="glosario">8. Glosario</h2>
+    <div class="tabla"><table>
+      <thead><tr><th>Término</th><th>Significado</th></tr></thead>
+      <tbody>
+        <tr><td>Bit / byte</td><td>Unidad mínima de información (0 o 1) / grupo de 8 bits</td></tr>
+        <tr><td>Volátil</td><td>Memoria que pierde los datos al apagar el equipo</td></tr>
+        <tr><td>RAM</td><td>Memoria principal, de lectura y escritura, volátil</td></tr>
+        <tr><td>ROM / flash</td><td>Memoria no volátil. Guarda la BIOS/UEFI y los datos de los SSD</td></tr>
+        <tr><td>Caché</td><td>Memoria muy rápida dentro del procesador (L1, L2, L3)</td></tr>
+        <tr><td>DIMM / SO-DIMM</td><td>Módulo de RAM de sobremesa / de portátil</td></tr>
+        <tr><td>DDR4 / DDR5</td><td>Generaciones actuales de memoria RAM</td></tr>
+        <tr><td>MT/s</td><td>Millones de transferencias por segundo. Mide la velocidad de la RAM</td></tr>
+        <tr><td>CL (latencia)</td><td>Ciclos de espera hasta que la memoria entrega los datos</td></tr>
+        <tr><td>Doble canal</td><td>Uso de dos módulos a la vez para casi duplicar la velocidad</td></tr>
+        <tr><td>XMP / EXPO</td><td>Perfil de la BIOS que pone la RAM a su velocidad anunciada</td></tr>
+        <tr><td>ESD</td><td>Descarga electrostática que puede dañar componentes</td></tr>
+        <tr><td>SSD / NVMe</td><td>Unidad de almacenamiento con memoria flash / sistema rápido de conexión de SSD por PCIe</td></tr>
+      </tbody>
+    </table></div>
+    <p>Para practicar lo aprendido, tienes las <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/actividades-memoria/">actividades</a> y el <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/test-memoria/">test de repaso</a> del tema.</p>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>
