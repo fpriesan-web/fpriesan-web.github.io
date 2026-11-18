@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La memoria del ordenador · Apuntes de clase</title>
-  <meta name="description" content="Tema 3 de 1º CFGB: qué es la memoria, cómo se mide, tipos de memoria, RAM DDR4 y DDR5, latencia, instalación y diagnóstico, y diferencia con el almacenamiento.">
+  <meta name="description" content="Tema 3 de 1º CFGB: qué es la memoria, cómo se mide, tipos de memoria, RAM DDR4 y DDR5, latencia, instalación y diagnóstico, diferencia con el almacenamiento, y memoria virtual y paginación.">
   <link rel="stylesheet" href="/css/estilo.css?v=8">
   <script src="/js/tema.js?v=1"></script>
   <script src="/js/apuntes-mapa.js?v=6" defer></script>
@@ -33,7 +33,8 @@
       <a href="#latencia">5. La latencia de la memoria</a>
       <a href="#instalacion">6. Instalación, comprobación y mantenimiento de la RAM</a>
       <a href="#almacenamiento">7. Memoria y almacenamiento: no son lo mismo</a>
-      <a href="#glosario">8. Glosario</a>
+      <a href="#memoria-virtual">8. Memoria virtual y paginación</a>
+      <a href="#glosario">9. Glosario</a>
     </nav>
 
     <h2 id="que-es">1. ¿Qué es la memoria?</h2>
@@ -338,11 +339,99 @@
       <li>Un SSD hace que el ordenador arranque en segundos. Cambiar un disco duro por un SSD es la mejora más notable en un equipo antiguo de oficina.</li>
       <li>El formato más común de SSD M.2 es el <strong>2280</strong> (22 mm de ancho y 80 mm de largo).</li>
       <li>Ojo: una ranura M.2 puede ser <strong>SATA</strong> o <strong>NVMe</strong>. Parecen iguales, así que hay que mirar el manual de la placa.</li>
-      <li>Cuando la RAM se llena, Windows usa parte del SSD como memoria de apoyo (el <strong>archivo de paginación</strong> o memoria virtual). Funciona, pero es mucho más lento que la RAM.</li>
+      <li>Cuando la RAM se llena, Windows usa parte del SSD como memoria de apoyo (el <strong>archivo de paginación</strong> o memoria virtual). Funciona, pero es mucho más lento que la RAM. Lo veremos en el <a href="#memoria-virtual">apartado 8</a>.</li>
     </ul>
     <p>Los discos y unidades de almacenamiento se estudian con más detalle en el apartado de dispositivos de almacenamiento.</p>
 
-    <h2 id="glosario">8. Glosario</h2>
+    <h2 id="memoria-virtual">8. Memoria virtual y paginación</h2>
+    <h3>¿Qué pasa cuando se llena la RAM?</h3>
+    <p>Cada programa abierto ocupa un trozo de RAM. Si abrimos muchos (el navegador con 30 pestañas, Word, Teams, un vídeo...), llega un momento en que la RAM no da para más. El ordenador no se bloquea: el sistema operativo <strong>usa una parte del disco como si fuera RAM</strong>. A esto se le llama <strong>memoria virtual</strong>.</p>
+    <div class="nota"><p><strong>Analogía de la mesa.</strong> La RAM es la mesa de trabajo y el disco es el armario. Cuando la mesa está llena, guardas en una caja junto a la mesa los papeles que no estás usando en ese momento. Si los vuelves a necesitar, los sacas de la caja. Funciona, pero es más lento que tenerlos encima de la mesa.</p></div>
+    <p>Esa «caja» es un archivo especial del disco:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Sistema</th><th>Nombre</th><th>Dónde está</th></tr></thead>
+      <tbody>
+        <tr><td>Windows</td><td>Archivo de paginación (<code>pagefile.sys</code>)</td><td>En la raíz de C:, oculto</td></tr>
+        <tr><td>Linux</td><td>Swap (intercambio)</td><td>Una partición o un archivo <code>swapfile</code></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>La paginación: la memoria en trozos iguales</h3>
+    <p>Para poder mover datos entre la RAM y el disco, el sistema operativo divide la memoria en trozos del mismo tamaño llamados <strong>páginas</strong>. Lo normal es que cada página mida <strong>4 KB</strong>.</p>
+    <ul>
+      <li>Las páginas que se están usando se quedan en la RAM.</li>
+      <li>Las que llevan un rato sin usarse se mandan al disco (al archivo de paginación) para dejar sitio.</li>
+      <li>Cuando un programa necesita una página que está en el disco, se produce un <strong>fallo de página</strong>: el sistema la trae de vuelta a la RAM. No es una avería, es algo normal, pero cada fallo obliga a esperar al disco.</li>
+    </ul>
+    <figure class="figura"><img src="paginacion.jpg" width="1200" height="540" loading="lazy" alt="Esquema: a la izquierda la RAM (la mesa) con ocho páginas de Word, Navegador, Vídeo y Teams, una de ellas libre; a la derecha el disco o SSD (el armario) con el archivo de paginación pagefile.sys y páginas de Correo, Excel, Navegador y Fotos. Una flecha verde envía al disco una página que no se usa y una flecha roja trae una página a la RAM (fallo de página: hay que esperar). Cada página mide 4 KB."><figcaption>La memoria se divide en páginas de 4 KB que van y vienen entre la RAM y el disco.</figcaption></figure>
+
+    <h3>¿Por qué es más lenta?</h3>
+    <p>Porque el disco es muchísimo más lento que la RAM (recuerda la tabla de latencias):</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Memoria</th><th>Latencia aproximada</th><th>Comparado con la RAM</th></tr></thead>
+      <tbody>
+        <tr><td>RAM</td><td>60-100 ns</td><td>1 vez</td></tr>
+        <tr><td>SSD NVMe</td><td>20-100 µs</td><td>unas 1.000 veces más lento</td></tr>
+        <tr><td>Disco duro (HDD)</td><td>5-10 ms</td><td>unas 100.000 veces más lento</td></tr>
+      </tbody>
+    </table></div>
+    <p>Si la RAM se queda muy corta, el equipo se pasa el tiempo moviendo páginas de un lado a otro. Los síntomas son claros: <strong>el ordenador va a tirones, tarda en cambiar de ventana y el disco está al 100 %</strong>. La solución no es tocar el archivo de paginación, sino <strong>ampliar la RAM</strong> o cerrar programas.</p>
+
+    <h3>Ventajas e inconvenientes</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Ventajas</th><th>Inconvenientes</th></tr></thead>
+      <tbody>
+        <tr><td>Se pueden abrir más programas de los que caben en la RAM</td><td>Es mucho más lenta que la RAM</td></tr>
+        <tr><td>Evita que los programas se cierren por falta de memoria</td><td>Ocupa espacio en el disco</td></tr>
+        <tr><td></td><td>Si se usa mucho, el equipo va muy lento</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Cómo verla en el ordenador</h3>
+    <p><strong>Administrador de tareas → Rendimiento → Memoria.</strong> El dato <strong>Confirmado</strong> muestra dos números, por ejemplo <em>12,4 / 18,2 GB</em>:</p>
+    <ul>
+      <li>12,4 GB es la memoria que piden ahora los programas.</li>
+      <li>18,2 GB es el límite: la RAM (16 GB) más el archivo de paginación (unos 2,2 GB).</li>
+    </ul>
+    <p>Windows también puede <strong>comprimir</strong> páginas en la RAM antes de mandarlas al disco: es el valor «En uso (Comprimida)».</p>
+    <p><strong>Ver o cambiar el tamaño:</strong> Configuración avanzada del sistema → Rendimiento → Configuración → Opciones avanzadas → Memoria virtual → Cambiar. Lo recomendado es dejar marcada la opción <strong>«Administrar automáticamente el tamaño del archivo de paginación»</strong>.</p>
+    <p><strong>En Linux:</strong> <code>free -h</code> muestra la RAM y, en la última línea, la swap (total, usada y libre).</p>
+
+    <h3>Un cálculo sencillo</h3>
+    <p>¿Cuántas páginas de 4 KB caben en 8 GB de RAM?</p>
+    <div class="nota">
+      <p class="formula">8 GB = 8 × 1.024 × 1.024 KB = 8.388.608 KB</p>
+      <p class="formula">8.388.608 KB ÷ 4 KB = <strong>2.097.152 páginas</strong></p>
+    </div>
+
+    <h3>Para recordar</h3>
+    <ul>
+      <li><strong>Memoria virtual:</strong> usar una parte del disco como si fuera RAM cuando esta se llena.</li>
+      <li><strong>Paginación:</strong> dividir la memoria en páginas (normalmente de 4 KB) para moverlas entre RAM y disco.</li>
+      <li><strong>Fallo de página:</strong> el programa necesita una página que está en el disco y hay que traerla.</li>
+      <li>La memoria virtual <strong>no sustituye</strong> a la RAM: si se usa mucho, el equipo va lento. Lo que hay que hacer es ampliar la RAM.</li>
+    </ul>
+
+    <h3>Preguntas de repaso</h3>
+    <ol>
+      <li>¿Cómo se llama el archivo de memoria virtual en Windows?</li>
+      <li>¿Qué es una página y cuánto mide normalmente?</li>
+      <li>Un equipo con 4 GB de RAM va a tirones y el disco está al 100 %. ¿Qué le pasa y qué harías?</li>
+      <li>¿Cuántas páginas de 4 KB caben en 16 GB?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones</summary>
+      <div>
+        <ol>
+          <li><code>pagefile.sys</code>.</li>
+          <li>Un trozo de memoria de tamaño fijo, normalmente de 4 KB.</li>
+          <li>Le falta RAM y usa mucho la memoria virtual; hay que ampliar la RAM.</li>
+          <li>16 × 1.024 × 1.024 ÷ 4 = <strong>4.194.304 páginas</strong>.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="glosario">9. Glosario</h2>
     <div class="tabla"><table>
       <thead><tr><th>Término</th><th>Significado</th></tr></thead>
       <tbody>
@@ -359,6 +448,10 @@
         <tr><td>XMP / EXPO</td><td>Perfil de la BIOS que pone la RAM a su velocidad anunciada</td></tr>
         <tr><td>ESD</td><td>Descarga electrostática que puede dañar componentes</td></tr>
         <tr><td>SSD / NVMe</td><td>Unidad de almacenamiento con memoria flash / sistema rápido de conexión de SSD por PCIe</td></tr>
+        <tr><td>Memoria virtual</td><td>Parte del disco que el sistema usa como si fuera RAM cuando esta se llena</td></tr>
+        <tr><td>Página</td><td>Trozo de memoria de tamaño fijo (normalmente 4 KB) que se mueve entre RAM y disco</td></tr>
+        <tr><td>Fallo de página</td><td>Un programa necesita una página que está en el disco y hay que traerla a la RAM</td></tr>
+        <tr><td>Archivo de paginación / swap</td><td>Archivo (pagefile.sys en Windows) o partición (swap en Linux) donde se guardan las páginas</td></tr>
       </tbody>
     </table></div>
     <p>Para practicar lo aprendido, tienes las <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/actividades-memoria/">actividades</a> y el <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/test-memoria/">test de repaso</a> del tema.</p>
