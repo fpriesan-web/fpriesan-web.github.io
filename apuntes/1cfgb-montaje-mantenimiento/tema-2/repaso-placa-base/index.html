@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntas de repaso: la placa base · Apuntes de clase</title>
+  <meta name="description" content="Tema 2 de 1º CFGB: preguntas de repaso sobre factores de forma, separadores, pitidos y BIOS, con soluciones.">
+  <link rel="stylesheet" href="/css/estilo.css?v=8">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=7" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-2/">Tema 2</a></p>
+    <span class="etiqueta">Recurso · Preguntas de repaso</span>
+    <h1>Preguntas de repaso: la placa base</h1>
+    <p class="entradilla">Preguntas para repasar los <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-2/placa-base-ii/">apuntes de La placa base (II)</a>. Cada bloque tiene la solución en un desplegable: inténtalo antes de abrirlo.</p>
+
+    <h2 id="factores">Factores de forma</h2>
+    <ol>
+      <li>¿Qué es el factor de forma de una placa base?</li>
+      <li>Enumera 3 tipos de factores de forma.</li>
+      <li>¿Qué significa E-ATX?</li>
+      <li>Ordena de mayor a menor: ATX, Pico-ITX, Micro-ATX y E-ATX.</li>
+      <li>¿En qué se diferencia una placa BTX de una ATX?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones de las preguntas 1 a 5</summary>
+      <div>
+        <ol>
+          <li>Es el formato de la placa. Determina su <strong>tamaño y su orientación</strong> con respecto a la caja, el <strong>tipo de fuente de alimentación</strong> necesaria y los <strong>periféricos que pueden integrarse</strong> en la placa.</li>
+          <li>Por ejemplo: <strong>ATX</strong>, <strong>Micro-ATX</strong>, <strong>E-ATX</strong>, <strong>Mini-ITX</strong>, BTX, LPX, NLX, Nano-ITX o Pico-ITX.</li>
+          <li><strong>Extended ATX</strong>: una versión ampliada de ATX (305 × 330 mm). Es el formato más grande de los ordenadores personales: deja más espacio alrededor de la CPU y admite hasta 8 ranuras de RAM y más ranuras PCI-Express y M.2.</li>
+          <li><strong>E-ATX</strong> (305 × 330 mm), <strong>ATX</strong> (305 × 244 mm), <strong>Micro-ATX</strong> (244 × 244 mm) y <strong>Pico-ITX</strong> (100 × 72 mm).</li>
+          <li>BTX, que Intel presentó en 2004 para mejorar la refrigeración, <strong>cambia por completo la distribución de los componentes</strong>: la CPU, la RAM y los conectores van en otro sitio. No es compatible con las cajas ATX y tuvo muy poca aceptación.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="separadores">Separadores</h2>
+    <ol start="6">
+      <li>Describe las 2 funciones principales de los separadores.</li>
+      <li>Si instalo más separadores de los especificados en la placa, o en puntos distintos de los existentes, ¿qué puede ocurrir?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones de las preguntas 6 y 7</summary>
+      <div>
+        <ol start="6">
+          <li>1) <strong>Elevar la placa base</strong> para que no toque el metal de la caja y evitar un cortocircuito. 2) <strong>Sujetar la placa</strong> firmemente en su sitio.</li>
+          <li>Si un separador toca las pistas o las soldaduras de la parte trasera de la placa, se produce un <strong>cortocircuito</strong> al encender. Puede que el ordenador no arranque (la fuente activa su protección) o que la placa base o el procesador se dañen para siempre.</li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="arranque">Pitidos y BIOS</h2>
+    <ol start="8">
+      <li>Al encender un PC, este no arranca y suenan 3 pitidos. ¿Qué debemos hacer?</li>
+      <li>El procesador encaja en el socket pero la placa no lo reconoce. ¿Qué haría falta? Elige la correcta:
+        <ul>
+          <li>Cambiar la caja</li>
+          <li>Actualizar la BIOS</li>
+          <li>Quitar la pila</li>
+          <li>Cambiar la placa</li>
+        </ul>
+      </li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones de las preguntas 8 y 9</summary>
+      <div>
+        <ol start="8">
+          <li>Primero, <strong>mirar en el manual de la placa qué significan 3 pitidos</strong>, porque cambia según el fabricante de la BIOS. En AMIBIOS, 3 pitidos cortos indican un fallo de la memoria RAM. Entonces: apagar y desenchufar, <strong>sacar y volver a colocar los módulos de RAM</strong>, probar con un solo módulo y en otra ranura y, si arranca, pasar un test de memoria.</li>
+          <li><strong>Actualizar la BIOS.</strong> Algunos procesadores nuevos usan el mismo socket que los anteriores, pero la placa necesita una versión de BIOS más reciente para reconocerlos.</li>
+        </ol>
+      </div>
+    </details>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>

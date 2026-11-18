@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Actividades: la memoria · Apuntes de clase</title>
-  <meta name="description" content="Tema 3 de 1º CFGB: actividades sobre la memoria del ordenador para pensar, calcular, investigar y practicar en el taller, con soluciones.">
+  <meta name="description" content="Tema 3 de 1º CFGB: actividades sobre la memoria del ordenador para pensar, calcular, investigar y practicar en el taller, con soluciones: preguntas cortas, problemas y la etiqueta de una memoria.">
   <link rel="stylesheet" href="/css/estilo.css?v=8">
   <script src="/js/tema.js?v=1"></script>
-  <script src="/js/apuntes-mapa.js?v=6" defer></script>
+  <script src="/js/apuntes-mapa.js?v=7" defer></script>
   <script src="/js/navegacion.js?v=1" defer></script>
 </head>
 <body>
@@ -80,6 +80,202 @@
       <li>Siguiendo las normas de seguridad, retira e instala la memoria de un equipo del aula. Después comprueba en la BIOS/UEFI y en el Administrador de tareas que se detecta toda la memoria.</li>
       <li>Ejecuta el Diagnóstico de memoria de Windows (<code>mdsched</code>) y anota el resultado en una ficha de incidencias.</li>
     </ol>
+
+    <h2 id="preguntas">Preguntas cortas</h2>
+    <ol start="12">
+      <li>Nombra 3 programas de diagnóstico de memoria.</li>
+      <li>¿Qué es la latencia?</li>
+      <li>Las tarjetas gráficas tienen su propia RAM. ¿Qué ocurre en el caso de las tarjetas gráficas integradas en la placa base?</li>
+      <li>Describe 2 formas de abrir el Administrador de tareas.</li>
+      <li>¿Se puede ampliar la memoria RAM en un portátil con 16 GB de RAM soldada a la placa? Explica tu respuesta.</li>
+      <li>SRAM y DRAM: ¿dónde se usa cada una?</li>
+      <li>En cuanto a su funcionamiento, ¿cuál es la principal diferencia entre la SRAM y la DRAM?</li>
+      <li>Nombra 3 formatos de módulos de memoria (DDR <strong>no</strong> es un formato).</li>
+      <li>Almacenamiento no volátil de datos: dime 3 tipos.</li>
+      <li>¿Qué almacena la memoria caché?</li>
+      <li>¿Y los registros?</li>
+      <li>El voltaje influye en la velocidad de la memoria y del procesador. Esto puede ocurrir de dos maneras: explica cada una de ellas.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones de las preguntas 12 a 23</summary>
+      <div>
+        <ol start="12">
+          <li>El <strong>Diagnóstico de memoria de Windows</strong> (<code>mdsched</code>), <strong>MemTest86</strong> (o su versión libre, Memtest86+) y otros como <strong>TestMem5</strong> u <strong>OCCT</strong>. Ojo: CPU-Z muestra los datos de la memoria, pero no la comprueba.</li>
+          <li>Es el <strong>tiempo de espera</strong> desde que el procesador pide un dato hasta que empieza a recibirlo. En la RAM se mide en ciclos de reloj (CL) o en nanosegundos. Cuanto más baja, mejor.</li>
+          <li>No tienen memoria propia: <strong>usan una parte de la RAM del sistema</strong> (memoria compartida). Esa parte queda reservada para la gráfica y los programas ya no la pueden usar.</li>
+          <li>Con <strong>Ctrl + Mayús + Esc</strong>; con <strong>Ctrl + Alt + Supr</strong> y eligiendo «Administrador de tareas»; con <strong>clic derecho en la barra de tareas</strong> (o en el botón Inicio) y «Administrador de tareas»; o escribiendo <code>taskmgr</code> en Ejecutar (Windows + R).</li>
+          <li>La memoria soldada <strong>no se puede cambiar ni ampliar</strong>. Solo se podría ampliar si, además de la memoria soldada, el portátil tiene una <strong>ranura SO-DIMM libre</strong> (algunos modelos la tienen). Hay que mirarlo en el manual antes de comprar memoria.</li>
+          <li>La <strong>SRAM</strong> se usa en la <strong>memoria caché</strong> del procesador. La <strong>DRAM</strong> se usa como <strong>memoria principal</strong> (los módulos de RAM DDR4 y DDR5).</li>
+          <li>La <strong>DRAM necesita «refrescarse»</strong> (recargarse) miles de veces por segundo para no perder los datos. La <strong>SRAM no necesita refresco</strong> mientras tenga corriente. Por eso la SRAM es más rápida, pero también más cara y ocupa más.</li>
+          <li><strong>DIMM</strong> (sobremesa), <strong>SO-DIMM</strong> (portátiles y miniPC) y <strong>CAMM2</strong> (portátiles nuevos). Formatos antiguos: SIMM, FB-DIMM y Micro-DIMM.</li>
+          <li>Por ejemplo: <strong>disco duro (HDD)</strong>, <strong>SSD</strong> (SATA o NVMe), <strong>pendrive USB y tarjetas SD</strong>, <strong>CD/DVD</strong>. También la memoria flash donde está la BIOS/UEFI.</li>
+          <li>Una <strong>copia de los datos e instrucciones que el procesador va a usar enseguida</strong> (o que acaba de usar), para no tener que ir a buscarlos a la RAM, que es más lenta.</li>
+          <li>El <strong>dato o la instrucción con la que la CPU está operando en ese instante</strong>. Están dentro del procesador y son la memoria más rápida y más pequeña (unos pocos bytes cada uno).</li>
+          <li>
+            <p><strong>1. Subiendo el voltaje para ir más rápido (overclocking).</strong> Para que una memoria o un procesador funcione a más frecuencia de la que trae de serie, suele hacer falta darle algo más de voltaje para que siga estable. Por ejemplo, una DDR4-3600 con el perfil XMP activado funciona a 1,35 V en lugar de los 1,2 V normales. A cambio, gasta más energía y se calienta más.</p>
+            <p><strong>2. Gracias a componentes más pequeños, que necesitan menos voltaje.</strong> En cada generación los transistores son más pequeños. Eso les permite trabajar más rápido y, a la vez, con menos voltaje. Por eso cada generación de RAM es más rápida y gasta menos: DDR3 a 1,5 V, DDR4 a 1,2 V y DDR5 a 1,1 V. Ojo: no es que bajar el voltaje haga ir más rápido. Lo que ocurre es que los componentes más pequeños permiten las dos cosas, y al calentarse menos se puede subir más la frecuencia.</p>
+          </li>
+        </ol>
+      </div>
+    </details>
+
+    <h2 id="ordenar">Ordenar y completar</h2>
+    <ol start="24">
+      <li>Ordena de mayor a menor velocidad (1 = la más rápida, 6 = la más lenta) e indica si cada memoria es volátil: RAM, SSD, registros, caché L2, CD/DVD y HDD.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 24</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Posición</th><th>Nombre</th><th>¿Es volátil?</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Registros</td><td>Sí</td></tr>
+            <tr><td>2</td><td>Caché L2</td><td>Sí</td></tr>
+            <tr><td>3</td><td>RAM</td><td>Sí</td></tr>
+            <tr><td>4</td><td>SSD</td><td>No</td></tr>
+            <tr><td>5</td><td>HDD</td><td>No</td></tr>
+            <tr><td>6</td><td>CD/DVD</td><td>No</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+    <ol start="25">
+      <li>Ordena de mayor a menor según su uso de RAM (1 = el que más usa): Windows, navegador con 5 pestañas, Bloc de notas, juego de última generación (CoD, Apex, Cyberpunk...) y servidor de Fortnite en un evento mundial.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 25</summary>
+      <div>
+        <ol>
+          <li><strong>Servidor de Fortnite en un evento mundial:</strong> cientos de GB, o incluso varios TB repartidos entre muchos servidores.</li>
+          <li><strong>Juego de última generación:</strong> entre 8 y 16 GB (por eso se recomiendan 32 GB para jugar).</li>
+          <li><strong>Windows:</strong> unos 2-4 GB solo para el sistema.</li>
+          <li><strong>Navegador con 5 pestañas:</strong> entre 0,5 y 1,5 GB, según las páginas.</li>
+          <li><strong>Bloc de notas:</strong> unos pocos MB.</li>
+        </ol>
+        <p>Son cifras orientativas: dependen del programa, de la versión y de la RAM que tenga el equipo.</p>
+      </div>
+    </details>
+    <ol start="26">
+      <li>Completa el glosario de términos: standoff, HDD, SSD, motherboard (MB), power supply (P.S.), LGA, RAM, ROM, SRAM y DRAM.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 26</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Término</th><th>Significado</th></tr></thead>
+          <tbody>
+            <tr><td>Standoff</td><td>Separador: pieza que sujeta la placa base a la caja y la mantiene separada del metal</td></tr>
+            <tr><td>HDD</td><td><em>Hard Disk Drive</em>: disco duro</td></tr>
+            <tr><td>SSD</td><td><em>Solid State Drive</em>: unidad de estado sólido (memoria flash)</td></tr>
+            <tr><td>Motherboard (MB)</td><td>Placa base</td></tr>
+            <tr><td>Power supply (P.S.)</td><td>Fuente de alimentación</td></tr>
+            <tr><td>LGA</td><td><em>Land Grid Array</em>: socket con los pines en la placa base</td></tr>
+            <tr><td>RAM</td><td><em>Random Access Memory</em>: memoria de acceso aleatorio</td></tr>
+            <tr><td>ROM</td><td><em>Read Only Memory</em>: memoria de solo lectura</td></tr>
+            <tr><td>SRAM</td><td><em>Static RAM</em>: RAM estática (caché)</td></tr>
+            <tr><td>DRAM</td><td><em>Dynamic RAM</em>: RAM dinámica (memoria principal)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+    <ol start="27">
+      <li>Ordena DDR5, DDR3 y DDR4 según su velocidad (1 = la más rápida) y según su voltaje (1 = la de más voltaje).</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución de la actividad 27</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Nombre</th><th>Velocidad</th><th>Voltaje</th></tr></thead>
+          <tbody>
+            <tr><td>DDR5</td><td>1</td><td>3 (1,1 V)</td></tr>
+            <tr><td>DDR4</td><td>2</td><td>2 (1,2 V)</td></tr>
+            <tr><td>DDR3</td><td>3</td><td>1 (1,5 V)</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <h2 id="problemas">Problemas</h2>
+    <div class="nota"><p><strong>Recuerda.</strong> Los fabricantes cuentan de 1.000 en 1.000 y Windows de 1.024 en 1.024. Para pasar de lo anunciado a lo que muestra Windows: GB en Windows = bytes ÷ (1.024 × 1.024 × 1.024).</p></div>
+    <h3>Problema 1</h3>
+    <p>Un disco duro se vende como de 3 TB. ¿Cuántos GB mostrará Windows? ¿Y cuántos TB?</p>
+    <details class="solucion">
+      <summary>Ver solución del problema 1</summary>
+      <div>
+        <p class="formula">3 TB = 3.000.000.000.000 bytes</p>
+        <p class="formula">3.000.000.000.000 ÷ 1.073.741.824 = <strong>2.794 GB</strong> aprox.</p>
+        <p class="formula">2.794 GB ÷ 1.024 = <strong>2,73 TB</strong></p>
+      </div>
+    </details>
+    <h3>Problema 2</h3>
+    <p>Tienes un SSD de 512 GB y un HDD de 2 TB. Calcula cuántos GB «faltan» en cada uno al verlos en Windows y qué porcentaje supone sobre lo anunciado.</p>
+    <details class="solucion">
+      <summary>Ver solución del problema 2</summary>
+      <div>
+        <ul>
+          <li><strong>SSD:</strong> 512.000.000.000 ÷ 1.073.741.824 = 476,8 GB. Faltan 512 − 476,8 = <strong>35,2 GB</strong>, un <strong>6,9 %</strong> (35,2 ÷ 512 × 100).</li>
+          <li><strong>HDD:</strong> 2.000.000.000.000 ÷ 1.073.741.824 = 1.862,6 GB. Faltan 2.000 − 1.862,6 = <strong>137,4 GB</strong>, también un <strong>6,9 %</strong>.</li>
+        </ul>
+        <p>El porcentaje es el mismo porque no se pierde nada: es la diferencia entre contar de 1.000 en 1.000 y de 1.024 en 1.024.</p>
+      </div>
+    </details>
+    <h3>Problema 3</h3>
+    <p>Tienes que hacer una copia de seguridad de <strong>1.850 GB</strong> (medidos en Windows) y solo tienes disponible un disco duro comercial de <strong>2 TB</strong>. Un compañero te dice que no lo intentes porque «los discos siempre pierden un 10 % de capacidad y se quedará en 1.800 GB». ¿Tiene razón o cabe la copia? Demuéstralo.</p>
+    <details class="solucion">
+      <summary>Ver solución del problema 3</summary>
+      <div>
+        <p>No tiene razón. Un disco de 2 TB aparece en Windows con 2.000.000.000.000 ÷ 1.073.741.824 = <strong>1.862,6 GB</strong>. La diferencia es de un 6,9 %, no de un 10 %.</p>
+        <p>Como 1.862,6 GB es más que 1.850 GB, <strong>la copia cabe</strong>, aunque muy justa: sobran unos 12 GB.</p>
+      </div>
+    </details>
+    <h3>Problema 4</h3>
+    <p>Comparamos dos equipos con IPC 5 (instrucciones por ciclo). El portátil tiene 8 núcleos a 2,5 GHz y el de sobremesa, 4 núcleos a 4 GHz.</p>
+    <p>a) ¿Cuál hace más instrucciones por segundo usando todos los núcleos?<br>b) ¿Y con un programa que solo usa 1 núcleo?</p>
+    <details class="solucion">
+      <summary>Ver solución del problema 4</summary>
+      <div>
+        <p class="formula">Instrucciones por segundo = núcleos × frecuencia (GHz) × IPC (en miles de millones)</p>
+        <p>a) Portátil: 8 × 2,5 × 5 = <strong>100.000 millones/s</strong>. Sobremesa: 4 × 4 × 5 = 80.000 millones/s. <strong>Gana el portátil.</strong></p>
+        <p>b) Portátil: 1 × 2,5 × 5 = 12.500 millones/s. Sobremesa: 1 × 4 × 5 = <strong>20.000 millones/s</strong>. <strong>Gana el sobremesa.</strong></p>
+      </div>
+    </details>
+    <h3>Problema 5</h3>
+    <p>Un programa de edición de vídeo necesita 1.300.000 millones de instrucciones. Se ejecuta en un procesador de 3 GHz con 8 núcleos e IPC 5.</p>
+    <p>a) ¿Cuánto tarda?<br>b) Si quisiéramos que tardara la mitad con el mismo número de núcleos e IPC, ¿a qué frecuencia tendría que ir?<br>c) ¿Y cuántos núcleos harían falta manteniendo los 3 GHz?</p>
+    <details class="solucion">
+      <summary>Ver solución del problema 5</summary>
+      <div>
+        <p class="formula">Instrucciones por segundo = 8 × 3 × 5 = 120.000 millones/s</p>
+        <p>a) 1.300.000 millones ÷ 120.000 millones/s = <strong>10,8 segundos</strong> aprox.</p>
+        <p>b) Para tardar la mitad hay que hacer el doble de instrucciones por segundo: <strong>6 GHz</strong>.</p>
+        <p>c) O bien el doble de núcleos: <strong>16 núcleos</strong>.</p>
+      </div>
+    </details>
+
+    <h2 id="etiqueta">La etiqueta de una memoria</h2>
+    <p>Fíjate en esta etiqueta de un módulo de memoria:</p>
+    <figure class="figura"><img src="etiqueta-kingston.jpg" width="1200" height="400" loading="lazy" alt="Etiqueta de un módulo Kingston Fury con estos datos rodeados en rojo: Kingston Fury, DDR4, 3600, 16GB, PC4-28800, CL16-19-19-39 y 1.35V. También pone XMP 2.0 Ready."><figcaption>Etiqueta de un módulo de memoria Kingston Fury.</figcaption></figure>
+    <ol start="28">
+      <li>Explica el significado de los datos marcados en rojo: Kingston Fury, DDR4, 3600, 16GB, CL16 y 1.35V.</li>
+      <li>PC4-28800 es el ancho de banda teórico (capacidad máxima de transferencia), donde PC4 indica que es una memoria DDR4. Teniendo en cuenta los datos de la etiqueta, ¿de dónde sale esta cifra?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver soluciones de las actividades 28 y 29</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Dato</th><th>Significado</th></tr></thead>
+          <tbody>
+            <tr><td>Kingston Fury</td><td>Fabricante (Kingston) y gama del producto (Fury, pensada para juegos y alto rendimiento)</td></tr>
+            <tr><td>DDR4</td><td>Generación de la memoria. Solo sirve en placas con ranuras DDR4</td></tr>
+            <tr><td>3600</td><td>Velocidad: 3.600 MT/s (con el perfil XMP activado)</td></tr>
+            <tr><td>16GB</td><td>Capacidad del módulo</td></tr>
+            <tr><td>CL16</td><td>Latencia CAS: 16 ciclos de espera desde que se pide un dato hasta que sale. Es el primero de los cuatro tiempos (16-19-19-39 = CL-tRCD-tRP-tRAS). En nanosegundos: 16 × 2.000 ÷ 3.600 = 8,9 ns</td></tr>
+            <tr><td>1.35V</td><td>Voltaje con el perfil XMP activado. Sin él, una DDR4 funciona a 1,2 V</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>PC4-28800:</strong> se multiplica la velocidad por 8, porque el bus de memoria es de 64 bits (8 bytes): <span class="formula">3.600 × 8 = 28.800 MB/s</span>.</p>
+      </div>
+    </details>
   </main>
   <footer class="contenedor pie">Materiales de uso educativo.</footer>
 </body>
