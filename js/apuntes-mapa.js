@@ -16,6 +16,11 @@ window.MAPA_APUNTES = [
         { slug: 'la-memoria', tipo: 'Apuntes', titulo: 'La memoria del ordenador' },
         { slug: 'actividades-memoria', tipo: 'Actividades', titulo: 'Actividades sobre la memoria' },
         { slug: 'test-memoria', tipo: 'Test', titulo: 'Test de repaso' }
+      ] },
+      { slug: 'tema-4', num: 4, titulo: 'El chipset', materiales: [
+        { slug: 'el-chipset', tipo: 'Apuntes', titulo: 'El chipset de la placa base' },
+        { slug: 'actividades-chipset', tipo: 'Actividades', titulo: 'Actividades sobre el chipset' },
+        { slug: 'test-chipset', tipo: 'Test', titulo: 'Test de repaso' }
       ] }
     ]
   },

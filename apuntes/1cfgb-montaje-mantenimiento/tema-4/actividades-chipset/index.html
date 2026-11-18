@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actividades: el chipset · Apuntes de clase</title>
+  <meta name="description" content="Tema 4 de 1º CFGB: actividades sobre el chipset de la placa base, con la solución debajo de cada una, y actividades para investigar y para el aula y el taller.">
+  <link rel="stylesheet" href="/css/estilo.css?v=8">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=8" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-4/">Tema 4</a></p>
+    <span class="etiqueta">Recurso · Actividades</span>
+    <h1>Actividades: el chipset de la placa base</h1>
+    <p class="entradilla">Actividades para repasar los <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-4/el-chipset/">apuntes del tema</a>. Las primeras tienen la solución en un desplegable justo debajo: inténtalo antes de abrirlo. Al final están las actividades para investigar y para el aula y el taller.</p>
+
+    <h2 id="actividades">Actividades con solución</h2>
+    <h3>Actividad 1. ¿Qué chipset tiene?</h3>
+    <p>Indica el chipset, la marca del procesador que admite y la gama (básica, media o alta) de estas placas base:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Placa base</th><th>Chipset</th><th>Intel o AMD</th><th>Gama</th></tr></thead>
+      <tbody>
+        <tr><td>MSI PRO H610M-E</td><td></td><td></td><td></td></tr>
+        <tr><td>ASUS TUF GAMING B650-PLUS</td><td></td><td></td><td></td></tr>
+        <tr><td>Gigabyte Z890 AORUS ELITE</td><td></td><td></td><td></td></tr>
+        <tr><td>ASRock A620M-HDV</td><td></td><td></td><td></td></tr>
+        <tr><td>ASUS ROG STRIX X870E-E GAMING</td><td></td><td></td><td></td></tr>
+        <tr><td>MSI MAG B860 TOMAHAWK</td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div>
+        <div class="tabla"><table>
+          <thead><tr><th>Placa base</th><th>Chipset</th><th>Intel o AMD</th><th>Gama</th></tr></thead>
+          <tbody>
+            <tr><td>MSI PRO H610M-E</td><td>H610</td><td>Intel</td><td>Básica (micro-ATX)</td></tr>
+            <tr><td>ASUS TUF GAMING B650-PLUS</td><td>B650</td><td>AMD (AM5)</td><td>Media</td></tr>
+            <tr><td>Gigabyte Z890 AORUS ELITE</td><td>Z890</td><td>Intel (LGA 1851)</td><td>Alta</td></tr>
+            <tr><td>ASRock A620M-HDV</td><td>A620</td><td>AMD (AM5)</td><td>Básica (micro-ATX)</td></tr>
+            <tr><td>ASUS ROG STRIX X870E-E GAMING</td><td>X870E</td><td>AMD (AM5)</td><td>Muy alta</td></tr>
+            <tr><td>MSI MAG B860 TOMAHAWK</td><td>B860</td><td>Intel (LGA 1851)</td><td>Media</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+
+    <h3>Actividad 2. Northbridge o southbridge</h3>
+    <p>En un ordenador antiguo, ¿qué chip controlaba cada uno de estos elementos? Escribe N (northbridge) o S (southbridge):</p>
+    <p>memoria RAM ..... · puertos USB ..... · ranura AGP ..... · discos IDE ..... · sonido ..... · FSB ..... · ranuras PCI ..... · BIOS .....</p>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>RAM: <strong>N</strong> · USB: <strong>S</strong> · AGP: <strong>N</strong> · IDE: <strong>S</strong> · sonido: <strong>S</strong> · FSB: <strong>N</strong> · PCI: <strong>S</strong> · BIOS: <strong>S</strong></p></div>
+    </details>
+
+    <h3>Actividad 3. Cálculo del cuello de botella</h3>
+    <p>Un ordenador con chipset Intel B760 (enlace DMI 4.0 x4, cada carril ≈ 2 GB/s) tiene dos SSD M.2 PCIe 4.0 conectados al chipset; cada uno puede leer a 7 GB/s.</p>
+    <ol>
+      <li>¿Cuál es el ancho de banda máximo del enlace entre la CPU y el chipset?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p class="formula">4 carriles × 2 GB/s = <strong>8 GB/s</strong></p></div>
+    </details>
+    <ol start="2">
+      <li>Si leemos de los dos SSD a la vez, ¿cuánto pedirían en total? ¿Cabe por el enlace?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p><span class="formula">7 + 7 = <strong>14 GB/s</strong></span>. No cabe: el enlace solo deja pasar 8 GB/s, así que los dos SSD se «frenan» entre sí (cuello de botella).</p></div>
+    </details>
+    <ol start="3">
+      <li>¿Cuánto tardaría en copiarse una carpeta de 56 GB del SSD 1 al SSD 2 si la copia va a 3,5 GB/s?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p class="formula">56 GB ÷ 3,5 GB/s = <strong>16 segundos</strong></p></div>
+    </details>
+    <ol start="4">
+      <li>¿Dónde sería mejor conectar el SSD del sistema operativo? ¿Por qué?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>En la ranura <strong>M.2 conectada a la CPU</strong>: tiene su propio enlace directo y no comparte ancho de banda con los USB, SATA, red, etc.</p></div>
+    </details>
+
+    <h3>Actividad 4. Asesora a un cliente</h3>
+    <p>Recomienda un chipset (Intel y AMD) para:</p>
+    <ol type="a">
+      <li>una gestoría que necesita 10 ordenadores de oficina;</li>
+      <li>un estudiante que quiere jugar y editar vídeo de vez en cuando;</li>
+      <li>un aficionado que quiere hacer overclocking y conectar 4 SSD.</li>
+    </ol>
+    <p>Justifica cada respuesta.</p>
+    <details class="solucion">
+      <summary>Ver solución (orientativa)</summary>
+      <div>
+        <ul>
+          <li><strong>a) Oficina:</strong> Intel H610/H810 o AMD A620. Baratos y suficientes; no se necesita overclocking.</li>
+          <li><strong>b) Juegos y vídeo:</strong> Intel B760/B860 o AMD B650/B850. Buen equilibrio, PCIe 4.0/5.0 y overclocking de RAM.</li>
+          <li><strong>c) Overclocking y 4 SSD:</strong> Intel Z890 o AMD X870E. Permiten overclocking del procesador y tienen más carriles PCIe y ranuras M.2.</li>
+        </ul>
+      </div>
+    </details>
+
+    <h2 id="investigar">Para investigar</h2>
+    <h3>Actividad 5. Investiga</h3>
+    <p>Entra en la web de Intel (intel.es, apartado de especificaciones de productos) o de AMD (amd.com) y busca el chipset <strong>B760</strong> o <strong>B650</strong>. Anota: enlace con la CPU, número de carriles PCIe y su versión, número de puertos SATA y USB, y si permite overclocking del procesador y de la RAM.</p>
+
+    <h2 id="taller">Práctica en el aula y en el taller</h2>
+    <h3>Actividad 6. En el aula</h3>
+    <p>En el ordenador de tu puesto, averigua con <code>msinfo32</code> y con <strong>CPU-Z</strong> (pestaña Mainboard): fabricante y modelo de la placa, chipset y procesador. ¿Coinciden los datos de los dos programas? ¿Qué aparece en el campo «Southbridge»?</p>
+    <h3>Actividad 7. Taller</h3>
+    <p>Localiza el chipset en dos placas base del taller (una antigua y una moderna). Dibuja un esquema de cada placa marcando el socket, las ranuras de memoria, el chipset (o el northbridge y el southbridge) y los puertos SATA. ¿Cuántos chips tiene el chipset de cada una?</p>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>

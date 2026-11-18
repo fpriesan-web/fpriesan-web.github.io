@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El chipset de la placa base · Apuntes de clase</title>
+  <meta name="description" content="Tema 4 de 1º CFGB: qué es el chipset, northbridge y southbridge, cómo funciona un ordenador actual, chipsets Intel y AMD actuales, el driver del chipset, cómo saber qué chipset tiene un equipo y averías.">
+  <link rel="stylesheet" href="/css/estilo.css?v=8">
+  <script src="/js/tema.js?v=1"></script>
+  <script src="/js/apuntes-mapa.js?v=8" defer></script>
+  <script src="/js/navegacion.js?v=1" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="/">Apuntes de clase</a>
+      <nav>
+        <a href="/#apuntes">Apuntes</a>
+        <a href="/recursos/">Recursos didácticos</a>
+      </nav>
+    </div>
+  </header>
+  <main class="contenedor guia">
+    <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-4/">Tema 4</a></p>
+    <span class="etiqueta">Material didáctico · Tema 4</span>
+    <h1>El chipset de la placa base</h1>
+    <p class="descargas"><a class="boton-descarga" href="El_chipset_de_la_placa_base.pptx" download>Descargar la presentación (PowerPoint, 745 KB)</a></p>
+    <div class="nota">
+      <p><strong>En este tema aprenderás</strong></p>
+      <ul>
+        <li>Qué es el chipset, para qué sirve y dónde está en la placa base.</li>
+        <li>Cómo eran los chipsets clásicos (northbridge y southbridge) y por qué han cambiado.</li>
+        <li>Cómo funciona un ordenador actual: qué hace el procesador y qué hace el chipset.</li>
+        <li>Qué chipsets se venden hoy (Intel y AMD), qué significan sus nombres y cómo elegir uno.</li>
+        <li>Cómo averiguar qué chipset tiene un ordenador, qué es el «driver del chipset» y qué averías puede dar.</li>
+      </ul>
+    </div>
+    <nav class="indice" aria-label="Apartados">
+      <a href="#que-es">1. ¿Qué es el chipset?</a>
+      <a href="#funciones">2. ¿Qué hace el chipset? Sus funciones</a>
+      <a href="#donde-esta">3. ¿Dónde está y cómo se reconoce?</a>
+      <a href="#clasico">4. El chipset clásico: northbridge y southbridge</a>
+      <a href="#evolucion">5. La gran evolución: el northbridge se mete en el procesador</a>
+      <a href="#actual">6. Cómo funciona un ordenador actual</a>
+      <a href="#chipsets-actuales">7. Los chipsets actuales: fabricantes, gamas y nombres</a>
+      <a href="#driver">8. El driver del chipset</a>
+      <a href="#averiguar">9. ¿Cómo saber qué chipset tiene un ordenador?</a>
+      <a href="#averias">10. Temperatura, averías y mantenimiento</a>
+      <a href="#resumen">11. Resumen: antes y ahora</a>
+      <a href="#glosario">12. Glosario</a>
+    </nav>
+
+    <h2 id="que-es">1. ¿Qué es el chipset?</h2>
+    <p>Cuando abrimos un ordenador reconocemos enseguida el procesador, los módulos de memoria o la tarjeta gráfica. Pero en la placa base hay otro chip, normalmente escondido bajo un disipador plano, del que casi nadie habla y sin el cual el ordenador no funcionaría: el <strong>chipset</strong>.</p>
+    <div class="nota">
+      <p><strong>Definición</strong></p>
+      <p>El <strong>chipset</strong> (del inglés <em>chip</em> + <em>set</em>, «conjunto de chips») es el chip o conjunto de chips <strong>soldados en la placa base</strong> que se encargan de <strong>comunicar el procesador con el resto de componentes</strong> del ordenador y de <strong>controlar esas comunicaciones</strong>: por dónde viajan los datos, a qué velocidad y en qué orden.</p>
+    </div>
+    <p>Su nombre viene de la historia. En los primeros PC, cada función de la placa (controlar el teclado, los discos, la memoria, el reloj...) la hacía un chip distinto, y una placa podía tener decenas de ellos. Con los avances tecnológicos esos circuitos se fueron <strong>agrupando en unos pocos chips</strong> que hacían todas las funciones estándar del ordenador. Así se consiguió:</p>
+    <ul>
+      <li>Placas base <strong>más pequeñas</strong> y <strong>más baratas</strong> de fabricar.</li>
+      <li><strong>Menor consumo</strong> de energía.</li>
+      <li><strong>Más fiabilidad</strong>: menos chips y menos soldaduras significan menos piezas que se puedan estropear.</li>
+    </ul>
+    <div class="nota">
+      <p><strong>Para entenderlo: el chipset es el «control de tráfico» de la placa</strong></p>
+      <p>Imagina que la placa base es una ciudad. El <strong>procesador</strong> es el ayuntamiento, donde se toman todas las decisiones. Los <strong>componentes</strong> (discos, USB, red, sonido...) son los barrios. Los <strong>buses</strong> son las calles y autopistas por las que circulan los datos.</p>
+      <p>El <strong>chipset</strong> es el centro de control del tráfico: decide por qué calle va cada dato, regula la velocidad, reparte el paso entre todos y evita los atascos. Sin él, el procesador no podría «hablar» con un pendrive, con el disco o con la tarjeta de red.</p>
+    </div>
+    <div class="nota">
+      <p><strong>Importante</strong></p>
+      <p>El chipset va <strong>soldado</strong> a la placa base: no se puede cambiar ni ampliar. Por eso, <strong>elegir una placa base es, en gran parte, elegir un chipset</strong>. Él decide cuántos puertos USB y SATA tendrá la placa, cuántos SSD M.2 se pueden conectar, si se puede hacer <em>overclocking</em>, etc.</p>
+    </div>
+
+    <h2 id="funciones">2. ¿Qué hace el chipset? Sus funciones</h2>
+    <p>Según el libro, el chipset realiza tres funciones básicas, que siguen siendo válidas hoy:</p>
+    <ol>
+      <li><strong>Controla la transmisión</strong> de datos, instrucciones y señales de control que circulan entre la CPU y el resto de elementos del sistema.</li>
+      <li><strong>Maneja la transferencia de datos</strong> entre la CPU, la memoria y los dispositivos periféricos.</li>
+      <li><strong>Ofrece soporte para los buses de expansión</strong>, es decir, las ranuras donde se conectan tarjetas (hoy, ranuras PCI Express).</li>
+    </ol>
+    <p>En un ordenador actual, además, el chipset incluye muchos <strong>controladores integrados</strong> y otras funciones:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Función</th><th>Qué significa</th><th>Ejemplos</th></tr></thead>
+      <tbody>
+        <tr><td>Almacenamiento</td><td>Controla los puertos donde se conectan discos y unidades.</td><td>Puertos SATA, ranuras M.2 extra, RAID (unir varios discos)</td></tr>
+        <tr><td>Puertos USB</td><td>Gestiona la mayoría de los USB de la placa.</td><td>USB 2.0, USB 3.2 de 5, 10 y 20 Gbps</td></tr>
+        <tr><td>Expansión</td><td>Proporciona carriles PCI Express para ranuras y chips de la placa.</td><td>Ranuras PCIe x1 y x4, chip de red, chip Wi-Fi</td></tr>
+        <tr><td>Red y sonido</td><td>Contiene o conecta los controladores de red y audio integrados.</td><td>Ethernet, Wi-Fi (Intel CNVi), audio HD</td></tr>
+        <tr><td>Arranque</td><td>Se comunica con el chip de la BIOS/UEFI, el reloj y la memoria CMOS.</td><td>Bus SPI hacia la flash de la BIOS, reloj en tiempo real (RTC)</td></tr>
+        <tr><td>Energía</td><td>Controla el encendido, el apagado y los modos de ahorro.</td><td>Suspensión, hibernación, encender por red (Wake on LAN)</td></tr>
+        <tr><td>Funciones extra</td><td>Activa o limita funciones de la placa.</td><td>Overclocking, administración remota en empresas (Intel vPro)</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="donde-esta">3. ¿Dónde está y cómo se reconoce?</h2>
+    <ul>
+      <li>En las placas actuales el chipset es <strong>un único chip cuadrado</strong> de unos 2 o 3 cm de lado, situado normalmente en la <strong>parte inferior derecha</strong> de la placa, cerca de los conectores SATA y del borde de la caja.</li>
+      <li>Casi siempre está tapado por un <strong>disipador metálico plano</strong>, a veces decorado con el logotipo del fabricante de la placa o con luces RGB.</li>
+      <li>Si se ve el chip, lleva <strong>impreso el nombre del fabricante</strong> (Intel, AMD) y un código.</li>
+      <li>En placas antiguas había <strong>dos chips</strong>: uno grande entre el procesador y las ranuras de expansión (el <em>northbridge</em>), con un disipador grande o incluso un ventilador, y otro más pequeño más abajo (el <em>southbridge</em>).</li>
+      <li>En la mayoría de <strong>portátiles modernos</strong> no verás chipset separado: va <strong>dentro del procesador</strong> (lo veremos en el apartado 6).</li>
+    </ul>
+    <div class="nota">
+      <p><strong>Truco: el chipset está en el nombre de la placa</strong></p>
+      <p>Los fabricantes incluyen el chipset en el nombre comercial de la placa base. Fíjate en estos ejemplos:</p>
+      <ul>
+        <li>ASUS PRIME <strong>B760</strong>M-A → chipset Intel B760</li>
+        <li>Gigabyte <strong>Z790</strong> AORUS ELITE → chipset Intel Z790</li>
+        <li>MSI MAG <strong>B650</strong> TOMAHAWK WIFI → chipset AMD B650</li>
+        <li>ASRock <strong>X870E</strong> Taichi → chipset AMD X870E</li>
+      </ul>
+      <p>La letra «M» que va detrás del chipset (B760<strong>M</strong>) suele indicar que la placa es de formato <strong>micro-ATX</strong>; «I» o «ITX», que es <strong>mini-ITX</strong>.</p>
+    </div>
+
+    <h2 id="clasico">4. El chipset clásico: northbridge y southbridge</h2>
+    <p>Durante muchos años (aproximadamente hasta 2010) el chipset estaba formado por <strong>dos chips</strong> con funciones muy diferentes: el <strong>northbridge</strong> (puente norte) y el <strong>southbridge</strong> (puente sur). Es la arquitectura que explica el libro, y conviene conocerla porque todavía hay muchos ordenadores antiguos funcionando y porque explica por qué los ordenadores actuales son como son.</p>
+    <figure class="figura"><img src="arquitectura-clasica.jpg" width="1200" height="843" loading="lazy" alt="Esquema de la arquitectura clásica. Arriba, la CPU, unida por el FSB (bus frontal) al northbridge, el chip rápido con disipador. Al northbridge se conectan con líneas gruesas la memoria RAM (DDR, DDR2, DDR3) y la tarjeta gráfica (ranura AGP o PCIe x16). Debajo, unido por el bus entre puentes, el southbridge, el chip más lento, del que salen líneas finas hacia los discos IDE y SATA, las ranuras PCI (e ISA antigua), USB y FireWire, sonido y red, el chip de la BIOS y el Super I/O (teclado, ratón, serie y paralelo). Los dos puentes juntos forman el chipset de 2 chips."><figcaption>Figura 1. Arquitectura clásica con northbridge y southbridge (ordenadores hasta 2010 aprox.).</figcaption></figure>
+
+    <h3>A. Northbridge (puente norte)</h3>
+    <p>Era el chip <strong>rápido</strong>. Se conectaba directamente al procesador mediante el <strong>bus frontal o FSB</strong> (<em>Front Side Bus</em>) y se encargaba de los componentes de <strong>alta velocidad</strong>: la <strong>memoria RAM</strong> y la <strong>tarjeta gráfica</strong> (ranura AGP o PCI Express). También se comunicaba con el southbridge. El northbridge controlaba:</p>
+    <ul>
+      <li>El tipo de microprocesador que admitía la placa, cuántos procesadores y a qué velocidad.</li>
+      <li>La velocidad del bus frontal (FSB).</li>
+      <li>El <strong>controlador de memoria</strong>: tipo y cantidad máxima de memoria RAM admitida.</li>
+      <li>En algunos modelos, una <strong>tarjeta gráfica integrada</strong>.</li>
+    </ul>
+    <p>Como trabajaba a gran velocidad, se calentaba mucho y solía llevar un disipador grande, a veces con ventilador o tubos de calor (<em>heatpipes</em>).</p>
+
+    <h3>B. Southbridge (puente sur)</h3>
+    <p>Era el chip <strong>lento</strong>. No estaba conectado directamente a la CPU: se comunicaba con ella <strong>a través del northbridge</strong>. Se encargaba de los componentes y periféricos más lentos:</p>
+    <ul>
+      <li>Buses de expansión: ranuras <strong>PCI</strong> (y la antigua <strong>ISA</strong>).</li>
+      <li>Controladores de discos (<strong>IDE</strong> y <strong>SATA</strong>), de red Ethernet y de sonido.</li>
+      <li>Puertos para periféricos: <strong>USB</strong> y <strong>FireWire</strong>.</li>
+      <li>Gestión de energía, controlador de interrupciones y controlador <strong>DMA</strong> (<em>Direct Memory Access</em>, acceso directo a memoria).</li>
+      <li>Conexión con el chip de la <strong>BIOS</strong> y con el chip <strong>Super I/O</strong>, que controlaba teclado y ratón PS/2, puertos serie y paralelo y disquetera.</li>
+    </ul>
+    <div class="tabla"><table>
+      <thead><tr><th></th><th>Northbridge (puente norte)</th><th>Southbridge (puente sur)</th></tr></thead>
+      <tbody>
+        <tr><td>Se conecta a...</td><td>Directamente a la CPU (por el FSB)</td><td>Al northbridge (no a la CPU)</td></tr>
+        <tr><td>Velocidad</td><td>Muy alta</td><td>Más baja</td></tr>
+        <tr><td>Controla</td><td>RAM y tarjeta gráfica (AGP / PCIe)</td><td>Discos, USB, PCI, red, sonido, BIOS, energía</td></tr>
+        <tr><td>Tamaño y calor</td><td>Más grande y caliente; disipador o ventilador</td><td>Más pequeño; disipador pequeño o ninguno</td></tr>
+        <tr><td>Nombre en Intel</td><td>MCH (Memory Controller Hub)</td><td>ICH (I/O Controller Hub), p. ej. ICH10</td></tr>
+        <tr><td>Situación actual</td><td>Desaparecido: sus funciones están dentro de la CPU</td><td>Sigue existiendo: es el chipset actual</td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota">
+      <p><strong>¿Sabías que...?</strong></p>
+      <p>Los nombres «norte» y «sur» se deben a la posición de los chips en una placa base montada en vertical dentro de la caja, como en un mapa: el chip situado más arriba, más cerca del procesador («al norte»), era el northbridge; el de más abajo, el southbridge.</p>
+    </div>
+
+    <h3>Palabras del libro que ya no vas a ver (o casi)</h3>
+    <p>El libro es de 2012 y menciona tecnologías que hoy están obsoletas. Esta tabla te ayuda a «traducirlas»:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>En el libro</th><th>Qué era</th><th>Qué se usa hoy</th></tr></thead>
+      <tbody>
+        <tr><td>FSB (bus frontal)</td><td>Bus que unía la CPU con el northbridge</td><td>Desapareció: la CPU se conecta directamente a la RAM y al chipset (DMI)</td></tr>
+        <tr><td>AGP</td><td>Ranura para tarjetas gráficas</td><td>PCI Express x16 (desde 2004)</td></tr>
+        <tr><td>PCI e ISA</td><td>Ranuras de expansión antiguas</td><td>PCI Express x1, x4, x16</td></tr>
+        <tr><td>IDE (PATA)</td><td>Cable plano ancho para discos y lectores de CD</td><td>SATA y, sobre todo, SSD M.2 NVMe</td></tr>
+        <tr><td>FireWire</td><td>Puerto para cámaras de vídeo y discos externos</td><td>USB-C, Thunderbolt</td></tr>
+        <tr><td>Puertos serie, paralelo, disquetera</td><td>Módems, impresoras antiguas, disquetes</td><td>USB (los PS/2 aún aparecen en algunas placas)</td></tr>
+        <tr><td>DDR, DDR2, DDR3</td><td>Generaciones de memoria RAM</td><td>DDR4 y DDR5</td></tr>
+        <tr><td>VIA, SiS, Nvidia... como fabricantes de chipsets</td><td>Empresas que fabricaban chipsets</td><td>Solo Intel y AMD fabrican chipsets para PC</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="evolucion">5. La gran evolución: el northbridge se mete en el procesador</h2>
+    <p>El libro ya avisaba de que «la tendencia actual es la desaparición de este chipset, ya que sus funciones están siendo integradas en la arquitectura de los nuevos microprocesadores». Esa predicción se cumplió por completo.</p>
+    <p>El problema de la arquitectura clásica era el <strong>cuello de botella</strong>: todo lo que el procesador quería leer de la memoria tenía que pasar por el FSB y por el northbridge, como si todos los coches de una ciudad tuvieran que cruzar el mismo puente. La solución fue <strong>llevar el controlador de memoria y el de la gráfica al interior del procesador</strong>, para que la CPU hablara directamente con la RAM y con la tarjeta gráfica.</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Año</th><th>Qué pasó</th><th>Consecuencia</th></tr></thead>
+      <tbody>
+        <tr><td>Hasta 2003</td><td>Chipset de dos chips (northbridge + southbridge) unidos a la CPU por el FSB.</td><td>Arquitectura clásica del libro.</td></tr>
+        <tr><td>2003</td><td>AMD Athlon 64: el controlador de memoria pasa dentro del procesador.</td><td>La RAM se conecta directamente a la CPU.</td></tr>
+        <tr><td>2008</td><td>Intel Core i7 (socket 1366): Intel también integra el controlador de memoria. Desaparece el FSB.</td><td>El northbridge solo se ocupa ya de la gráfica.</td></tr>
+        <tr><td>2009</td><td>Intel socket 1156: también la conexión de la tarjeta gráfica (PCIe x16) pasa a la CPU.</td><td>El chipset queda en un solo chip: el PCH, unido a la CPU por el enlace DMI.</td></tr>
+        <tr><td>2011</td><td>Intel socket 1155 y AMD FM1 («Llano»): la gráfica integrada va dentro del procesador. AMD llama a su chipset FCH.</td><td>Northbridge desaparecido en ambas marcas.</td></tr>
+        <tr><td>2017</td><td>AMD Ryzen (socket AM4): el procesador trae además sus propios USB, SATA y carriles PCIe para un SSD.</td><td>Algunos mini-PC funcionan incluso sin chipset.</td></tr>
+        <tr><td>2021-2022</td><td>Intel 12ª gen. (LGA 1700) y AMD Ryzen 7000 (AM5): llegan DDR5 y PCIe 5.0.</td><td>La CPU controla la RAM, la gráfica y el SSD principal.</td></tr>
+        <tr><td>Hoy</td><td>En portátiles, tabletas y móviles todo va en un solo chip: SoC (<em>System on a Chip</em>).</td><td>En muchos portátiles no existe chipset separado.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="actual">6. Cómo funciona un ordenador actual</h2>
+    <p>Hoy el reparto del trabajo es así: el <strong>procesador</strong> se encarga de lo más rápido (lo que antes hacía el northbridge) y el <strong>chipset</strong>, que ya es <strong>un solo chip</strong>, se encarga de todo lo demás (lo que antes hacía el southbridge).</p>
+    <figure class="figura"><img src="arquitectura-actual.jpg" width="1200" height="827" loading="lazy" alt="Esquema de la arquitectura actual. Dentro de la CPU están los núcleos, la gráfica integrada, el controlador de memoria y el controlador PCI Express (los dos antes en el northbridge) y el enlace con el chipset. A la CPU se conectan directamente la memoria RAM DDR4 o DDR5 (2 canales), las salidas de vídeo HDMI y DisplayPort, la tarjeta gráfica PCIe 5.0 x16 y el SSD M.2 NVMe principal. Un solo enlace (DMI 4.0 x8 en Intel, PCIe 4.0 x4 en AMD), compartido por todo lo de abajo, une la CPU con el chipset de 1 chip (Intel: PCH; AMD: FCH o Promontory), que hace lo que hacía el southbridge. Del chipset salen los puertos USB, SATA, los SSD M.2 adicionales, las ranuras PCIe x1 y x4, la red LAN y Wi-Fi, el sonido y el chip BIOS/UEFI con el Super I/O."><figcaption>Figura 2. Arquitectura actual: el procesador incluye el antiguo northbridge y el chipset es un solo chip.</figcaption></figure>
+
+    <h3>Lo que se conecta directamente al procesador</h3>
+    <ul>
+      <li>La <strong>memoria RAM</strong> (DDR4 o DDR5), normalmente en doble canal.</li>
+      <li>La <strong>tarjeta gráfica</strong>, en la primera ranura PCI Express x16 (PCIe 5.0 en las placas más nuevas).</li>
+      <li>Uno o varios <strong>SSD M.2 NVMe</strong>, normalmente la ranura M.2 más cercana al procesador.</li>
+      <li>Las <strong>salidas de vídeo</strong> de la placa (HDMI, DisplayPort), que usan la gráfica integrada del procesador.</li>
+      <li>En algunos procesadores, también algunos <strong>USB</strong>, USB4 o Thunderbolt.</li>
+    </ul>
+
+    <h3>Lo que se conecta al chipset</h3>
+    <p>Casi todo lo demás: la mayoría de los <strong>puertos USB</strong>, los puertos <strong>SATA</strong>, las <strong>ranuras M.2 adicionales</strong>, las <strong>ranuras PCIe pequeñas</strong> (x1, x4), la <strong>red</strong> (Ethernet y Wi-Fi), el <strong>sonido</strong>, el chip de la <strong>BIOS/UEFI</strong> y el <strong>Super I/O</strong> (sensores de temperatura y control de ventiladores).</p>
+
+    <h3>El enlace entre el procesador y el chipset</h3>
+    <p>El chipset se comunica con la CPU por un único enlace:</p>
+    <ul>
+      <li><strong>Intel</strong>: enlace <strong>DMI</strong> (<em>Direct Media Interface</em>). En las placas actuales es DMI 4.0 de 8 carriles (x8) en gama alta, unos <strong>16 GB/s</strong>, o de 4 carriles (x4) en gama media y básica, unos <strong>8 GB/s</strong>.</li>
+      <li><strong>AMD</strong>: un enlace <strong>PCI Express 4.0 x4</strong>, unos <strong>8 GB/s</strong> (PCIe 3.0 x4, unos 4 GB/s, en el chipset más básico).</li>
+    </ul>
+    <div class="nota">
+      <p><strong>Cuidado con el cuello de botella</strong></p>
+      <p>Todo lo que cuelga del chipset (USB, SATA, M.2 extra, red...) <strong>comparte ese único enlace</strong> con el procesador, como varias carreteras que desembocan en un mismo túnel. Normalmente no se nota, pero si conectas varios SSD muy rápidos al chipset y los usas a la vez, el enlace puede saturarse.</p>
+      <p><strong>Consejo de montaje</strong>: conecta la tarjeta gráfica en la <strong>primera ranura PCIe x16</strong> y el SSD del sistema operativo en la <strong>ranura M.2 conectada a la CPU</strong>. El manual de la placa incluye un <strong>diagrama de bloques</strong> que indica qué va conectado a la CPU y qué al chipset.</p>
+    </div>
+
+    <h3>¿Qué es un «carril» PCI Express?</h3>
+    <p>El bus PCI Express funciona por <strong>carriles</strong> (<em>lanes</em>), como una autopista: cada carril es una conexión independiente, y cuantos más carriles, más datos pasan a la vez. Por eso se habla de <strong>x1, x4, x8 o x16</strong> (1, 4, 8 o 16 carriles). Además, cada nueva <strong>versión</strong> de PCIe duplica la velocidad de cada carril:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Versión</th><th>Año</th><th>Velocidad por carril (aprox.)</th><th>Ranura x16 (aprox.)</th><th>Uso típico</th></tr></thead>
+      <tbody>
+        <tr><td>PCIe 1.0</td><td>2003</td><td>0,25 GB/s</td><td>4 GB/s</td><td>Primeras gráficas PCIe</td></tr>
+        <tr><td>PCIe 2.0</td><td>2007</td><td>0,5 GB/s</td><td>8 GB/s</td><td>Placas de la época del libro</td></tr>
+        <tr><td>PCIe 3.0</td><td>2010</td><td>1 GB/s</td><td>16 GB/s</td><td>Primeros SSD NVMe; chipsets básicos</td></tr>
+        <tr><td>PCIe 4.0</td><td>2017</td><td>2 GB/s</td><td>32 GB/s</td><td>SSD rápidos, enlace con el chipset</td></tr>
+        <tr><td>PCIe 5.0</td><td>2019 (PC desde 2021)</td><td>4 GB/s</td><td>64 GB/s</td><td>Gráficas y SSD más modernos</td></tr>
+        <tr><td>PCIe 6.0</td><td>2022</td><td>8 GB/s</td><td>128 GB/s</td><td>Servidores; aún no en PC domésticos</td></tr>
+      </tbody>
+    </table></div>
+    <p><em>Velocidades en cada sentido. Una tarjeta o SSD funciona en una ranura de otra versión, pero a la velocidad de la más lenta de las dos.</em></p>
+    <div class="nota">
+      <p><strong>Lo que hay ahora en portátiles y móviles: el SoC</strong></p>
+      <p>En los portátiles finos, tabletas y móviles se ha ido un paso más allá: el procesador, la gráfica, el controlador de memoria y las funciones del chipset van <strong>en un único chip</strong>, llamado <strong>SoC</strong> (<em>System on a Chip</em>, «sistema en un chip»). Ejemplos: los Intel Core Ultra para portátil, los Apple M o los Snapdragon de los móviles. Ventaja: menos consumo y menos espacio. Inconveniente: no se puede cambiar ni ampliar nada por separado.</p>
+    </div>
+
+    <h2 id="chipsets-actuales">7. Los chipsets actuales: fabricantes, gamas y nombres</h2>
+    <p>Antes había muchos fabricantes de chipsets (VIA, SiS, Nvidia con sus nForce, ATI, ALi...). Desde que el northbridge se integró en el procesador, cada marca de CPU fabrica su propio chipset, y hoy en los PC <strong>solo hay chipsets de Intel y de AMD</strong> (los de AMD se diseñan junto con la empresa ASMedia).</p>
+    <p><em>Nota sobre el libro</em>: entre los fabricantes cita a ITE. ITE (y Nuvoton) no fabrican chipsets, sino los chips <strong>Super I/O</strong>, que controlan sensores de temperatura, ventiladores y puertos antiguos como el PS/2.</p>
+
+    <h3>Cómo leer el nombre de un chipset</h3>
+    <p>El nombre tiene <strong>una letra</strong> que indica la gama y <strong>tres cifras</strong>: la primera indica la <strong>serie</strong> o generación (más alta = más moderna).</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Letra</th><th>Intel</th><th>AMD</th></tr></thead>
+      <tbody>
+        <tr><td>Gama alta</td><td>Z: permite overclocking del procesador y de la RAM. Más puertos y carriles.</td><td>X: gama alta, más puertos y carriles. La E final (X870E) = «Extreme»: PCIe 5.0 en gráfica y SSD.</td></tr>
+        <tr><td>Gama media</td><td>B: gama media. Desde 2021 permite subir la velocidad de la RAM, pero no del procesador.</td><td>B: gama media. Permite overclocking. B650E: con PCIe 5.0 en gráfica y SSD.</td></tr>
+        <tr><td>Gama básica</td><td>H: H610, H810 son básicas (sin overclocking). H670/H770 eran gama media.</td><td>A: gama básica (A520, A620).</td></tr>
+        <tr><td>Empresas</td><td>Q: ordenadores de empresa (administración remota vPro). W: estaciones de trabajo.</td><td>Serie PRO en los procesadores; los chipsets son los mismos.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Plataformas actuales</h3>
+    <p>Cada chipset solo sirve para un <strong>socket</strong> concreto y para unas generaciones de procesador concretas:</p>
+    <div class="tabla"><table>
+      <thead><tr><th>Marca</th><th>Socket</th><th>Procesadores</th><th>Chipsets</th></tr></thead>
+      <tbody>
+        <tr><td>Intel</td><td>LGA 1700</td><td>Core de 12ª, 13ª y 14ª generación (2021-2023)</td><td>Serie 600: Z690, H670, B660, H610<br>Serie 700: Z790, H770, B760</td></tr>
+        <tr><td>Intel</td><td>LGA 1851</td><td>Core Ultra 200S «Arrow Lake» (2024)</td><td>Serie 800: Z890, B860, H810 (y Q870, W880)</td></tr>
+        <tr><td>Intel</td><td>LGA 1954</td><td>Core Ultra «Nova Lake» (anunciados para finales de 2026)</td><td>Serie 900: Z990, Z970, B960, Q970, W980</td></tr>
+        <tr><td>AMD</td><td>AM4</td><td>Ryzen 1000 a 5000 (2017-2022)</td><td>A320, A520, B350, B450, B550, X370, X470, X570</td></tr>
+        <tr><td>AMD</td><td>AM5</td><td>Ryzen 7000, 8000 y 9000 (desde 2022)</td><td>Serie 600: A620, B650, B650E, X670, X670E<br>Serie 800: B840, B850, X870, X870E</td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota">
+      <p><strong>¿Sabías que...?</strong></p>
+      <p>Los chipsets AMD <strong>X670E</strong>, <strong>X670</strong> y <strong>X870E</strong> están formados por <strong>dos chips iguales conectados en cadena</strong>. Es decir, en la gama alta de AMD ¡vuelven a ser dos chips! Pero no es la vieja pareja northbridge/southbridge: los dos hacen el papel del antiguo southbridge, y se ponen dos para tener el doble de puertos USB, SATA y carriles PCIe.</p>
+    </div>
+
+    <h3>Ejemplo: comparación de los chipsets Intel serie 800</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Característica</th><th>Z890 (alta)</th><th>B860 (media)</th><th>H810 (básica)</th></tr></thead>
+      <tbody>
+        <tr><td>Enlace con la CPU</td><td>DMI 4.0 x8 (≈16 GB/s)</td><td>DMI 4.0 x4 (≈8 GB/s)</td><td>DMI 4.0 x4 (≈8 GB/s)</td></tr>
+        <tr><td>Carriles PCIe 4.0 del chipset</td><td>hasta 24</td><td>hasta 14</td><td>hasta 8</td></tr>
+        <tr><td>Puertos SATA</td><td>hasta 8</td><td>hasta 4</td><td>hasta 4</td></tr>
+        <tr><td>USB 3.2 de 20 Gbps</td><td>hasta 5</td><td>hasta 2</td><td>no</td></tr>
+        <tr><td>Overclocking del procesador</td><td>sí</td><td>no</td><td>no</td></tr>
+        <tr><td>Overclocking de la RAM</td><td>sí</td><td>sí</td><td>no</td></tr>
+        <tr><td>Módulos de RAM</td><td>4</td><td>4</td><td>2 (uno por canal)</td></tr>
+      </tbody>
+    </table></div>
+    <p><em>Fuente: especificaciones de Intel recogidas por Puget Systems. Cada fabricante de placas decide cuántos de esos puertos monta realmente.</em></p>
+
+    <h3>Ejemplo: chipsets AMD serie 800 (socket AM5)</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Chipset</th><th>Gama</th><th>Lo más destacado</th></tr></thead>
+      <tbody>
+        <tr><td>X870E</td><td>Muy alta</td><td>Dos chips. USB4 obligatorio. PCIe 5.0 para la gráfica y el SSD. El que más puertos ofrece.</td></tr>
+        <tr><td>X870</td><td>Alta</td><td>Un chip. USB4 obligatorio. PCIe 5.0 para la gráfica y el SSD.</td></tr>
+        <tr><td>B850</td><td>Media</td><td>Un chip. Al menos un M.2 con PCIe 5.0. La opción más equilibrada.</td></tr>
+        <tr><td>B840</td><td>Básica</td><td>Chip más sencillo: todo en PCIe 3.0 y sin overclocking del procesador (sí de la RAM).</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>¿Qué decide el chipset y qué no?</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Depende del chipset</th><th>NO depende del chipset</th></tr></thead>
+      <tbody>
+        <tr><td>Si se puede hacer overclocking (CPU y/o RAM)</td><td>Qué procesador encaja físicamente (eso lo decide el socket)</td></tr>
+        <tr><td>Número máximo de puertos USB y su velocidad</td><td>La cantidad de RAM instalada (depende de los módulos)</td></tr>
+        <tr><td>Número de puertos SATA y de ranuras M.2 extra</td><td>El rendimiento de la tarjeta gráfica</td></tr>
+        <tr><td>Número de ranuras PCIe y su versión</td><td>El tamaño de la placa (ATX, micro-ATX, mini-ITX)</td></tr>
+        <tr><td>Si la ranura gráfica se puede dividir (x8 + x8)</td><td>La calidad de los componentes de la placa (fases de alimentación, etc.)</td></tr>
+        <tr><td>RAID, Wi-Fi integrado (Intel CNVi), USB4...</td><td></td></tr>
+      </tbody>
+    </table></div>
+    <div class="nota">
+      <p><strong>Compatibilidad: chipset, procesador y BIOS</strong></p>
+      <p>Aunque un procesador encaje en el socket, <strong>el chipset y la BIOS tienen que reconocerlo</strong>. Por ejemplo, una placa con chipset <strong>B450</strong> (AM4) admite los Ryzen 5000, pero solo después de <strong>actualizar la BIOS</strong>. Y un procesador Intel de 14ª generación cabe en una placa H610, pero puede necesitar también una BIOS reciente. Antes de comprar o montar, consulta siempre la <strong>lista de procesadores compatibles</strong> (<em>CPU support list</em>) en la web del fabricante de la placa.</p>
+    </div>
+
+    <h3>¿Qué chipset elegir?</h3>
+    <div class="tabla"><table>
+      <thead><tr><th>Uso del ordenador</th><th>Intel</th><th>AMD</th></tr></thead>
+      <tbody>
+        <tr><td>Oficina, clase, navegación</td><td>H610 / H810</td><td>A620 (o A520 en AM4)</td></tr>
+        <tr><td>Uso general y juegos</td><td>B760 / B860</td><td>B650 / B850</td></tr>
+        <tr><td>Gaming exigente, edición de vídeo, overclocking</td><td>Z790 / Z890</td><td>X870 / X870E</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="driver">8. El driver del chipset</h2>
+    <p>Para que el sistema operativo sepa qué es cada parte del chipset y la aproveche bien, necesita su <strong>controlador</strong> o <strong>driver</strong>. Los fabricantes lo ofrecen como:</p>
+    <ul>
+      <li><strong>Intel</strong>: <em>Intel Chipset Device Software</em> (y, aparte, el driver del <em>Intel Management Engine</em>).</li>
+      <li><strong>AMD</strong>: <em>AMD Chipset Drivers</em>. En los Ryzen es especialmente importante, porque incluye ajustes de energía y de reparto de tareas entre núcleos.</li>
+    </ul>
+    <p>Windows suele instalarlos automáticamente con Windows Update, pero después de <strong>formatear e instalar el sistema</strong> es recomendable descargar el driver del chipset desde la <strong>web del fabricante de la placa base</strong> (o de Intel/AMD) e instalarlo <strong>antes que los demás controladores</strong>.</p>
+    <div class="nota"><p><strong>Síntoma de que falta</strong>: en el <strong>Administrador de dispositivos</strong> aparecen dispositivos desconocidos con un <strong>triángulo amarillo</strong>, como «Controlador de bus SMBus» o «Dispositivo PCI».</p></div>
+
+    <h2 id="averiguar">9. ¿Cómo saber qué chipset tiene un ordenador?</h2>
+    <ol>
+      <li><strong>Por el nombre de la placa base.</strong> En Windows, pulsa Windows + R y escribe <code>msinfo32</code>. Busca «Fabricante de la placa base» y «Producto de la placa base». El chipset suele aparecer en el nombre (por ejemplo, PRIME B760M-A).</li>
+      <li><strong>Con PowerShell</strong>: el comando <code>Get-CimInstance Win32_BaseBoard | Select Manufacturer, Product</code> muestra el fabricante y el modelo de la placa.</li>
+      <li><strong>Con CPU-Z</strong> (programa gratuito): en la pestaña <strong>Mainboard</strong> aparece el chipset. ¡Curiosidad! CPU-Z todavía usa el campo «Southbridge» para mostrar el chipset actual (por ejemplo, «Intel B760»).</li>
+      <li><strong>Con HWiNFO</strong>: muestra el chipset, sus características e incluso su <strong>temperatura</strong> («PCH Temperature» en Intel).</li>
+      <li><strong>En el Administrador de dispositivos</strong> → «Dispositivos del sistema»: aparecen entradas con el nombre del chipset, como «Intel(R) B760 Chipset LPC/eSPI Controller».</li>
+      <li><strong>En Linux</strong>: el comando <code>lspci</code> lista todos los dispositivos PCI, incluido el chipset («ISA bridge» o «LPC controller»).</li>
+      <li><strong>Mirando la placa</strong>: el nombre está serigrafiado en la placa y en su caja y manual. No es recomendable quitar el disipador del chipset para leer el chip.</li>
+    </ol>
+
+    <h2 id="averias">10. Temperatura, averías y mantenimiento</h2>
+    <h3>Temperatura</h3>
+    <p>Un chipset actual consume poco (entre 5 y 15 W aproximadamente), así que basta con un <strong>disipador pasivo</strong> (sin ventilador) y el aire que mueve la caja. Hay excepciones: el chipset AMD <strong>X570</strong> (2019), uno de los primeros con PCIe 4.0, se calentaba tanto que casi todas sus placas llevaban un <strong>pequeño ventilador</strong>. Es normal que un chipset funcione entre 40 y 70 °C.</p>
+
+    <h3>Averías típicas</h3>
+    <p>El chipset es un chip de tipo <strong>BGA</strong> (con cientos de bolitas de soldadura por debajo), soldado a la placa. Si se estropea, <strong>en la práctica hay que cambiar la placa base completa</strong>. Síntomas que pueden indicar un fallo del chipset:</p>
+    <ul>
+      <li>Dejan de funcionar <strong>todos los USB</strong>, o <strong>todos los discos SATA</strong>, a la vez.</li>
+      <li>Desaparecen del sistema la <strong>red</strong> o el <strong>sonido integrados</strong>.</li>
+      <li>El equipo <strong>no arranca</strong>, se reinicia solo o se cuelga sin motivo aparente.</li>
+      <li>La zona del chipset está <strong>muy caliente</strong> al tacto o el ventilador del chipset hace ruido.</li>
+    </ul>
+    <p>Causas habituales: <strong>sobrecalentamiento</strong> (polvo, mala ventilación), <strong>descargas electrostáticas</strong>, <strong>subidas de tensión</strong> o un <strong>cortocircuito en un USB</strong> (por ejemplo, conectar mal el cable de los USB frontales de la caja). Antes de culpar al chipset hay que descartar lo más sencillo: probar otros puertos y otro cable, comprobar en la BIOS si se detectan los discos, reinstalar los drivers del chipset o actualizar la BIOS.</p>
+    <div class="nota">
+      <p><strong>¿Sabías que...?</strong></p>
+      <p>Hacia 2007-2008 muchos portátiles con chips gráficos y chipsets de Nvidia fallaron de forma masiva porque las soldaduras se agrietaban con los cambios de temperatura. Algunos talleres los «reparaban» con un <strong>reballing</strong> (volver a soldar el chip con bolitas nuevas), una técnica delicada que necesita máquinas especiales y que no siempre dura mucho.</p>
+    </div>
+
+    <h3>Mantenimiento preventivo</h3>
+    <ul>
+      <li>Limpiar el polvo del disipador del chipset con aire comprimido (sujetando los ventiladores para que no giren).</li>
+      <li>Asegurar un buen flujo de aire en la caja; la tarjeta gráfica suele quedar encima del chipset y le da calor.</li>
+      <li>Si el chipset tiene ventilador, comprobar que gira y no hace ruido.</li>
+      <li>Usar pulsera antiestática y no conectar cables con el equipo enchufado.</li>
+      <li>Mantener actualizados la BIOS y el driver del chipset.</li>
+    </ul>
+
+    <h2 id="resumen">11. Resumen: antes y ahora</h2>
+    <div class="tabla"><table>
+      <thead><tr><th></th><th>Antes (libro, hasta ~2010)</th><th>Ahora</th></tr></thead>
+      <tbody>
+        <tr><td>Número de chips</td><td>Dos: northbridge + southbridge</td><td>Uno (dos iguales en alguna gama alta de AMD); ninguno en portátiles con SoC</td></tr>
+        <tr><td>Controlador de memoria</td><td>En el northbridge</td><td>Dentro del procesador</td></tr>
+        <tr><td>Tarjeta gráfica</td><td>Conectada al northbridge (AGP / PCIe)</td><td>Conectada directamente a la CPU (PCIe x16)</td></tr>
+        <tr><td>Unión CPU-chipset</td><td>FSB (bus frontal)</td><td>DMI (Intel) o PCIe x4 (AMD)</td></tr>
+        <tr><td>Discos</td><td>IDE y SATA, en el southbridge</td><td>SSD M.2 en la CPU y en el chipset; SATA en el chipset</td></tr>
+        <tr><td>Fabricantes</td><td>Intel, AMD, VIA, SiS, Nvidia...</td><td>Solo Intel y AMD</td></tr>
+        <tr><td>Nombre del chip</td><td>Northbridge (MCH) / southbridge (ICH)</td><td>Intel: PCH · AMD: FCH o chipset «Promontory»</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 id="glosario">12. Glosario</h2>
+    <div class="tabla"><table>
+      <thead><tr><th>Término</th><th>Significado</th></tr></thead>
+      <tbody>
+        <tr><td>Bus</td><td>Conjunto de líneas eléctricas por las que viajan los datos entre componentes.</td></tr>
+        <tr><td>Ancho de banda</td><td>Cantidad de datos que pueden pasar por una conexión en un segundo (GB/s).</td></tr>
+        <tr><td>Carril (lane)</td><td>Cada una de las conexiones independientes de PCI Express. x4 = 4 carriles.</td></tr>
+        <tr><td>FSB</td><td>Front Side Bus o bus frontal: bus antiguo entre la CPU y el northbridge.</td></tr>
+        <tr><td>DMI</td><td>Direct Media Interface: enlace entre el procesador Intel y su chipset.</td></tr>
+        <tr><td>PCH</td><td>Platform Controller Hub: nombre que da Intel a su chipset actual.</td></tr>
+        <tr><td>FCH</td><td>Fusion Controller Hub: nombre que daba AMD a su chipset (hoy también «Promontory»).</td></tr>
+        <tr><td>SoC</td><td>System on a Chip: un único chip que incluye procesador, gráfica y funciones del chipset.</td></tr>
+        <tr><td>Super I/O</td><td>Chip pequeño de la placa que controla sensores, ventiladores y puertos antiguos.</td></tr>
+        <tr><td>Overclocking</td><td>Hacer que el procesador o la memoria funcionen más rápido de lo que indica el fabricante.</td></tr>
+        <tr><td>BGA</td><td>Ball Grid Array: tipo de chip soldado a la placa mediante bolitas por debajo.</td></tr>
+        <tr><td>Cuello de botella</td><td>Parte del sistema más lenta que el resto, que limita el rendimiento total.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Para practicar lo aprendido, tienes las <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-4/actividades-chipset/">actividades</a> y el <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-4/test-chipset/">test de repaso</a> del tema.</p>
+  </main>
+  <footer class="contenedor pie">Materiales de uso educativo.</footer>
+</body>
+</html>
