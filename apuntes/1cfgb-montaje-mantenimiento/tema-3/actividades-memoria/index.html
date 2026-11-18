@@ -24,22 +24,21 @@
     <p class="miga"><a href="/">Inicio</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/">Montaje y mantenimiento de sistemas y componentes informáticos</a> / <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/">Tema 3</a></p>
     <span class="etiqueta">Recurso · Actividades</span>
     <h1>Actividades: la memoria del ordenador</h1>
-    <p class="entradilla">Actividades para repasar los <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/la-memoria/">apuntes del tema</a>. Algunas tienen la solución en un desplegable: inténtalo antes de abrirlo.</p>
+    <p class="entradilla">Actividades para repasar los <a href="/apuntes/1cfgb-montaje-mantenimiento/tema-3/la-memoria/">apuntes del tema</a>. Las preguntas, ejercicios y problemas tienen la solución en un desplegable justo debajo: inténtalo antes de abrirlo. Al final están las actividades para investigar y para el taller.</p>
 
-    <h2 id="pensar">Para pensar y calcular</h2>
-    <ol>
-      <li>Explica con tus palabras, usando la comparación de la mesa y el armario, la diferencia entre RAM y almacenamiento.</li>
+    <h2 id="preguntas">Preguntas cortas</h2>
+    <ol start="1">
       <li>Ordena de más rápida a más lenta: SSD NVMe, caché L1, disco duro, RAM, caché L3.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 2</summary>
+      <summary>Ver solución</summary>
       <div><p>Caché L1, caché L3, RAM, SSD NVMe, disco duro.</p></div>
     </details>
-    <ol start="3">
+    <ol start="2">
       <li>Calcula el ancho de banda (en MB/s) de una DDR4-2666 y de una DDR5-4800. ¿Qué nombre comercial PC4-... y PC5-... tendrán?</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 3</summary>
+      <summary>Ver solución</summary>
       <div>
         <ul>
           <li>DDR4-2666: 2.666 × 8 = <strong>21.328 MB/s</strong>. Se vende como <strong>PC4-21300</strong>.</li>
@@ -47,25 +46,25 @@
         </ul>
       </div>
     </details>
-    <ol start="4">
+    <ol start="3">
       <li>Un SSD de 512 GB aparece en Windows con unos 476 GB. ¿Está roto? Explica por qué.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 4</summary>
+      <summary>Ver solución</summary>
       <div><p>No está roto: 512 GB contados de 1.000 en 1.000 son unos 476 GB contados de 1.024 en 1.024.</p></div>
     </details>
-    <ol start="5">
+    <ol start="4">
       <li>¿Qué es mejor para un equipo de oficina, 1 módulo de 16 GB o 2 módulos de 8 GB? Justifícalo.</li>
     </ol>
-
-    <h2 id="investigar">Para investigar</h2>
-    <ol start="6">
-      <li>Busca en una tienda online un kit de memoria DDR5 y otro DDR4 de 16 GB. Anota su ficha (formato, velocidad, CL, voltaje) y su precio. ¿Cuánto cuesta cada GB?</li>
-      <li>Busca el manual de una placa base actual y responde: ¿qué tipo de memoria admite?, ¿cuántas ranuras tiene?, ¿cuánta memoria máxima?, ¿en qué ranuras se colocan dos módulos para el doble canal?</li>
-      <li>Una placa base tiene estas características: <em>2 ranuras DDR5 DIMM, máximo 96 GB, dual channel, 4800-6400 MT/s</em>. ¿Se podría instalar el kit del ejemplo del apartado 4 (2 × 16 GB DDR5-6000)? ¿Y un módulo DDR4-3200 de 16 GB? ¿Por qué?</li>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>Es mejor la opción de <strong>2 módulos de 8 GB</strong>, por el <strong>doble canal</strong> (<em>dual channel</em>): con dos módulos iguales en las ranuras correctas, el procesador accede a los dos a la vez y casi se duplica el ancho de banda. Con un solo módulo de 16 GB la memoria trabaja en un solo canal.</p></div>
+    </details>
+    <ol start="5">
+      <li>Una placa base tiene estas características: <em>2 ranuras DDR5 DIMM, máximo 96 GB, dual channel, 4800-6400 MT/s</em>. ¿Se podría instalar el kit del ejemplo del apartado 4 de los apuntes (2 × 16 GB DDR5-6000)? ¿Y un módulo DDR4-3200 de 16 GB? ¿Por qué?</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 8</summary>
+      <summary>Ver solución</summary>
       <div>
         <ul>
           <li>El kit DDR5-6000 <strong>sí</strong>, porque es DDR5, cabe en las 2 ranuras, 32 GB es menos del máximo y 6000 está dentro del rango.</li>
@@ -73,58 +72,100 @@
         </ul>
       </div>
     </details>
-
-    <h2 id="taller">Práctica en el taller</h2>
-    <ol start="9">
-      <li>Con los módulos del aula, identifica cada uno: formato (DIMM o SO-DIMM), generación (fíjate en la muesca y en la etiqueta), capacidad y velocidad. Rellena una tabla con los datos.</li>
-      <li>Siguiendo las normas de seguridad, retira e instala la memoria de un equipo del aula. Después comprueba en la BIOS/UEFI y en el Administrador de tareas que se detecta toda la memoria.</li>
-      <li>Ejecuta el Diagnóstico de memoria de Windows (<code>mdsched</code>) y anota el resultado en una ficha de incidencias.</li>
-    </ol>
-
-    <h2 id="preguntas">Preguntas cortas</h2>
-    <ol start="12">
+    <ol start="6">
       <li>Nombra 3 programas de diagnóstico de memoria.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>El <strong>Diagnóstico de memoria de Windows</strong> (<code>mdsched</code>), <strong>MemTest86</strong> (o su versión libre, Memtest86+) y otros como <strong>TestMem5</strong> u <strong>OCCT</strong>. Ojo: CPU-Z muestra los datos de la memoria, pero no la comprueba.</p></div>
+    </details>
+    <ol start="7">
       <li>¿Qué es la latencia?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>Es el <strong>tiempo de espera</strong> desde que el procesador pide un dato hasta que empieza a recibirlo. En la RAM se mide en ciclos de reloj (CL) o en nanosegundos. Cuanto más baja, mejor.</p></div>
+    </details>
+    <ol start="8">
       <li>Las tarjetas gráficas tienen su propia RAM. ¿Qué ocurre en el caso de las tarjetas gráficas integradas en la placa base?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>No tienen memoria propia: <strong>usan una parte de la RAM del sistema</strong> (memoria compartida). Esa parte queda reservada para la gráfica y los programas ya no la pueden usar.</p></div>
+    </details>
+    <ol start="9">
       <li>Describe 2 formas de abrir el Administrador de tareas.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>Con <strong>Ctrl + Mayús + Esc</strong>; con <strong>Ctrl + Alt + Supr</strong> y eligiendo «Administrador de tareas»; con <strong>clic derecho en la barra de tareas</strong> (o en el botón Inicio) y «Administrador de tareas»; o escribiendo <code>taskmgr</code> en Ejecutar (Windows + R).</p></div>
+    </details>
+    <ol start="10">
       <li>¿Se puede ampliar la memoria RAM en un portátil con 16 GB de RAM soldada a la placa? Explica tu respuesta.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>La memoria soldada <strong>no se puede cambiar ni ampliar</strong>. Solo se podría ampliar si, además de la memoria soldada, el portátil tiene una <strong>ranura SO-DIMM libre</strong> (algunos modelos la tienen). Hay que mirarlo en el manual antes de comprar memoria.</p></div>
+    </details>
+    <ol start="11">
       <li>SRAM y DRAM: ¿dónde se usa cada una?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>La <strong>SRAM</strong> se usa en la <strong>memoria caché</strong> del procesador. La <strong>DRAM</strong> se usa como <strong>memoria principal</strong> (los módulos de RAM DDR4 y DDR5).</p></div>
+    </details>
+    <ol start="12">
       <li>En cuanto a su funcionamiento, ¿cuál es la principal diferencia entre la SRAM y la DRAM?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>La <strong>DRAM necesita «refrescarse»</strong> (recargarse) miles de veces por segundo para no perder los datos. La <strong>SRAM no necesita refresco</strong> mientras tenga corriente. Por eso la SRAM es más rápida, pero también más cara y ocupa más.</p></div>
+    </details>
+    <ol start="13">
       <li>Nombra 3 formatos de módulos de memoria (DDR <strong>no</strong> es un formato).</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p><strong>DIMM</strong> (sobremesa), <strong>SO-DIMM</strong> (portátiles y miniPC) y <strong>CAMM2</strong> (portátiles nuevos). Formatos antiguos: SIMM, FB-DIMM y Micro-DIMM.</p></div>
+    </details>
+    <ol start="14">
       <li>Almacenamiento no volátil de datos: dime 3 tipos.</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>Por ejemplo: <strong>disco duro (HDD)</strong>, <strong>SSD</strong> (SATA o NVMe), <strong>pendrive USB y tarjetas SD</strong>, <strong>CD/DVD</strong>. También la memoria flash donde está la BIOS/UEFI.</p></div>
+    </details>
+    <ol start="15">
       <li>¿Qué almacena la memoria caché?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>Una <strong>copia de los datos e instrucciones que el procesador va a usar enseguida</strong> (o que acaba de usar), para no tener que ir a buscarlos a la RAM, que es más lenta.</p></div>
+    </details>
+    <ol start="16">
       <li>¿Y los registros?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p>El <strong>dato o la instrucción con la que la CPU está operando en ese instante</strong>. Están dentro del procesador y son la memoria más rápida y más pequeña (unos pocos bytes cada uno).</p></div>
+    </details>
+    <ol start="17">
       <li>El voltaje influye en la velocidad de la memoria y del procesador. Esto puede ocurrir de dos maneras: explica cada una de ellas.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver soluciones de las preguntas 12 a 23</summary>
+      <summary>Ver solución</summary>
       <div>
-        <ol start="12">
-          <li>El <strong>Diagnóstico de memoria de Windows</strong> (<code>mdsched</code>), <strong>MemTest86</strong> (o su versión libre, Memtest86+) y otros como <strong>TestMem5</strong> u <strong>OCCT</strong>. Ojo: CPU-Z muestra los datos de la memoria, pero no la comprueba.</li>
-          <li>Es el <strong>tiempo de espera</strong> desde que el procesador pide un dato hasta que empieza a recibirlo. En la RAM se mide en ciclos de reloj (CL) o en nanosegundos. Cuanto más baja, mejor.</li>
-          <li>No tienen memoria propia: <strong>usan una parte de la RAM del sistema</strong> (memoria compartida). Esa parte queda reservada para la gráfica y los programas ya no la pueden usar.</li>
-          <li>Con <strong>Ctrl + Mayús + Esc</strong>; con <strong>Ctrl + Alt + Supr</strong> y eligiendo «Administrador de tareas»; con <strong>clic derecho en la barra de tareas</strong> (o en el botón Inicio) y «Administrador de tareas»; o escribiendo <code>taskmgr</code> en Ejecutar (Windows + R).</li>
-          <li>La memoria soldada <strong>no se puede cambiar ni ampliar</strong>. Solo se podría ampliar si, además de la memoria soldada, el portátil tiene una <strong>ranura SO-DIMM libre</strong> (algunos modelos la tienen). Hay que mirarlo en el manual antes de comprar memoria.</li>
-          <li>La <strong>SRAM</strong> se usa en la <strong>memoria caché</strong> del procesador. La <strong>DRAM</strong> se usa como <strong>memoria principal</strong> (los módulos de RAM DDR4 y DDR5).</li>
-          <li>La <strong>DRAM necesita «refrescarse»</strong> (recargarse) miles de veces por segundo para no perder los datos. La <strong>SRAM no necesita refresco</strong> mientras tenga corriente. Por eso la SRAM es más rápida, pero también más cara y ocupa más.</li>
-          <li><strong>DIMM</strong> (sobremesa), <strong>SO-DIMM</strong> (portátiles y miniPC) y <strong>CAMM2</strong> (portátiles nuevos). Formatos antiguos: SIMM, FB-DIMM y Micro-DIMM.</li>
-          <li>Por ejemplo: <strong>disco duro (HDD)</strong>, <strong>SSD</strong> (SATA o NVMe), <strong>pendrive USB y tarjetas SD</strong>, <strong>CD/DVD</strong>. También la memoria flash donde está la BIOS/UEFI.</li>
-          <li>Una <strong>copia de los datos e instrucciones que el procesador va a usar enseguida</strong> (o que acaba de usar), para no tener que ir a buscarlos a la RAM, que es más lenta.</li>
-          <li>El <strong>dato o la instrucción con la que la CPU está operando en ese instante</strong>. Están dentro del procesador y son la memoria más rápida y más pequeña (unos pocos bytes cada uno).</li>
-          <li>
             <p><strong>1. Subiendo el voltaje para ir más rápido (overclocking).</strong> Para que una memoria o un procesador funcione a más frecuencia de la que trae de serie, suele hacer falta darle algo más de voltaje para que siga estable. Por ejemplo, una DDR4-3600 con el perfil XMP activado funciona a 1,35 V en lugar de los 1,2 V normales. A cambio, gasta más energía y se calienta más.</p>
             <p><strong>2. Gracias a componentes más pequeños, que necesitan menos voltaje.</strong> En cada generación los transistores son más pequeños. Eso les permite trabajar más rápido y, a la vez, con menos voltaje. Por eso cada generación de RAM es más rápida y gasta menos: DDR3 a 1,5 V, DDR4 a 1,2 V y DDR5 a 1,1 V. Ojo: no es que bajar el voltaje haga ir más rápido. Lo que ocurre es que los componentes más pequeños permiten las dos cosas, y al calentarse menos se puede subir más la frecuencia.</p>
-          </li>
-        </ol>
       </div>
     </details>
 
     <h2 id="ordenar">Ordenar y completar</h2>
-    <ol start="24">
+    <ol start="18">
       <li>Ordena de mayor a menor velocidad (1 = la más rápida, 6 = la más lenta) e indica si cada memoria es volátil: RAM, SSD, registros, caché L2, CD/DVD y HDD.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 24</summary>
+      <summary>Ver solución</summary>
       <div>
         <div class="tabla"><table>
           <thead><tr><th>Posición</th><th>Nombre</th><th>¿Es volátil?</th></tr></thead>
@@ -139,11 +180,11 @@
         </table></div>
       </div>
     </details>
-    <ol start="25">
+    <ol start="19">
       <li>Ordena de mayor a menor según su uso de RAM (1 = el que más usa): Windows, navegador con 5 pestañas, Bloc de notas, juego de última generación (CoD, Apex, Cyberpunk...) y servidor de Fortnite en un evento mundial.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 25</summary>
+      <summary>Ver solución</summary>
       <div>
         <ol>
           <li><strong>Servidor de Fortnite en un evento mundial:</strong> cientos de GB, o incluso varios TB repartidos entre muchos servidores.</li>
@@ -155,11 +196,11 @@
         <p>Son cifras orientativas: dependen del programa, de la versión y de la RAM que tenga el equipo.</p>
       </div>
     </details>
-    <ol start="26">
+    <ol start="20">
       <li>Completa el glosario de términos: standoff, HDD, SSD, motherboard (MB), power supply (P.S.), LGA, RAM, ROM, SRAM y DRAM.</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 26</summary>
+      <summary>Ver solución</summary>
       <div>
         <div class="tabla"><table>
           <thead><tr><th>Término</th><th>Significado</th></tr></thead>
@@ -178,11 +219,11 @@
         </table></div>
       </div>
     </details>
-    <ol start="27">
+    <ol start="21">
       <li>Ordena DDR5, DDR3 y DDR4 según su velocidad (1 = la más rápida) y según su voltaje (1 = la de más voltaje).</li>
     </ol>
     <details class="solucion">
-      <summary>Ver solución de la actividad 27</summary>
+      <summary>Ver solución</summary>
       <div>
         <div class="tabla"><table>
           <thead><tr><th>Nombre</th><th>Velocidad</th><th>Voltaje</th></tr></thead>
@@ -255,12 +296,11 @@
     <h2 id="etiqueta">La etiqueta de una memoria</h2>
     <p>Fíjate en esta etiqueta de un módulo de memoria:</p>
     <figure class="figura"><img src="etiqueta-kingston.jpg" width="1200" height="400" loading="lazy" alt="Etiqueta de un módulo Kingston Fury con estos datos rodeados en rojo: Kingston Fury, DDR4, 3600, 16GB, PC4-28800, CL16-19-19-39 y 1.35V. También pone XMP 2.0 Ready."><figcaption>Etiqueta de un módulo de memoria Kingston Fury.</figcaption></figure>
-    <ol start="28">
+    <ol start="22">
       <li>Explica el significado de los datos marcados en rojo: Kingston Fury, DDR4, 3600, 16GB, CL16 y 1.35V.</li>
-      <li>PC4-28800 es el ancho de banda teórico (capacidad máxima de transferencia), donde PC4 indica que es una memoria DDR4. Teniendo en cuenta los datos de la etiqueta, ¿de dónde sale esta cifra?</li>
     </ol>
     <details class="solucion">
-      <summary>Ver soluciones de las actividades 28 y 29</summary>
+      <summary>Ver solución</summary>
       <div>
         <div class="tabla"><table>
           <thead><tr><th>Dato</th><th>Significado</th></tr></thead>
@@ -273,9 +313,28 @@
             <tr><td>1.35V</td><td>Voltaje con el perfil XMP activado. Sin él, una DDR4 funciona a 1,2 V</td></tr>
           </tbody>
         </table></div>
-        <p><strong>PC4-28800:</strong> se multiplica la velocidad por 8, porque el bus de memoria es de 64 bits (8 bytes): <span class="formula">3.600 × 8 = 28.800 MB/s</span>.</p>
       </div>
     </details>
+    <ol start="23">
+      <li>PC4-28800 es el ancho de banda teórico (capacidad máxima de transferencia), donde PC4 indica que es una memoria DDR4. Teniendo en cuenta los datos de la etiqueta, ¿de dónde sale esta cifra?</li>
+    </ol>
+    <details class="solucion">
+      <summary>Ver solución</summary>
+      <div><p><strong>PC4-28800:</strong> se multiplica la velocidad por 8, porque el bus de memoria es de 64 bits (8 bytes): <span class="formula">3.600 × 8 = 28.800 MB/s</span>.</p></div>
+    </details>
+
+    <h2 id="investigar">Para investigar</h2>
+    <ol start="24">
+      <li>Busca en una tienda online un kit de memoria DDR5 y otro DDR4 de 16 GB. Anota su ficha (formato, velocidad, CL, voltaje) y su precio. ¿Cuánto cuesta cada GB?</li>
+      <li>Busca el manual de una placa base actual y responde: ¿qué tipo de memoria admite?, ¿cuántas ranuras tiene?, ¿cuánta memoria máxima?, ¿en qué ranuras se colocan dos módulos para el doble canal?</li>
+    </ol>
+
+    <h2 id="taller">Práctica en el taller</h2>
+    <ol start="26">
+      <li>Con los módulos del aula, identifica cada uno: formato (DIMM o SO-DIMM), generación (fíjate en la muesca y en la etiqueta), capacidad y velocidad. Rellena una tabla con los datos.</li>
+      <li>Siguiendo las normas de seguridad, retira e instala la memoria de un equipo del aula. Después comprueba en la BIOS/UEFI y en el Administrador de tareas que se detecta toda la memoria.</li>
+      <li>Ejecuta el Diagnóstico de memoria de Windows (<code>mdsched</code>) y anota el resultado en una ficha de incidencias.</li>
+    </ol>
   </main>
   <footer class="contenedor pie">Materiales de uso educativo.</footer>
 </body>
