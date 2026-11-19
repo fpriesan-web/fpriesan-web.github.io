@@ -33,7 +33,8 @@ window.MAPA_APUNTES = [
       { slug: 'tema-1', num: 1, titulo: 'La sostenibilidad en las organizaciones empresariales', materiales: [
         { slug: 'sostenibilidad-organizaciones', tipo: 'Apuntes', titulo: 'La sostenibilidad en las organizaciones empresariales' },
         { slug: 'actividad-foro-hlpf', tipo: 'Actividad 1', titulo: 'Investiga el Foro Político de Alto Nivel (HLPF)' },
-        { slug: 'caso-cafeterias-origen', tipo: 'Actividad 2', titulo: 'Caso práctico: Cafeterías Origen' }
+        { slug: 'caso-cafeterias-origen', tipo: 'Actividad 2', titulo: 'Caso práctico: Cafeterías Origen' },
+        { slug: 'test-repaso', tipo: 'Test', titulo: 'Test de repaso' }
       ] },
       { slug: 'tema-2', num: 2, titulo: 'Retos ambientales y sociales', materiales: [
         { slug: 'retos-ambientales-sociales', tipo: 'Apuntes', titulo: 'Retos ambientales y sociales' },
